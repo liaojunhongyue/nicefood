@@ -1,0 +1,99 @@
+<template>
+	<transition name="slidetop">
+		<div class="add-more-info" v-show="this.$store.state.add.showadd">
+			<div class="close" @click="hideAdd">
+				<i class="fa fa-times" aria-hidden="true"></i>
+			</div>
+			<p class="title">生活不止诗和远方，还有眼前的肉和汤</p>
+			<div class="go-operate">
+				<router-link :to="'/user/create/menu'" class="operate-item">
+					<i class="fa fa-coffee" aria-hidden="true"></i>
+					<span>传菜谱</span>
+				</router-link>
+				<router-link :to="'/user/create/works'" class="operate-item">
+					<i class="fa fa-shopping-basket" aria-hidden="true"></i>
+					<span>晒作品</span>
+				</router-link>
+				<router-link :to="'/user/create/article'" class="operate-item">
+					<i class="fa fa-book" aria-hidden="true"></i>
+					<span>发文章</span>
+				</router-link>
+			</div>
+		</div>
+	</transition>
+</template>
+<script>
+	export default {
+		methods: {
+			hideAdd: function() {
+				this.$store.state.add.showadd = false;
+				this.$store.state.add.addrotate = '';
+			}
+		}
+	}
+</script>
+<style lang="less">
+	.add-more-info {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1000;
+		background-color: #fff;
+		.close {
+			position: absolute;
+	    top: 0px;
+	    left: 0px;
+	    height: 40px;
+	    width: 50px;
+	    text-align: center;
+			i {
+				margin-top: 11px;
+		    color: #303030;
+		    font-size: 20px;
+			}
+		}
+		&>.title {
+			position: absolute;
+			top: 60px;
+			padding: 0 20px;
+			font-size: 22px;
+			line-height: 35px;
+			color: #333;
+		}
+		.go-operate {
+			position: absolute;
+			bottom: 90px;
+			width: 100%;
+			padding: 0 30px;
+			display: flex;
+			justify-content: space-between;
+			box-sizing: border-box;
+			.operate-item {
+				text-align: center;
+				i {
+					font-size: 30px;
+					padding: 10px;
+					border: 2px solid #ddd;
+					border-radius: 200px;
+					&.fa-coffee {
+						color: #d4e966; 
+					}
+					&.fa-shopping-basket {
+						color: #ffb381;
+					}
+					&.fa-book {
+						color: #7fc7f6;
+					}
+				}
+				span {
+					display: block;
+					margin-top: 10px;
+					font-size: 16px;
+					color: #666;
+				}
+			}
+		}
+	}
+</style>

@@ -1,0 +1,153 @@
+/*通用*/
+html,body {
+	width: 100%;
+	height: 100%;
+	background-color: #f9f9f9;
+	overflow-x: hidden;
+}
+#app {
+	height: 100%;
+}
+body > * {
+	background-color: #fff;
+}
+body > * > *{
+	background-color: #fff;
+}
+.padding {
+	padding: 10px;
+}
+.flex {
+	display: flex;
+}
+/*表单*/
+.form-list {
+	position: relative;
+	overflow: hidden;
+}
+/*页面过渡动画*/
+.child-view {  
+  position: absolute;  
+  left: 0;  
+  top: 0;  
+  width: 100%;  
+  min-height: 100%;  
+  transition: all .5s cubic-bezier(.55,0,.1,1);
+}  
+.slide-left-enter, .slide-right-leave-active {  
+  opacity: 0;  
+  -webkit-transform: translate(30px, 0);  
+  transform: translate(30px, 0);  
+}  
+.slide-left-leave-active, .slide-right-enter {  
+  opacity: 0;  
+  -webkit-transform: translate(-30px, 0);  
+  transform: translate(-30px, 0);  
+}
+/*向上展开的过渡 (全屏)*/
+div.slidetop-enter {
+	top: 100% !important;
+}
+div.slidetop-enter-active {
+	transition: all 0.5s !important;
+}
+div.slidetop-enter-to {
+	top: 0 !important;
+}
+/*向下收起的过渡 (全屏)*/
+div.slidetop-leave {
+	top: 0 !important;
+}
+div.slidetop-leave-active {
+	transition: all 0.3s !important;
+}
+div.slidetop-leave-to {
+	top: 100% !important;
+}
+/*向上展开的过渡 (局部)*/
+div.slidebottom-enter {
+	bottom: -100% !important;
+}
+div.slidebottom-enter-active {
+	transition: all 0.2s !important;
+}
+div.slidebottom-enter-to {
+	bottom: 0 !important;
+}
+/*向下收起的过渡 (局部)*/
+div.slidebottom-leave {
+	bottom: 0 !important;
+}
+div.slidebottom-leave-active {
+	transition: all 1s !important;
+}
+div.slidebottom-leave-to {
+	bottom: -100% !important;
+}
+/* 淡入淡出动画 */
+.prompt-enter-active, .prompt-leave-active {
+  transition: opacity .5s;
+}
+.prompt-enter, .prompt-leave-to {
+  opacity: 0;
+}
+/*暂无数据*/
+.blank {
+	position: fixed;
+	top: 25%;
+	left: 25%;
+	width: 50%;
+	height: 50%;
+	background: url(../images/blank.png) center center no-repeat;
+	background-size: 70%
+}
+/*菜谱列表*/
+.menu-list-item {
+	display: flex;
+	padding: 10px 0;
+	border-bottom: 1px solid #e7e7e7;
+}
+.menu-list-item:first-child {
+	padding-top: 0;
+}
+.menu-list-item:last-child {
+	border-bottom: 0;
+}
+.menu-list-item .pic {
+	flex-grow: 1;
+	width: 0;
+}
+.menu-list-item .pic img {
+	width: 100%;
+}
+.menu-list-item .info {
+	flex-grow: 2;
+	width: 0;
+	padding: 16px 0 16px 10px;
+}
+.menu-list-item .info > .title {
+	color: #333;
+}
+.menu-list-item .info .star i {
+	color: #f0fd24;
+}
+.menu-list-item .info .operate span {
+	margin-right: 16px;
+	font-size: 12px;
+	color: #bbb;
+}
+.menu-list-item .info .operate span i {
+	font-size: 12px;
+	color: #bbb;
+}
+/*遮罩*/
+.mask {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	opacity: 0.5;
+	z-index: 1000;
+}
