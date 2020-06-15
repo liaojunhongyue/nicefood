@@ -5,6 +5,8 @@ import App from './App'
 import Vuex from 'vuex'
 import router from './router'
 import axios from 'axios'
+import 'normalize.css/normalize.css'
+import 'font-awesome/css/font-awesome.min.css'
 
 Vue.prototype.$http = axios
 Vue.config.productionTip = false

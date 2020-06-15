@@ -60,4 +60,18 @@ export default {
   }
 }
 </script>
-
+<style lang="less">
+* {
+  font-size: @normalFontSize;
+}
+a {
+  color: @normalFontColor;
+  text-decoration: none;
+}
+p {
+  margin: 0;
+}
+input {
+  outline: none;
+}
+</style>

@@ -1,15 +1,17 @@
 <template>
   <div class="search">
-    <div class="add" :class="this.$store.state.add.addrotate" @click="showAdd">
-      <i class="fa fa-plus" aria-hidden="true" />
+    <div class="search-border-bottom">
+      <div class="add" :class="this.$store.state.add.addrotate" @click="showAdd">
+        <i class="fa fa-plus" aria-hidden="true" />
+      </div>
+      <div class="input">
+        <i class="fa fa-search" aria-hidden="true" />
+        <input type="text" placeholder="菜谱、食材">
+      </div>
+      <router-link :to="'/message'" class="message">
+        <i class="fa fa-envelope-o" aria-hidden="true" />
+      </router-link>
     </div>
-    <div class="input">
-      <i class="fa fa-search" aria-hidden="true" />
-      <input type="text" placeholder="菜谱、食材">
-    </div>
-    <router-link :to="'/message'" class="message">
-      <i class="fa fa-envelope-o" aria-hidden="true" />
-    </router-link>
   </div>
 </template>
 <script>
@@ -32,23 +34,26 @@ export default {
 		position: fixed;
 		top: 0px;
 		left: 0px;
-		height: 40px;
+		height: 12vw;
 		width: 100%;
-		background-color: #fff;
-		border-bottom: 1px solid #e7e7e7;
+    background-color: #fff;
+    .search-border-bottom {
+      height: 12vw;
+      .border-bottom-1px(#e7e7e7);
+    }
 		z-index: 100;
 		.add {
 			position: absolute;
 			top: 0px;
 			left: 0px;
-			height: 40px;
-			width: 50px;
+			height: 12vw;
+			width: 12vw;
 			text-align: center;
 			transition: all 0.3s;
 			i {
-				margin-top: 11px;
+				margin-top: 3vw;
 				color: #303030;
-				font-size: 20px;
+				font-size: 6vw;
 			}
 		}
 		.rotate {
@@ -56,14 +61,15 @@ export default {
 		}
 		.input {
 			position: absolute;
-			top: 8px;
-			left: 50px;
-			right: 50px;
-			height: 24px;
+			top: 2.5vw;
+			left: 12vw;
+			right: 12vw;
+			height: 7vw;
 			background-color: #ececec;
 			i {
 				position: relative;
-				margin: 4px 0 0 6px;
+        margin: 1.5vw 0 0 2vw;
+        font-size: 4vw;
 				background-color: #ececec;
 				z-index: 100;
 			}
@@ -71,8 +77,9 @@ export default {
 				position: absolute;
 				width: 100%;
 				left: 0;
-				padding-left: 25px;
-				height: 22px;
+				padding-left: 8vw;
+        height: 7vw;
+        line-height: 7vw;
 				border: 0;
 				background-color: #ececec;
 				box-sizing: border-box;
@@ -82,13 +89,13 @@ export default {
 			position: absolute;
 			right: 0px;
 			top: 0px;
-			width: 50px;
-			height: 40px;
+			width: 12vw;
+			height: 12vw;
 			text-align: center;
 			i {
-				margin-top: 10px;
+				margin-top: 3vw;
 				color: #303030;
-				font-size: 20px;
+				font-size: 6vw;
 			}
 		}
 	}

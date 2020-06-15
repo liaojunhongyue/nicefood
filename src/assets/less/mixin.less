@@ -1,0 +1,49 @@
+// 1px border 实现
+// 上边线
+.border-top-1px(@color) {
+  position: relative;
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 100%;
+    border-top: 1px solid @color;
+    transform-origin: 0 0;
+    overflow: hidden;
+  }
+  @media (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49) {
+    &::after {
+      transform: scaleY(0.5);
+    }
+  }
+  @media (-webkit-min-device-pixel-ratio: 2.5) {
+    &::after {
+      transform: scaleY(0.33333);
+    }
+  }
+}
+// 下边线
+.border-bottom-1px(@color) {
+  position: relative;
+  &:after {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    content: '';
+    width: 100%;
+    border-bottom: 1px solid @color;
+    transform-origin: 0 0;
+    overflow: hidden;
+  }
+  @media (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49) {
+    &::after {
+      transform: scaleY(0.5);
+    }
+  }
+  @media (-webkit-min-device-pixel-ratio: 2.5) {
+    &::after {
+      transform: scaleY(0.33333);
+    }
+  }
+}
