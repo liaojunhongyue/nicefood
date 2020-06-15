@@ -1,14 +1,14 @@
 <template>
 	<div class="collect-menu">
 		<div class="main-title"><p><i class="fa fa-star" aria-hidden="true"></i> {{ collectCategory }}</p></div>
-		<div class="menu-list-item" v-for="item in collectData">
+		<div class="menu-list-item" v-for="item in collectData" :key="item.id">
 			<div class="pic">
 				<img :src="item.image" />
 			</div>
 			<div class="info">
 				<p class="title">{{ item.title }}</p>
 				<p class="star">
-					<i class="fa fa-star" aria-hidden="true" v-for="star in item.star"></i>
+					<i class="fa fa-star" aria-hidden="true" v-for="(star, index) in item.star" :key="index"></i>
 				</p>
 				<p class="operate">
 					<span class="like">

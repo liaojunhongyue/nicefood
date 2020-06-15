@@ -16,7 +16,7 @@
 						<div class="info">
 							<p class="title">{{ item.title }}</p>
 							<p class="star">
-								<i class="fa fa-star" aria-hidden="true" v-for="star in item.star"></i>
+								<i class="fa fa-star" aria-hidden="true" v-for="(star, index) in item.star" :key="index"></i>
 							</p>
 							<p class="operate">
 								<span class="like">

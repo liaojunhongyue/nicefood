@@ -18,7 +18,7 @@
 					<input type="text" class="article-title" name="menuTitle" placeholder="添加文章标题" ref="mainTitle" />
 				</div>
 				<div class="add-component">
-					<div :is="item.component" v-for="item in items"></div>
+					<div :is="item.component" v-for="(item, index) in items" :key="index"></div>
 				</div>
 			</form>
 			<div class="add-article-details">

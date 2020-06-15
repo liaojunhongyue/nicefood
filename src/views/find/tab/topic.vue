@@ -1,7 +1,7 @@
 <template>
 	<div class="find-topic padding">
 		<div class="find-topic-list">
-			<div class="find-topic-item" v-for="item in topicData">
+			<div class="find-topic-item" v-for="item in topicData" :key="item.id">
 				<div class="pic">
 					<img :src="item.image" />
 					<div class="pic-text">

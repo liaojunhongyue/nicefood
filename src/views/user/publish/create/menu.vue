@@ -44,7 +44,7 @@
 					<div class="menu-material">
 						<p class="menu-material-title">主料</p>
 						<ul class="menu-material-list">
-							<li :is="item.component" v-for="(item, index) in mainMaterial" :datas="mainMaterial" :dataindex="index"></li>
+							<li :is="item.component" v-for="(item, index) in mainMaterial" :key="index" :datas="mainMaterial" :dataindex="index"></li>
 						</ul>
 						<p class="menu-material-add" @click="addMainMaterial">
 							<i class="fa fa-plus" aria-hidden="true"></i>
@@ -57,7 +57,7 @@
 					<div class="menu-material">
 						<p class="menu-material-title">辅料</p>
 						<ul class="menu-material-list">
-							<li :is="item.component" v-for="(item, index) in othersMaterial" :datas="othersMaterial" :dataindex="index"></li>
+							<li :is="item.component" v-for="(item, index) in othersMaterial" :key="index" :datas="othersMaterial" :dataindex="index"></li>
 						</ul>
 						<p class="menu-material-add" @click="addOthersMaterial">
 							<i class="fa fa-plus" aria-hidden="true"></i>
@@ -68,8 +68,8 @@
 				<!-- 步骤图 -->
 				<div class="form-list">
 					<div class="menu-display">
-						<div class="menu-display-content" v-for="(item, index) in procedures">
-							<p class="menu-display-title">步骤<span>{{ index + 1 }}</span><i class="fa fa-times" :dataindex="index" aria-hidden="true" 
+						<div class="menu-display-content" v-for="(item, index) in procedures" :key="index">
+							<p class="menu-display-title">步骤<span>{{ index + 1 }}</span><i class="fa fa-times" :dataindex="index" aria-hidden="true"
 								@click="deleteThisProcedure"></i></p>
 							<ul class="menu-display-list">
 								<li class="menu-display-item">
@@ -135,7 +135,7 @@
 					<i class="fa fa-times" aria-hidden="true" @click="hideAllSelect"></i>
 				</div>
 				<div class="content" id="menuTechCont">
-					<p v-for="tech in menuTech"><span @click="getMenuInfo" type="techType">{{ tech }}</span></p>
+					<p v-for="tech in menuTech" :key="tech"><span @click="getMenuInfo" type="techType">{{ tech }}</span></p>
 				</div>
 			</div>
 		</transition>
@@ -147,7 +147,7 @@
 					<i class="fa fa-times" aria-hidden="true" @click="hideAllSelect"></i>
 				</div>
 				<div class="content">
-					<p v-for="item in menuTaste"><span @click="getMenuInfo" type="tasteType">{{ item }}</span></p>
+					<p v-for="item in menuTaste" :key="item"><span @click="getMenuInfo" type="tasteType">{{ item }}</span></p>
 				</div>
 			</div>
 		</transition>
@@ -159,7 +159,7 @@
 					<i class="fa fa-times" aria-hidden="true" @click="hideAllSelect"></i>
 				</div>
 				<div class="content">
-					<p v-for="item in menuTime"><span @click="getMenuInfo" type="timeType">{{ item }}</span></p>
+					<p v-for="item in menuTime" :key="item"><span @click="getMenuInfo" type="timeType">{{ item }}</span></p>
 				</div>
 			</div>
 		</transition>
@@ -559,5 +559,5 @@
 			}
 		}
 	}
-	
+
 </style>

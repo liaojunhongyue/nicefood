@@ -4,21 +4,21 @@
 		<div class="food-category-all">
 			<div class="main-category" ref="mainCategory">
 				<ul>
-					<li class="main-category-item" v-for="item in foodCategoryData">
+					<li class="main-category-item" v-for="item in foodCategoryData" :key="item.id">
 						{{ item.mainCate }}
 					</li>
 				</ul>
 			</div>
 			<div class="sub-category">
-				<div class="sub-category-list" v-for="item in foodCategoryData">
-					<div v-for="list in item.list">
+				<div class="sub-category-list" v-for="item in foodCategoryData" :key="item.id">
+					<div v-for="list in item.list" :key="list.id">
 						<div class="sub-category-title" v-if="list.secondTitle != null">
 							<div class="line"></div>
 							<div class="text">{{ list.secondTitle }}</div>
 							<div class="line"></div>
 						</div>
 						<ul>
-							<li class="sub-category-item" v-for="text in list.listText"><p>{{ text }}</p></li>
+							<li class="sub-category-item" v-for="text in list.listText" :key="text"><p>{{ text }}</p></li>
 						</ul>
 					</div>
 				</div>

@@ -4,7 +4,7 @@
 			<p class="title">新手任务</p>
 		</div>
 		<div class="new-task-list">
-			<div class="new-task-item" v-for="item in taskData">
+			<div class="new-task-item" v-for="item in taskData" :key="item.id">
 				<div class="not-receive-outer">
 					<div class="not-receive-inner">
 						<p>{{ item.isReceived == 0 ? '未领取' : '已领取' }}</p>

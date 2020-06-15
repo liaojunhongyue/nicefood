@@ -6,7 +6,7 @@
 				<p>当季推荐蔬菜</p>
 			</div>
 			<ul class="current-season-list">
-				<li class="current-season-item" v-for="item in currentSeasonData">
+				<li class="current-season-item" v-for="item in currentSeasonData" :key="item.id">
 					<div class="pic">
 						<img :src="item.image" />
 					</div>
@@ -14,7 +14,7 @@
 						<p class="title">{{ item.title }}</p>
 						<p class="effect">
 							<span class="heat">{{ item.heat }}</span>
-							<span v-for="tag in item.tags">{{ tag }}</span>
+							<span v-for="tag in item.tags" :key="tag">{{ tag }}</span>
 						</p>
 					</div>
 				</li>

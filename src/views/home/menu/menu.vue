@@ -5,7 +5,7 @@
 		<div class="menu-meal">
 			<swiper :options="swiperOption" ref="mySwiper">
 				<swiper-slide class="menu-meal-list" v-for="n in 5" v-bind:key="n">
-					<div v-for="item in swiperData.slice(2*n-2,2*n)" class="menu-meal-pic">
+					<div v-for="(item, index) in swiperData.slice(2*n-2,2*n)" :key="index" class="menu-meal-pic">
 						<router-link :to="{name: 'fooddetails', params: {id: item.id}}">
 							<img :src="item.image" />
 						</router-link>

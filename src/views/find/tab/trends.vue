@@ -1,7 +1,7 @@
 <template>
 	<div class="find-trends padding">
 		<div class="find-trends-list">
-			<div class="find-trends-item" v-for="item in trendsData">
+			<div class="find-trends-item" v-for="item in trendsData" :key="item.id">
 				<div class="title">
 					<i class="fa fa-bullhorn" aria-hidden="true"></i>
 					<span>{{ item.title }}</span>

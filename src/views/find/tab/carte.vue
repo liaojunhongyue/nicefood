@@ -1,7 +1,7 @@
 <template>
 	<div class="find-carte padding">
 		<div class="find-carte-list">
-			<div class="find-carte-item" v-for="item in carteData">
+			<div class="find-carte-item" v-for="item in carteData" :key="item.id">
 				<div class="title">
 					<div class="text">
 						<p>{{ item.title }}</p>
@@ -12,7 +12,7 @@
 					</div>
 				</div>
 				<div class="pics">
-					<div class="pic" v-for="image in item.images">
+					<div class="pic" v-for="image in item.images" :key="image">
 						<img :src="image" />
 					</div>
 				</div>

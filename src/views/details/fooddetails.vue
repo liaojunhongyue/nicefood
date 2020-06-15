@@ -26,7 +26,7 @@
 		<div class="food-point">
 			<p>
 				<span>评分</span>
-				<i class="fa fa-star" aria-hidden="true" v-for="item in menuDetails.star"></i>
+				<i class="fa fa-star" aria-hidden="true" v-for="(item, index) in menuDetails.star" :key="index"></i>
 			</p>
 		</div>
 		<div class="food-footer">

@@ -1,7 +1,7 @@
 <template>
 	<div class="find-talk-tab-content">
 		<ul class="find-talk-tab-list">
-			<li class="find-talk-tab-item" v-for="item in templateData">
+			<li class="find-talk-tab-item" v-for="item in templateData" :key="item.id">
 				<div class="author">
 					<div class="avatar">
 						<img class="avatar-img" :src="item.author.avatar" />
@@ -14,7 +14,7 @@
 				<div class="content">
 					<p class="text">{{ item.text }}</p>
 					<div class="pictures">
-						<div class="picture" v-for="pic in item.images">
+						<div class="picture" v-for="pic in item.images" :key="pic">
 							<img :src="pic" />
 						</div>
 					</div>
