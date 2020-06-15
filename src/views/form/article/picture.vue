@@ -1,47 +1,48 @@
 <template>
-	<div class="form-list" v-if="isShowPicture">
-		<div class="article-content-pic">
-			<div class="article-content-picbg">
-				<i class="fa fa-plus-square" aria-hidden="true"></i>
-				<p>添加图片</p>
-				<img class="article-img" v-show="isShowImg" ref="articleImg" src="" />
-				<input type="file" class="article-content-pic-upload" @change="selectFile" />
-			</div>
-			<i class="fa fa-times" aria-hidden="true" @click="removeThis"></i>
-		</div>
-	</div>
+  <div v-if="isShowPicture" class="form-list">
+    <div class="article-content-pic">
+      <div class="article-content-picbg">
+        <i class="fa fa-plus-square" aria-hidden="true" />
+        <p>添加图片</p>
+        <img v-show="isShowImg" ref="articleImg" class="article-img" src="">
+        <input type="file" class="article-content-pic-upload" @change="selectFile">
+      </div>
+      <i class="fa fa-times" aria-hidden="true" @click="removeThis" />
+    </div>
+  </div>
 </template>
 <script>
-	export default {
-		data() {
-			return {
-				isShowPicture: true,
-				isShowImg: false
-			}
-		},
-		methods: {
-			removeThis: function(){
-				this.isShowPicture = false;
-			},
-			selectFile: function(e){
-				e = e || window.event;
-				let that = this;
-				let files = e.target.files;
-				for(let i = 0, f; f = files[i]; i++){
-					let reader = new FileReader;
-					reader.onload = (function(){
-						return function(e){
-							if(this.result != ''){
-								that.isShowImg = true;
-								that.$refs.articleImg.src = this.result;
-							}
-						}
-					})(f);
-					reader.readAsDataURL(f);
-				}
-			}
-		}
-	}
+export default {
+  data() {
+    return {
+      isShowPicture: true,
+      isShowImg: false
+    }
+  },
+  methods: {
+    removeThis: function() {
+      this.isShowPicture = false
+    },
+    selectFile: function(e) {
+      e = e || window.event
+      const that = this
+      const files = e.target.files
+      for (let i = 0; i <= files.length; i++) {
+        const f = files[i]
+        const reader = new FileReader()
+        reader.onload = (function() {
+          return function(e) {
+            if (this.result !== '') {
+              that.isShowImg = true
+              that.$refs.articleImg.src = this.result
+            }
+          }
+        })(f)
+        reader.readAsDataURL(f)
+      }
+    }
+  }
+}
 </script>
 <style lang="less">
 	.article-content-pic {

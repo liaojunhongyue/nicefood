@@ -1,27 +1,27 @@
 <template>
-	<div class="find-activity padding">
-		<div class="find-activity-list">
-			<div class="find-activity-item" v-for="item in activityData" :key="item.id">
-				<img :src="item.image" />
-			</div>
-		</div>
-	</div>
+  <div class="find-activity padding">
+    <div class="find-activity-list">
+      <div v-for="item in activityData" :key="item.id" class="find-activity-item">
+        <img :src="item.image">
+      </div>
+    </div>
+  </div>
 </template>
 <script>
-	export default {
-		data() {
-			return {
-				findData: '',
-				activityData: ''
-			}
-		},
-		mounted() {
-			this.$http.get('/api/findData').then((response) => {
-				this.findData = response.data.data;
-				this.activityData = this.findData.activity;
-			})
-		}
-	}
+export default {
+  data() {
+    return {
+      findData: '',
+      activityData: ''
+    }
+  },
+  mounted() {
+    this.$http.get('/api/findData').then((response) => {
+      this.findData = response.data.data
+      this.activityData = this.findData.activity
+    })
+  }
+}
 </script>
 <style lang="less">
 	.find-activity-list {

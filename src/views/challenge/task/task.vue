@@ -1,50 +1,50 @@
 <template>
-	<div class="new-task">
-		<div class="new-task-title">
-			<p class="title">新手任务</p>
-		</div>
-		<div class="new-task-list">
-			<div class="new-task-item" v-for="item in taskData" :key="item.id">
-				<div class="not-receive-outer">
-					<div class="not-receive-inner">
-						<p>{{ item.isReceived == 0 ? '未领取' : '已领取' }}</p>
-					</div>
-				</div>
-				<div class="info">
-					<div class="pic">
-						<img :src="item.image" />
-						<div class="pic-mask">
-							<p>{{ item.imageTitle }}</p>
-						</div>
-					</div>
-					<div class="title">
-						<p>{{ item.title }}</p>
-					</div>
-				</div>
-				<div class="points">
-					<i class="fa fa-database" aria-hidden="true"></i>
-					<span>奖励：{{ item.points }}积分</span>
-					<span class="state">{{ item.isFinished == 1 ? '进行中' : '已完成' }}</span>
-				</div>
-			</div>
-		</div>
-	</div>
+  <div class="new-task">
+    <div class="new-task-title">
+      <p class="title">新手任务</p>
+    </div>
+    <div class="new-task-list">
+      <div v-for="item in taskData" :key="item.id" class="new-task-item">
+        <div class="not-receive-outer">
+          <div class="not-receive-inner">
+            <p>{{ item.isReceived == 0 ? '未领取' : '已领取' }}</p>
+          </div>
+        </div>
+        <div class="info">
+          <div class="pic">
+            <img :src="item.image">
+            <div class="pic-mask">
+              <p>{{ item.imageTitle }}</p>
+            </div>
+          </div>
+          <div class="title">
+            <p>{{ item.title }}</p>
+          </div>
+        </div>
+        <div class="points">
+          <i class="fa fa-database" aria-hidden="true" />
+          <span>奖励：{{ item.points }}积分</span>
+          <span class="state">{{ item.isFinished == 1 ? '进行中' : '已完成' }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 <script>
-	export default {
-		data() {
-			return {
-				challengeData: '',
-				taskData: ''
-			}
-		},
-		mounted() {
-			this.$http.get('/api/challengeData').then((response) => {
-				this.challengeData = response.data.data;
-				this.taskData = this.challengeData.task;
-			})
-		}
-	}
+export default {
+  data() {
+    return {
+      challengeData: '',
+      taskData: ''
+    }
+  },
+  mounted() {
+    this.$http.get('/api/challengeData').then((response) => {
+      this.challengeData = response.data.data
+      this.taskData = this.challengeData.task
+    })
+  }
+}
 </script>
 <style lang="less">
 	.new-task {

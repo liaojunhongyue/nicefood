@@ -50,20 +50,20 @@ Vue.use(Router)
 
 export default new Router({
   base: '/dist/',
-  scrollBehavior (to, from, savedPosition) {
+  scrollBehavior(to, from, savedPosition) {
     return { x: 0, y: 0 }
   },
   routes: [
     {
       path: '/',
       name: 'home', // 首页
-      component: Home,
+      component: Home
     },
     {
-    	path: '/find',
+      path: '/find',
       redirect: '/find/talk/newtab',
-    	name: 'find', // 发现 > 食话
-    	component: Find,
+      name: 'find', // 发现 > 食话
+      component: Find,
       children: [
         {
           path: 'talk',
@@ -111,14 +111,14 @@ export default new Router({
       ]
     },
     {
-    	path: '/challenge',
-    	name: 'challenge', // 挑战
-    	component: Challenge
+      path: '/challenge',
+      name: 'challenge', // 挑战
+      component: Challenge
     },
     {
-    	path: '/user',
-    	name: 'user', // 我的
-    	component: User
+      path: '/user',
+      name: 'user', // 我的
+      component: User
     },
     {
       path: '/user/collect',

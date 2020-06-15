@@ -1,24 +1,22 @@
 <template>
-	<div class="message-collect">
-		<f-normal-header message="收藏" historyurl=""></f-normal-header>
-		<div class="message-collect-list" :class="{blank: isBlank}">
-
-		</div>
-	</div>
+  <div class="message-collect">
+    <f-normal-header message="收藏" historyurl="" />
+    <div class="message-collect-list" :class="{blank: isBlank}" />
+  </div>
 </template>
 <script>
-	import fNormalHeader from '@/components/common/normalHeader.vue'
+import fNormalHeader from '@/components/common/normalHeader.vue'
 
-	export default {
-		data() {
-			return {
-				isBlank: true
-			}
-		},
-		components: {
-			'f-normal-header': fNormalHeader
-		}
-	}
+export default {
+  components: {
+    'f-normal-header': fNormalHeader
+  },
+  data() {
+    return {
+      isBlank: true
+    }
+  }
+}
 </script>
 <style lang="less">
 

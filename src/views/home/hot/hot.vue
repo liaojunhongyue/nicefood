@@ -1,34 +1,34 @@
 <template>
-	<div class="hot padding">
-		<p class="title">热门专题</p>
-		<router-link :to="'/hotmore'" class="more">更多</router-link>
-		<div class="hot-list">
-			<router-link :to="{name: 'hotdetails', params: {id: item.id}}" class="hot-list-item" v-for="item in hotData" :key="item.id">
-				<div class="pic">
-					<img :src="item.image" />
-					<p class="pic-title">
-						<span class="main-title">{{ item.imageTitle }}</span>
-						<span class="sub-title">{{ item.imageDesc }}</span>
-					</p>
-				</div>
-				<p class="title">{{ item.title }}</p>
-			</router-link>
-		</div>
-	</div>
+  <div class="hot padding">
+    <p class="title">热门专题</p>
+    <router-link :to="'/hotmore'" class="more">更多</router-link>
+    <div class="hot-list">
+      <router-link v-for="item in hotData" :key="item.id" :to="{name: 'hotdetails', params: {id: item.id}}" class="hot-list-item">
+        <div class="pic">
+          <img :src="item.image">
+          <p class="pic-title">
+            <span class="main-title">{{ item.imageTitle }}</span>
+            <span class="sub-title">{{ item.imageDesc }}</span>
+          </p>
+        </div>
+        <p class="title">{{ item.title }}</p>
+      </router-link>
+    </div>
+  </div>
 </template>
 <script>
-	export default {
-		data() {
-			return {
-				hotData: ''
-			}
-		},
-		mounted() {
-			this.$http.get('/api/hotData').then((response) => {
-				this.hotData = response.data.data;
-			})
-		}
-	}
+export default {
+  data() {
+    return {
+      hotData: ''
+    }
+  },
+  mounted() {
+    this.$http.get('/api/hotData').then((response) => {
+      this.hotData = response.data.data
+    })
+  }
+}
 </script>
 <style lang="less">
 	.padding {

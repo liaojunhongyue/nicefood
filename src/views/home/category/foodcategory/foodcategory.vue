@@ -1,65 +1,65 @@
 <template>
-	<div class="food-category">
-		<f-normal-header message="菜谱分类" historyurl=""></f-normal-header>
-		<div class="food-category-all">
-			<div class="main-category" ref="mainCategory">
-				<ul>
-					<li class="main-category-item" v-for="item in foodCategoryData" :key="item.id">
-						{{ item.mainCate }}
-					</li>
-				</ul>
-			</div>
-			<div class="sub-category">
-				<div class="sub-category-list" v-for="item in foodCategoryData" :key="item.id">
-					<div v-for="list in item.list" :key="list.id">
-						<div class="sub-category-title" v-if="list.secondTitle != null">
-							<div class="line"></div>
-							<div class="text">{{ list.secondTitle }}</div>
-							<div class="line"></div>
-						</div>
-						<ul>
-							<li class="sub-category-item" v-for="text in list.listText" :key="text"><p>{{ text }}</p></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+  <div class="food-category">
+    <f-normal-header message="菜谱分类" historyurl="" />
+    <div class="food-category-all">
+      <div ref="mainCategory" class="main-category">
+        <ul>
+          <li v-for="item in foodCategoryData" :key="item.id" class="main-category-item">
+            {{ item.mainCate }}
+          </li>
+        </ul>
+      </div>
+      <div class="sub-category">
+        <div v-for="item in foodCategoryData" :key="item.id" class="sub-category-list">
+          <div v-for="list in item.list" :key="list.id">
+            <div v-if="list.secondTitle != null" class="sub-category-title">
+              <div class="line" />
+              <div class="text">{{ list.secondTitle }}</div>
+              <div class="line" />
+            </div>
+            <ul>
+              <li v-for="text in list.listText" :key="text" class="sub-category-item"><p>{{ text }}</p></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 <script>
-	import BScroll from 'better-scroll'
-	import fNormalHeader from '@/components/common/normalHeader.vue'
+import BScroll from 'better-scroll'
+import fNormalHeader from '@/components/common/normalHeader.vue'
 
-	export default {
-		data() {
-			return {
-				foodCategoryData: ''
-			}
-		},
-		components: {
-			'f-normal-header': fNormalHeader
-		},
-		created() {
-			this.$nextTick(() => {
-				this._initScroll();
-			})
-		},
-		mounted() {
-			this.$http.get('/api/foodCategoryData').then((response) => {
-				this.foodCategoryData = response.data.data;
-			})
-		},
-		methods: {
-			_initScroll: function(){
-				this.scroll = new BScroll(this.$refs.mainCategory, {
-					mouseWheel: {    // 配置PC端滑动
-			            speed: 20,
-            			invert: false
-			        }
-				})
-			}
-		}
-	}
+export default {
+  components: {
+    'f-normal-header': fNormalHeader
+  },
+  data() {
+    return {
+      foodCategoryData: ''
+    }
+  },
+  created() {
+    this.$nextTick(() => {
+      this._initScroll()
+    })
+  },
+  mounted() {
+    this.$http.get('/api/foodCategoryData').then((response) => {
+      this.foodCategoryData = response.data.data
+    })
+  },
+  methods: {
+    _initScroll: function() {
+      this.scroll = new BScroll(this.$refs.mainCategory, {
+        mouseWheel: { // 配置PC端滑动
+          speed: 20,
+          invert: false
+        }
+      })
+    }
+  }
+}
 </script>
 <style lang="less">
 	.food-category {

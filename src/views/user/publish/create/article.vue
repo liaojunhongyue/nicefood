@@ -1,129 +1,130 @@
 <template>
-	<div class="create-article">
-		<f-normal-header message="创作文章" historyurl=""></f-normal-header>
-		<p class="article-publish" @click="submitArticle">发布</p>
-		<div class="add-article">
-			<form id="addArticleForm" ref="addarticleform">
-				<div class="form-list">
-					<div class="article-pic">
-						<div class="article-picbg">
-							<i class="fa fa-plus-square" aria-hidden="true"></i>
-							<p>添加封面图</p>
-							<img class="article-img" v-show="isShowPic" ref="mainpic" />
-							<input @change="mainPicSelect" type="file" class="article-pic-upload" ref="mainImg" />
-						</div>
-					</div>
-				</div>
-				<div class="form-list">
-					<input type="text" class="article-title" name="menuTitle" placeholder="添加文章标题" ref="mainTitle" />
-				</div>
-				<div class="add-component">
-					<div :is="item.component" v-for="(item, index) in items" :key="index"></div>
-				</div>
-			</form>
-			<div class="add-article-details">
-				<div class="details-item" @click="addSubTitle">
-					<i class="fa fa-file-powerpoint-o" aria-hidden="true"></i>
-					<p>添加二级标题</p>
-				</div>
-				<div class="details-item" @click="addSection">
-					<i class="fa fa-file-text-o" aria-hidden="true"></i>
-					<p>添加段落文字</p>
-				</div>
-				<div class="details-item" @click="addPicture">
-					<i class="fa fa-file-image-o" aria-hidden="true"></i>
-					<p>添加图片</p>
-				</div>
-			</div>
-		</div>
-		<!-- 验证返回信息 -->
-		<toast v-show="isShowPrompt" :prompttext="promptCallback"></toast>
-	</div>
+  <div class="create-article">
+    <f-normal-header message="创作文章" historyurl="" />
+    <p class="article-publish" @click="submitArticle">发布</p>
+    <div class="add-article">
+      <form id="addArticleForm" ref="addarticleform">
+        <div class="form-list">
+          <div class="article-pic">
+            <div class="article-picbg">
+              <i class="fa fa-plus-square" aria-hidden="true" />
+              <p>添加封面图</p>
+              <img v-show="isShowPic" ref="mainpic" class="article-img">
+              <input ref="mainImg" type="file" class="article-pic-upload" @change="mainPicSelect">
+            </div>
+          </div>
+        </div>
+        <div class="form-list">
+          <input ref="mainTitle" type="text" class="article-title" name="menuTitle" placeholder="添加文章标题">
+        </div>
+        <div class="add-component">
+          <div :is="item.component" v-for="(item, index) in items" :key="index" />
+        </div>
+      </form>
+      <div class="add-article-details">
+        <div class="details-item" @click="addSubTitle">
+          <i class="fa fa-file-powerpoint-o" aria-hidden="true" />
+          <p>添加二级标题</p>
+        </div>
+        <div class="details-item" @click="addSection">
+          <i class="fa fa-file-text-o" aria-hidden="true" />
+          <p>添加段落文字</p>
+        </div>
+        <div class="details-item" @click="addPicture">
+          <i class="fa fa-file-image-o" aria-hidden="true" />
+          <p>添加图片</p>
+        </div>
+      </div>
+    </div>
+    <!-- 验证返回信息 -->
+    <toast v-show="isShowPrompt" :prompttext="promptCallback" />
+  </div>
 </template>
 <script>
-	import fNormalHeader from '@/components/common/normalHeader.vue'
-	import subTitle from '../../../form/article/subtitle.vue'
-	import articleSection from '../../../form/article/section.vue'
-	import articlePicture from '../../../form/article/picture.vue'
-	import toast from '@/components/toast/toast.vue'
+import fNormalHeader from '@/components/common/normalHeader.vue'
+import subTitle from '../../../form/article/subtitle.vue'
+import articleSection from '../../../form/article/section.vue'
+import articlePicture from '../../../form/article/picture.vue'
+import toast from '@/components/toast/toast.vue'
 
-	export default {
-		data() {
-			return {
-				isShowPic: false,
-				items: [],
-				isShowPrompt: false,
-				promptCallback: ''
-			}
-		},
-		components: {
-			'f-normal-header': fNormalHeader,
-			'sub-title': subTitle,
-			'article-section': articleSection,
-			'article-picture': articlePicture,
-			'toast': toast
-		},
-		methods: {
-			mainPicSelect: function(e){
-				e = e || window.event;
-				let that = this;
-				let files = e.target.files;
-				for(let i = 0, f; f = files[i]; i++){
-					let reader = new FileReader();
-					reader.onload = (function(){
-						return function(e){
-							if(this.result != ''){
-								that.isShowPic = true;
-								that.$refs.mainpic.src = this.result;
-							}
-						}
-					})(f);
-					reader.readAsDataURL(f);
-				}
-			},
-			addSubTitle: function(){
-				this.items.push({
-					'component': subTitle
-				})
-			},
-			addSection: function(){
-				this.items.push({
-					'component': articleSection
-				})
-			},
-			addPicture: function(){
-				this.items.push({
-					'component': articlePicture
-				})
-			},
-			submitArticle: function(){
-				let that = this;
-				let mainImgValue = this.$refs.mainImg.value;
-				let mainTitleValue = this.$refs.mainTitle.value;
-				if(mainImgValue == ''){
-					this.promptCallback = '请上传文章封面图';
-					this.showPrompt();
-				}else if(mainTitleValue == ''){
-					this.promptCallback = '请添加文章标题';
-					this.showPrompt();
-				}else{
-					this.promptCallback = '文章提交成功，请等待管理员审核';
-					this.isShowPrompt = true;
-					setTimeout(function(){
-						that.isShowPrompt = false;
-						that.$router.replace('/user/publish/article');
-					}, 1500)
-				}
-			},
-			showPrompt: function(){
-				let that = this;
-				this.isShowPrompt = true;
-				setTimeout(function(){
-					that.isShowPrompt = false;
-				}, 1500)
-			}
-		}
-	}
+export default {
+  components: {
+    'f-normal-header': fNormalHeader,
+    'sub-title': subTitle,
+    'article-section': articleSection,
+    'article-picture': articlePicture,
+    'toast': toast
+  },
+  data() {
+    return {
+      isShowPic: false,
+      items: [],
+      isShowPrompt: false,
+      promptCallback: ''
+    }
+  },
+  methods: {
+    mainPicSelect: function(e) {
+      e = e || window.event
+      const that = this
+      const files = e.target.files
+      for (let i = 0; i <= files.length; i++) {
+        const f = files[i]
+        const reader = new FileReader()
+        reader.onload = (function() {
+          return function(e) {
+            if (this.result !== '') {
+              that.isShowPic = true
+              that.$refs.mainpic.src = this.result
+            }
+          }
+        })(f)
+        reader.readAsDataURL(f)
+      }
+    },
+    addSubTitle: function() {
+      this.items.push({
+        'component': subTitle
+      })
+    },
+    addSection: function() {
+      this.items.push({
+        'component': articleSection
+      })
+    },
+    addPicture: function() {
+      this.items.push({
+        'component': articlePicture
+      })
+    },
+    submitArticle: function() {
+      const that = this
+      const mainImgValue = this.$refs.mainImg.value
+      const mainTitleValue = this.$refs.mainTitle.value
+      if (mainImgValue === '') {
+        this.promptCallback = '请上传文章封面图'
+        this.showPrompt()
+      } else if (mainTitleValue === '') {
+        this.promptCallback = '请添加文章标题'
+        this.showPrompt()
+      } else {
+        this.promptCallback = '文章提交成功，请等待管理员审核'
+        this.isShowPrompt = true
+        setTimeout(function() {
+          that.isShowPrompt = false
+          that.$router.replace('/user/publish/article')
+        }, 1500)
+      }
+    },
+    showPrompt: function() {
+      const that = this
+      this.isShowPrompt = true
+      setTimeout(function() {
+        that.isShowPrompt = false
+      }, 1500)
+    }
+  }
+}
 </script>
 <style lang="less">
 	.create-article {

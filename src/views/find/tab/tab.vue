@@ -1,29 +1,29 @@
 <template>
-	<div class="find-tab">
-		<router-link :to="'/find/talk'" class="find-tab-list">
-			<span class="active">食话</span>
-		</router-link>
-		<router-link :to="'/find/trends'" class="find-tab-list">
-			<span>动态</span>
-		</router-link>
-		<router-link :to="'/find/activity'" class="find-tab-list">
-			<span>活动</span>
-		</router-link>
-		<router-link :to="'/find/video'" class="find-tab-list">
-			<span>视频</span>
-		</router-link>
-		<router-link :to="'/find/carte'" class="find-tab-list">
-			<span>菜单</span>
-		</router-link>
-		<router-link :to="'/find/topic'" class="find-tab-list">
-			<span>专题</span>
-		</router-link>
-	</div>
+  <div class="find-tab">
+    <router-link :to="'/find/talk'" class="find-tab-list">
+      <span class="active">食话</span>
+    </router-link>
+    <router-link :to="'/find/trends'" class="find-tab-list">
+      <span>动态</span>
+    </router-link>
+    <router-link :to="'/find/activity'" class="find-tab-list">
+      <span>活动</span>
+    </router-link>
+    <router-link :to="'/find/video'" class="find-tab-list">
+      <span>视频</span>
+    </router-link>
+    <router-link :to="'/find/carte'" class="find-tab-list">
+      <span>菜单</span>
+    </router-link>
+    <router-link :to="'/find/topic'" class="find-tab-list">
+      <span>专题</span>
+    </router-link>
+  </div>
 </template>
 <script>
-	export default {
+export default {
 
-	}
+}
 </script>
 <style lang="less">
 	.find-tab {

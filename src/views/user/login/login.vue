@@ -1,19 +1,19 @@
 <template>
   <div class="login">
-    <i class="fa fa-times" aria-hidden="true"></i>
+    <i class="fa fa-times" aria-hidden="true" />
     <p class="go-register">注册</p>
     <div class="login-content">
       <p class="title">欢迎来到美食杰</p>
       <div class="login-box">
         <form class="login-form">
           <div class="form-list">
-            <input type="text" class="form-text" v-model="userName" placeholder="请输入手机号/邮箱/昵称" />
-            <p class="validator">{{validator.name}}</p>
+            <input v-model="userName" type="text" class="form-text" placeholder="请输入手机号/邮箱/昵称">
+            <p class="validator">{{ validator.name }}</p>
           </div>
           <div class="form-list">
-            <input type="password" class="form-text" v-model="userPassword" placeholder="请输入密码" />
-            <i class="fa fa-eye" aria-hidden="true"></i>
-            <p class="validator">{{validator.password}}</p>
+            <input v-model="userPassword" type="password" class="form-text" placeholder="请输入密码">
+            <i class="fa fa-eye" aria-hidden="true" />
+            <p class="validator">{{ validator.password }}</p>
           </div>
           <input type="submit" :disabled="submitDisabled" :class="['login-submit', {'active': isSubmitActive}]" value="登录">
         </form>
@@ -23,18 +23,18 @@
         </p>
         <div class="login-third">
           <p class="login-third-title">
-            <span class="line"></span>
+            <span class="line" />
             <span class="text">第三方登录</span>
           </p>
           <div class="login-third-content">
             <div class="list">
-              <i class="fa fa-weixin" aria-hidden="true"></i>
+              <i class="fa fa-weixin" aria-hidden="true" />
             </div>
             <div class="list">
-              <i class="fa fa-qq" aria-hidden="true"></i>
+              <i class="fa fa-qq" aria-hidden="true" />
             </div>
             <div class="list">
-              <i class="fa fa-weibo" aria-hidden="true"></i>
+              <i class="fa fa-weibo" aria-hidden="true" />
             </div>
           </div>
         </div>
@@ -67,7 +67,7 @@ export default {
         left: 10px;
         top: 10px;
         color: #303030;
-		    font-size: 20px;
+        font-size: 20px;
       }
     }
     .go-register {
@@ -195,6 +195,4 @@ export default {
     }
   }
 </style>
-
-
 

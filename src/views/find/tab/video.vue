@@ -1,45 +1,45 @@
 <template>
-	<div class="find-video padding">
-		<div class="find-video-list">
-			<router-link :to="{name: 'videodetails', params: {id: item.id}}" :key="item.id" class="find-video-item" v-for="item in videoData">
-				<div class="video">
-					<video 
-						:poster="item.cover" 
-					  	:src="item.video">
-					</video>
-					<i class="fa fa-play-circle" aria-hidden="true"></i>
-				</div>
-				<div class="title">
-					<p>{{ item.title }}</p>
-				</div>
-				<div class="author">
-					<div class="avatar-name">
-						<img :src="item.author.avatar" />
-						<p>{{ item.author.name }}</p>
-					</div>
-					<div class="date">
-						<p>{{ item.time }}</p>
-					</div>
-				</div>
-			</router-link>
-		</div>
-	</div>
+  <div class="find-video padding">
+    <div class="find-video-list">
+      <router-link v-for="item in videoData" :key="item.id" :to="{name: 'videodetails', params: {id: item.id}}" class="find-video-item">
+        <div class="video">
+          <video
+            :poster="item.cover"
+            :src="item.video"
+          />
+          <i class="fa fa-play-circle" aria-hidden="true" />
+        </div>
+        <div class="title">
+          <p>{{ item.title }}</p>
+        </div>
+        <div class="author">
+          <div class="avatar-name">
+            <img :src="item.author.avatar">
+            <p>{{ item.author.name }}</p>
+          </div>
+          <div class="date">
+            <p>{{ item.time }}</p>
+          </div>
+        </div>
+      </router-link>
+    </div>
+  </div>
 </template>
 <script>
-	export default {
-		data() {
-			return {
-				findData: '',
-				videoData: ''
-			}
-		},
-		mounted() {
-			this.$http.get('/api/findData').then((response) => {
-				this.findData = response.data.data;
-				this.videoData = this.findData.video;
-			})
-		}
-	}
+export default {
+  data() {
+    return {
+      findData: '',
+      videoData: ''
+    }
+  },
+  mounted() {
+    this.$http.get('/api/findData').then((response) => {
+      this.findData = response.data.data
+      this.videoData = this.findData.video
+    })
+  }
+}
 </script>
 <style lang="less">
 	.find-video-list {

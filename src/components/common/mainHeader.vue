@@ -1,15 +1,20 @@
 <template>
-	<header class="main-header">
-		{{message}}
-		<router-link :to="'/message'" class="message">
-			<i class="fa fa-envelope-o" aria-hidden="true"></i>
-		</router-link>
-	</header>
+  <header class="main-header">
+    {{ message }}
+    <router-link :to="'/message'" class="message">
+      <i class="fa fa-envelope-o" aria-hidden="true" />
+    </router-link>
+  </header>
 </template>
 <script>
-	export default {
-		props: ['message']
-	}
+export default {
+  props: {
+    message: {
+      type: String,
+      default: ''
+    }
+  }
+}
 </script>
 <style lang="less">
 	.main-header {

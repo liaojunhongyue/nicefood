@@ -1,30 +1,30 @@
 <template>
-	<div class="user-basket">
-		<header class="user-basket-header">
-			<div @click="goHistory" class="go-back">
-				<i class="fa fa-angle-left" aria-hidden="true"></i>
-			</div>
-			我的菜篮
-			<div class="clear-draft">
-				清空
-			</div>
-		</header>
-		<div class="user-basket-list" :class="{blank: isBlank}"></div>
-	</div>
+  <div class="user-basket">
+    <header class="user-basket-header">
+      <div class="go-back" @click="goHistory">
+        <i class="fa fa-angle-left" aria-hidden="true" />
+      </div>
+      我的菜篮
+      <div class="clear-draft">
+        清空
+      </div>
+    </header>
+    <div class="user-basket-list" :class="{blank: isBlank}" />
+  </div>
 </template>
 <script>
-	export default {
-		data() {
-			return {
-				isBlank: true
-			}
-		},
-		methods: {
-			goHistory: function(){
-				this.$router.go(-1);
-			}
-		}
-	}
+export default {
+  data() {
+    return {
+      isBlank: true
+    }
+  },
+  methods: {
+    goHistory: function() {
+      this.$router.go(-1)
+    }
+  }
+}
 </script>
 <style lang="less">
 	.user-basket {

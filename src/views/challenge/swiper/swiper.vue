@@ -1,43 +1,43 @@
 <template>
-	<swiper :options="swiperOption" class="challenge-swiper" ref="mySwiper">
+  <swiper ref="mySwiper" :options="swiperOption" class="challenge-swiper">
     <swiper-slide v-for="item in bannerData" :key="item.id">
-    	<img class="pic" :src="item.image" />
-    	<div class="title">
-    		<p>{{ item.title }}</p>
-    	</div>
+      <img class="pic" :src="item.image">
+      <div class="title">
+        <p>{{ item.title }}</p>
+      </div>
     </swiper-slide>
-    <div class="swiper-pagination" slot="pagination"></div>
+    <div slot="pagination" class="swiper-pagination" />
   </swiper>
 </template>
 <script>
-	import 'swiper/dist/css/swiper.css'
-	import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
-	export default {
-		data() {
-			return {
-				swiperOption: {
-					pagination : {
-						el: '.swiper-pagination'
-					},
-					effect: 'flip',
-					loop: true
-				},
-				challengeData: '',
-				bannerData: ''
-			}
-		},
-		components: {
-		    swiper,
-		    swiperSlide
-		},
-		mounted() {
-			this.$http.get('/api/challengeData').then((response) => {
-				this.challengeData = response.data.data;
-				this.bannerData = this.challengeData.banner;
-			})
-		}
-	}
+export default {
+  components: {
+    swiper,
+    swiperSlide
+  },
+  data() {
+    return {
+      swiperOption: {
+        pagination: {
+          el: '.swiper-pagination'
+        },
+        effect: 'flip',
+        loop: true
+      },
+      challengeData: '',
+      bannerData: ''
+    }
+  },
+  mounted() {
+    this.$http.get('/api/challengeData').then((response) => {
+      this.challengeData = response.data.data
+      this.bannerData = this.challengeData.banner
+    })
+  }
+}
 </script>
 <style lang="less">
 	.challenge-swiper {

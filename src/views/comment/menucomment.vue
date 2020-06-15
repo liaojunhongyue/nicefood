@@ -1,45 +1,45 @@
 <template>
-	<div class="comment-menu">
-		<f-normal-header message="发布评论" historyurl=""></f-normal-header>
-		<div class="comment-menu-content">
-			<form id="menuCommentForm">
-				<div class="evaluate-star">
-					<div class="title"><p>给菜谱打分</p></div>
-					<div class="star">
-						<i class="fa fa-star active" aria-hidden="true"></i>
-						<i class="fa fa-star active" aria-hidden="true"></i>
-						<i class="fa fa-star active" aria-hidden="true"></i>
-						<i class="fa fa-star" aria-hidden="true"></i>
-						<i class="fa fa-star" aria-hidden="true"></i>
-					</div>
-					<div class="text"><p>味道不错</p></div>
-				</div>
-				<div class="evaluate-content">
-					<textarea class="evaluate-content-textarea" placeholder="填写评论内容"></textarea>
-				</div>
-				<div class="upload-pic">
-					<div class="upload-picbg">
-						<div class="upload-picbg-icon">
-							<i class="fa fa-file-image-o" aria-hidden="true"></i>
-						</div>
-						<input type="file" class="upload-pic-button" name="" />
-					</div>
-				</div>
-				<div class="submit-button">
-					<input type="submit" class="submit-menu-comment" value="发布" />
-				</div>
-			</form>
-		</div>
-	</div>
+  <div class="comment-menu">
+    <f-normal-header message="发布评论" historyurl="" />
+    <div class="comment-menu-content">
+      <form id="menuCommentForm">
+        <div class="evaluate-star">
+          <div class="title"><p>给菜谱打分</p></div>
+          <div class="star">
+            <i class="fa fa-star active" aria-hidden="true" />
+            <i class="fa fa-star active" aria-hidden="true" />
+            <i class="fa fa-star active" aria-hidden="true" />
+            <i class="fa fa-star" aria-hidden="true" />
+            <i class="fa fa-star" aria-hidden="true" />
+          </div>
+          <div class="text"><p>味道不错</p></div>
+        </div>
+        <div class="evaluate-content">
+          <textarea class="evaluate-content-textarea" placeholder="填写评论内容" />
+        </div>
+        <div class="upload-pic">
+          <div class="upload-picbg">
+            <div class="upload-picbg-icon">
+              <i class="fa fa-file-image-o" aria-hidden="true" />
+            </div>
+            <input type="file" class="upload-pic-button" name="">
+          </div>
+        </div>
+        <div class="submit-button">
+          <input type="submit" class="submit-menu-comment" value="发布">
+        </div>
+      </form>
+    </div>
+  </div>
 </template>
 <script>
-	import fNormalHeader from '@/components/common/normalHeader.vue'
+import fNormalHeader from '@/components/common/normalHeader.vue'
 
-	export default {
-		components: {
-			'f-normal-header': fNormalHeader
-		}
-	}
+export default {
+  components: {
+    'f-normal-header': fNormalHeader
+  }
+}
 </script>
 <style lang="less">
 	.comment-menu {

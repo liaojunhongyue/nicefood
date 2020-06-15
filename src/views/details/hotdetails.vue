@@ -1,41 +1,41 @@
 <template>
-	<div class="hot-details-wrapper">
-		<f-normal-header message="热门专题" historyurl=""></f-normal-header>
-		<div class="hot-details">
-			<div class="pic">
-				<img :src="hotDetails.image" />
-				<p class="pic-title">{{ hotDetails.imageTitle }}</p>
-				<p class="pic-desc">{{ hotDetails.imageDesc }}</p>
-			</div>
-			<p class="title">{{ hotDetails.title }}</p>
-			<p class="details">{{ hotDetails.details }}</p>
-		</div>
-	</div>
+  <div class="hot-details-wrapper">
+    <f-normal-header message="热门专题" historyurl="" />
+    <div class="hot-details">
+      <div class="pic">
+        <img :src="hotDetails.image">
+        <p class="pic-title">{{ hotDetails.imageTitle }}</p>
+        <p class="pic-desc">{{ hotDetails.imageDesc }}</p>
+      </div>
+      <p class="title">{{ hotDetails.title }}</p>
+      <p class="details">{{ hotDetails.details }}</p>
+    </div>
+  </div>
 </template>
 <script>
-	import fNormalHeader from '@/components/common/normalHeader.vue'
+import fNormalHeader from '@/components/common/normalHeader.vue'
 
-	export default {
-		data() {
-			return {
-				hotData: '',
-				hotDetails: '',
-				hotId: '',
-				hotIndex: ''
-			}
-		},
-		components: {
-			'f-normal-header': fNormalHeader
-		},
-		mounted() {
-			this.$http.get('/api/hotData').then((response) => {
-				this.hotData = response.data.data;
-				this.hotId = this.$route.params.id;
-				this.hotIndex = this.hotId - 1;
-				this.hotDetails = this.hotData[this.hotIndex];
-			})
-		}
-	}
+export default {
+  components: {
+    'f-normal-header': fNormalHeader
+  },
+  data() {
+    return {
+      hotData: '',
+      hotDetails: '',
+      hotId: '',
+      hotIndex: ''
+    }
+  },
+  mounted() {
+    this.$http.get('/api/hotData').then((response) => {
+      this.hotData = response.data.data
+      this.hotId = this.$route.params.id
+      this.hotIndex = this.hotId - 1
+      this.hotDetails = this.hotData[this.hotIndex]
+    })
+  }
+}
 </script>
 <style lang="less">
 	.hot-details {

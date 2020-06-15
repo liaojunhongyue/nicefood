@@ -1,31 +1,37 @@
 <template>
-	<li class="menu-material-item">
-		<div class="name">
-			<input type="text" name="" placeholder="材料名称" />
-		</div>
-		<div class="quantity">
-			<input type="text" name="" placeholder="用量">
-		</div>
-		<div class="delete-item">
-			<i class="fa fa-times" aria-hidden="true" @click="removeMaterial"></i>
-		</div>
-	</li>
+  <li class="menu-material-item">
+    <div class="name">
+      <input type="text" name="" placeholder="材料名称">
+    </div>
+    <div class="quantity">
+      <input type="text" name="" placeholder="用量">
+    </div>
+    <div class="delete-item">
+      <i class="fa fa-times" aria-hidden="true" @click="removeMaterial" />
+    </div>
+  </li>
 </template>
 <script>
-	export default {
-		props: ['datas','dataindex'],
-		methods: {
-			removeMaterial: function(){
-				let datasLength = this.datas.length;
-				if(datasLength <= 1){
-					return false;
-				}
-				let thisIndex = this.dataindex;
-				let deleteData = this.datas.splice(thisIndex, 1);
-				let newDatasLength = this.datas.length;
-			}
-		}
-	}
+export default {
+  props: {
+    datas: {
+      type: String,
+      default: ''
+    },
+    dataindex: {
+      type: Number,
+      default: 0
+    }
+  },
+  methods: {
+    removeMaterial: function() {
+      const datasLength = this.datas.length
+      if (datasLength <= 1) {
+        return false
+      }
+    }
+  }
+}
 </script>
 <style lang="less">
 	.menu-material {

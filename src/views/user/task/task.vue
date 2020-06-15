@@ -1,21 +1,21 @@
 <template>
-	<div class="user-task">
-		<f-normal-header message="我的任务" historyurl="/user"></f-normal-header>
-		<ul class="user-task-tab">
-			<router-link class="tab-item" :to="'/user/task/unfinished'"><span>未完成</span></router-link>
-			<router-link class="tab-item" :to="'/user/task/finished'"><span>已完成</span></router-link>
-		</ul>
-		<router-view></router-view>
-	</div>
+  <div class="user-task">
+    <f-normal-header message="我的任务" historyurl="/user" />
+    <ul class="user-task-tab">
+      <router-link class="tab-item" :to="'/user/task/unfinished'"><span>未完成</span></router-link>
+      <router-link class="tab-item" :to="'/user/task/finished'"><span>已完成</span></router-link>
+    </ul>
+    <router-view />
+  </div>
 </template>
 <script>
-	import fNormalHeader from '@/components/common/normalHeader.vue'
+import fNormalHeader from '@/components/common/normalHeader.vue'
 
-	export default {
-		components: {
-			'f-normal-header': fNormalHeader
-		}
-	}
+export default {
+  components: {
+    'f-normal-header': fNormalHeader
+  }
+}
 </script>
 <style lang="less">
 	.user-task {

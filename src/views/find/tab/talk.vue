@@ -1,94 +1,94 @@
 <template>
-	<div class="find-talk">
-		<div class="find-talk-banner">
-			<img :src="talkBanner" />
-		</div>
-		<div class="find-talk-icon">
-			<div class="icon-scroll" style="width: 560px;">
-				<div class="item">
-					<i class="fa fa-beer" style="background-color: #1d9442;" aria-hidden="true"></i>
-					<span>V家厨房</span>
-				</div>
-				<div class="item">
-					<i class="fa fa-bell" style="background-color: #fe6e0d;" aria-hidden="true"></i>
-					<span>玖号厨房</span>
-				</div>
-				<div class="item">
-					<i class="fa fa-camera-retro" style="background-color: #3ece9b;" aria-hidden="true"></i>
-					<span>美食厨房</span>
-				</div>
-				<div class="item">
-					<i class="fa fa-comments" style="background-color: #ab82c4;" aria-hidden="true"></i>
-					<span>最IN活动</span>
-				</div>
-				<div class="item">
-					<i class="fa fa-cubes" style="background-color: #ffca08;" aria-hidden="true"></i>
-					<span>餐桌时光</span>
-				</div>
-				<div class="item">
-					<i class="fa fa-balance-scale" style="background-color: #ff969a;" aria-hidden="true"></i>
-					<span>玩转烘培</span>
-				</div>
-				<div class="item">
-					<i class="fa fa-book" style="background-color: #139466;" aria-hidden="true"></i>
-					<span>美食课堂</span>
-				</div>
-			</div>
-		</div>
-		<div class="find-talk-tab">
-			<router-link :to="'/find/talk/newtab'" class="item">
-				最新
-			</router-link>
-			<router-link :to="'/find/talk/hottab'" class="item">
-				最热
-			</router-link>
-		</div>
-		<div class="find-talk-add">
-			<transition name="slideshowadd">
-				<ul class="add-list" v-show="isShowAdd">
-					<router-link :to="'/user/create/talks'" class="add-item"><i class="fa fa-comments-o" aria-hidden="true"></i><span>发食话</span></router-link>
-					<router-link :to="'/user/create/works'" class="add-item"><i class="fa fa-picture-o" aria-hidden="true"></i><span>晒作品</span></router-link>
-					<li class="add-item"><i class="fa fa-search" aria-hidden="true"></i><span>搜用户</span></li>
-				</ul>
-			</transition>
-			<div class="add-icon" @click="addTalk" :class="rotateClass">
-				<i class="fa fa-plus" aria-hidden="true"></i>
-			</div>
-		</div>
-		<div class="add-mask" v-show="isShowAdd"></div>
-		<router-view/>
-	</div>
+  <div class="find-talk">
+    <div class="find-talk-banner">
+      <img :src="talkBanner">
+    </div>
+    <div class="find-talk-icon">
+      <div class="icon-scroll" style="width: 560px;">
+        <div class="item">
+          <i class="fa fa-beer" style="background-color: #1d9442;" aria-hidden="true" />
+          <span>V家厨房</span>
+        </div>
+        <div class="item">
+          <i class="fa fa-bell" style="background-color: #fe6e0d;" aria-hidden="true" />
+          <span>玖号厨房</span>
+        </div>
+        <div class="item">
+          <i class="fa fa-camera-retro" style="background-color: #3ece9b;" aria-hidden="true" />
+          <span>美食厨房</span>
+        </div>
+        <div class="item">
+          <i class="fa fa-comments" style="background-color: #ab82c4;" aria-hidden="true" />
+          <span>最IN活动</span>
+        </div>
+        <div class="item">
+          <i class="fa fa-cubes" style="background-color: #ffca08;" aria-hidden="true" />
+          <span>餐桌时光</span>
+        </div>
+        <div class="item">
+          <i class="fa fa-balance-scale" style="background-color: #ff969a;" aria-hidden="true" />
+          <span>玩转烘培</span>
+        </div>
+        <div class="item">
+          <i class="fa fa-book" style="background-color: #139466;" aria-hidden="true" />
+          <span>美食课堂</span>
+        </div>
+      </div>
+    </div>
+    <div class="find-talk-tab">
+      <router-link :to="'/find/talk/newtab'" class="item">
+        最新
+      </router-link>
+      <router-link :to="'/find/talk/hottab'" class="item">
+        最热
+      </router-link>
+    </div>
+    <div class="find-talk-add">
+      <transition name="slideshowadd">
+        <ul v-show="isShowAdd" class="add-list">
+          <router-link :to="'/user/create/talks'" class="add-item"><i class="fa fa-comments-o" aria-hidden="true" /><span>发食话</span></router-link>
+          <router-link :to="'/user/create/works'" class="add-item"><i class="fa fa-picture-o" aria-hidden="true" /><span>晒作品</span></router-link>
+          <li class="add-item"><i class="fa fa-search" aria-hidden="true" /><span>搜用户</span></li>
+        </ul>
+      </transition>
+      <div class="add-icon" :class="rotateClass" @click="addTalk">
+        <i class="fa fa-plus" aria-hidden="true" />
+      </div>
+    </div>
+    <div v-show="isShowAdd" class="add-mask" />
+    <router-view />
+  </div>
 </template>
 <script>
-	export default {
-		data() {
-			return {
-				findData: '',
-				talkData: '',
-				talkBanner: '',
-				isShowAdd: false,
-				rotateClass: '',
-			}
-		},
-		mounted() {
-			this.$http.get('/api/findData').then((response) => {
-				this.findData = response.data.data;
-				this.talkData = this.findData.talk;
-				this.talkBanner = this.talkData.banner;
-			})
-		},
-		methods: {
-			addTalk: function(){
-				if(!this.isShowAdd){
-					this.isShowAdd = true;
-					this.rotateClass = 'rotate';
-				}else{
-					this.isShowAdd = false;
-					this.rotateClass = '';
-				}
-			}
-		}
-	}
+export default {
+  data() {
+    return {
+      findData: '',
+      talkData: '',
+      talkBanner: '',
+      isShowAdd: false,
+      rotateClass: ''
+    }
+  },
+  mounted() {
+    this.$http.get('/api/findData').then((response) => {
+      this.findData = response.data.data
+      this.talkData = this.findData.talk
+      this.talkBanner = this.talkData.banner
+    })
+  },
+  methods: {
+    addTalk: function() {
+      if (!this.isShowAdd) {
+        this.isShowAdd = true
+        this.rotateClass = 'rotate'
+      } else {
+        this.isShowAdd = false
+        this.rotateClass = ''
+      }
+    }
+  }
+}
 </script>
 <style lang="less">
 	.find-talk {

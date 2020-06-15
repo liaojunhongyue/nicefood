@@ -1,24 +1,24 @@
 <template>
-	<div class="form-list" v-if="isShowSection">
-		<div class="article-section">
-			<textarea class="article-section-textarea" placeholder="添加段落文字"></textarea>
-			<i class="fa fa-times" aria-hidden="true" @click="removeThis"></i>
-		</div>
-	</div>
+  <div v-if="isShowSection" class="form-list">
+    <div class="article-section">
+      <textarea class="article-section-textarea" placeholder="添加段落文字" />
+      <i class="fa fa-times" aria-hidden="true" @click="removeThis" />
+    </div>
+  </div>
 </template>
 <script>
-	export default {
-		data() {
-			return {
-				isShowSection: true
-			}
-		},
-		methods: {
-			removeThis: function(){
-				this.isShowSection = false;
-			}
-		}
-	}
+export default {
+  data() {
+    return {
+      isShowSection: true
+    }
+  },
+  methods: {
+    removeThis: function() {
+      this.isShowSection = false
+    }
+  }
+}
 </script>
 <style lang="less">
 	.article-section {

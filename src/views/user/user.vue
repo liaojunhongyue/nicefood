@@ -1,102 +1,102 @@
 <template>
-	<div class="wrap user">
-		<div class="user-header">
-			<div class="user-header-mask"></div>
-			<div class="user-operate">
-				<!-- <i class="fa fa-cog" aria-hidden="true"></i> -->
-				<router-link :to="'/message'">
-					<i class="fa fa-envelope-o" aria-hidden="true"></i>
-				</router-link>
-			</div>
-			<div class="user-avatar">
-				<img src="/static/upload/avatar.jpg" />
-			</div>
-			<div class="user-info">
-				<p class="name">路很长（来自微信...）</p>
-				<p class="slogan">正在通往美食达人的路上...</p>
-				<p class="fans">关注1 · 粉丝0</p>
-			</div>
-		</div>
-		<div class="user-menu">
-			<router-link :to="'/user/collect/all'" class="user-menu-list">
-				<i class="fa fa-heart-o" aria-hidden="true"></i>
-				<span>收藏</span>
-			</router-link>
-			<router-link :to="'/user/publish/menu'" class="user-menu-list">
-				<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-				<span>发布</span>
-			</router-link>
-			<router-link :to="'/user/task/unfinished'" class="user-menu-list">
-				<i class="fa fa-folder-o" aria-hidden="true"></i>
-				<span>任务</span>
-			</router-link>
-			<router-link :to="'/user/point'" class="user-menu-list">
-				<i class="fa fa-graduation-cap" aria-hidden="true"></i>
-				<span>积分</span>
-			</router-link>
-			<router-link :to="'/user/draft'" class="user-menu-list">
-				<i class="fa fa-folder-open-o" aria-hidden="true"></i>
-				<span>草稿</span>
-			</router-link>
-			<router-link :to="'/user/basket'" class="user-menu-list">
-				<i class="fa fa-shopping-basket" aria-hidden="true"></i>
-				<span>菜篮</span>
-			</router-link>
-			<router-link :to="'/user/comment/menu'" class="user-menu-list">
-				<i class="fa fa-commenting" aria-hidden="true"></i>
-				<span>评论</span>
-			</router-link>
-			<router-link :to="'/user/callback'" class="user-menu-list">
-				<i class="fa fa-bullhorn" aria-hidden="true"></i>
-				<span>反馈</span>
-			</router-link>
-		</div>
-		<div class="user-footprint">
-			<p class="title">我的美食足迹</p>
-			<router-link :to="{name: 'fooddetails', params: {id: item.id}}" :key="item.id" class="user-footprint-list" v-for="item in browseData">
-				<div class="user-footprint-title">
-					<i class="fa fa-circle" aria-hidden="true"></i>
-					<p class="title">浏览了这个菜谱</p>
-					<p class="date">2018-04-18</p>
-				</div>
-				<div class="menu-list-item">
-					<div class="pic">
-						<img :src="item.image" />
-					</div>
-					<div class="info">
-						<p class="title">{{ item.title }}</p>
-						<p class="star">
-							<i class="fa fa-star" aria-hidden="true" v-for="(star, index) in item.star" :key="index"></i>
-						</p>
-						<p class="operate">
-							<span class="like">
-								<i class="fa fa-heart-o" aria-hidden="true"></i>
-								{{ item.like }}
-							</span>
-							<span class="browse">
-								<i class="fa fa-eye" aria-hidden="true"></i>
-								{{ item.browse }}
-							</span>
-						</p>
-					</div>
-				</div>
-			</router-link>
-		</div>
-	</div>
+  <div class="wrap user">
+    <div class="user-header">
+      <div class="user-header-mask" />
+      <div class="user-operate">
+        <!-- <i class="fa fa-cog" aria-hidden="true"></i> -->
+        <router-link :to="'/message'">
+          <i class="fa fa-envelope-o" aria-hidden="true" />
+        </router-link>
+      </div>
+      <div class="user-avatar">
+        <img src="/static/upload/avatar.jpg">
+      </div>
+      <div class="user-info">
+        <p class="name">路很长（来自微信...）</p>
+        <p class="slogan">正在通往美食达人的路上...</p>
+        <p class="fans">关注1 · 粉丝0</p>
+      </div>
+    </div>
+    <div class="user-menu">
+      <router-link :to="'/user/collect/all'" class="user-menu-list">
+        <i class="fa fa-heart-o" aria-hidden="true" />
+        <span>收藏</span>
+      </router-link>
+      <router-link :to="'/user/publish/menu'" class="user-menu-list">
+        <i class="fa fa-pencil-square-o" aria-hidden="true" />
+        <span>发布</span>
+      </router-link>
+      <router-link :to="'/user/task/unfinished'" class="user-menu-list">
+        <i class="fa fa-folder-o" aria-hidden="true" />
+        <span>任务</span>
+      </router-link>
+      <router-link :to="'/user/point'" class="user-menu-list">
+        <i class="fa fa-graduation-cap" aria-hidden="true" />
+        <span>积分</span>
+      </router-link>
+      <router-link :to="'/user/draft'" class="user-menu-list">
+        <i class="fa fa-folder-open-o" aria-hidden="true" />
+        <span>草稿</span>
+      </router-link>
+      <router-link :to="'/user/basket'" class="user-menu-list">
+        <i class="fa fa-shopping-basket" aria-hidden="true" />
+        <span>菜篮</span>
+      </router-link>
+      <router-link :to="'/user/comment/menu'" class="user-menu-list">
+        <i class="fa fa-commenting" aria-hidden="true" />
+        <span>评论</span>
+      </router-link>
+      <router-link :to="'/user/callback'" class="user-menu-list">
+        <i class="fa fa-bullhorn" aria-hidden="true" />
+        <span>反馈</span>
+      </router-link>
+    </div>
+    <div class="user-footprint">
+      <p class="title">我的美食足迹</p>
+      <router-link v-for="item in browseData" :key="item.id" :to="{name: 'fooddetails', params: {id: item.id}}" class="user-footprint-list">
+        <div class="user-footprint-title">
+          <i class="fa fa-circle" aria-hidden="true" />
+          <p class="title">浏览了这个菜谱</p>
+          <p class="date">2018-04-18</p>
+        </div>
+        <div class="menu-list-item">
+          <div class="pic">
+            <img :src="item.image">
+          </div>
+          <div class="info">
+            <p class="title">{{ item.title }}</p>
+            <p class="star">
+              <i v-for="(star, index) in item.star" :key="index" class="fa fa-star" aria-hidden="true" />
+            </p>
+            <p class="operate">
+              <span class="like">
+                <i class="fa fa-heart-o" aria-hidden="true" />
+                {{ item.like }}
+              </span>
+              <span class="browse">
+                <i class="fa fa-eye" aria-hidden="true" />
+                {{ item.browse }}
+              </span>
+            </p>
+          </div>
+        </div>
+      </router-link>
+    </div>
+  </div>
 </template>
 <script>
-	export default {
-		data() {
-			return {
-				browseData: ''
-			}
-		},
-		mounted() {
-			this.$http.get('/api/menuData').then((response) => {
-				this.browseData = response.data.data;
-			})
-		}
-	}
+export default {
+  data() {
+    return {
+      browseData: ''
+    }
+  },
+  mounted() {
+    this.$http.get('/api/menuData').then((response) => {
+      this.browseData = response.data.data
+    })
+  }
+}
 </script>
 <style lang="less">
 .user {

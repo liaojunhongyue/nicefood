@@ -1,44 +1,44 @@
 <template>
-	<div class="find-trends padding">
-		<div class="find-trends-list">
-			<div class="find-trends-item" v-for="item in trendsData" :key="item.id">
-				<div class="title">
-					<i class="fa fa-bullhorn" aria-hidden="true"></i>
-					<span>{{ item.title }}</span>
-				</div>
-				<div class="pic">
-					<img :src="item.image" />
-				</div>
-				<div class="author">
-					<div class="avatar">
-						<img :src="item.author.avatar" />
-					</div>
-					<div class="name">
-						<p>{{ item.author.name }}</p>
-					</div>
-					<div class="date">
-						<p>{{ item.time }}</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+  <div class="find-trends padding">
+    <div class="find-trends-list">
+      <div v-for="item in trendsData" :key="item.id" class="find-trends-item">
+        <div class="title">
+          <i class="fa fa-bullhorn" aria-hidden="true" />
+          <span>{{ item.title }}</span>
+        </div>
+        <div class="pic">
+          <img :src="item.image">
+        </div>
+        <div class="author">
+          <div class="avatar">
+            <img :src="item.author.avatar">
+          </div>
+          <div class="name">
+            <p>{{ item.author.name }}</p>
+          </div>
+          <div class="date">
+            <p>{{ item.time }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 <script>
-	export default {
-		data() {
-			return {
-				findData: '',
-				trendsData: ''
-			}
-		},
-		mounted() {
-			this.$http.get('/api/findData').then((response) => {
-				this.findData = response.data.data;
-				this.trendsData = this.findData.trends;
-			})
-		}
-	}
+export default {
+  data() {
+    return {
+      findData: '',
+      trendsData: ''
+    }
+  },
+  mounted() {
+    this.$http.get('/api/findData').then((response) => {
+      this.findData = response.data.data
+      this.trendsData = this.findData.trends
+    })
+  }
+}
 </script>
 <style lang="less">
 	.find-trends-item {

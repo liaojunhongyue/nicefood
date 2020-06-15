@@ -1,24 +1,24 @@
 <template>
-	<div class="form-list" v-if="isShowSubTitle" ref="articlecontent">
-		<div class="article-subtitle">
-			<input type="text" class="article-subtitle-text" placeholder="添加二级标题" />
-			<i class="fa fa-times" aria-hidden="true" @click="removeThis"></i>
-		</div>
-	</div>
+  <div v-if="isShowSubTitle" ref="articlecontent" class="form-list">
+    <div class="article-subtitle">
+      <input type="text" class="article-subtitle-text" placeholder="添加二级标题">
+      <i class="fa fa-times" aria-hidden="true" @click="removeThis" />
+    </div>
+  </div>
 </template>
 <script>
-	export default {
-		data(){
-			return {
-				isShowSubTitle: true
-			}
-		},
-		methods: {
-			removeThis: function(){
-				this.isShowSubTitle = false;
-			}
-		}
-	}
+export default {
+  data() {
+    return {
+      isShowSubTitle: true
+    }
+  },
+  methods: {
+    removeThis: function() {
+      this.isShowSubTitle = false
+    }
+  }
+}
 </script>
 <style lang="less">
 	.article-subtitle {

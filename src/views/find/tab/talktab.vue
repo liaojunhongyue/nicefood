@@ -1,70 +1,70 @@
 <template>
-	<div class="find-talk-tab-content">
-		<ul class="find-talk-tab-list">
-			<li class="find-talk-tab-item" v-for="item in templateData" :key="item.id">
-				<div class="author">
-					<div class="avatar">
-						<img class="avatar-img" :src="item.author.avatar" />
-						<i class="icon">V</i>
-					</div>
-					<div class="name">
-						<p>{{ item.author.name }}</p>
-					</div>
-				</div>
-				<div class="content">
-					<p class="text">{{ item.text }}</p>
-					<div class="pictures">
-						<div class="picture" v-for="pic in item.images" :key="pic">
-							<img :src="pic" />
-						</div>
-					</div>
-				</div>
-				<div class="desc">
-					<div class="publish">
-						<p>{{ item.time }}发布 来自<span>{{ item.origin }}</span></p>
-					</div>
-					<div class="operate">
-						<p class="like"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>{{ item.like }}</p>
-						<p class="comment"><i class="fa fa-commenting-o" aria-hidden="true"></i>{{ item.comment }}</p>
-					</div>
-				</div>
-			</li>
-		</ul>
-	</div>
+  <div class="find-talk-tab-content">
+    <ul class="find-talk-tab-list">
+      <li v-for="item in templateData" :key="item.id" class="find-talk-tab-item">
+        <div class="author">
+          <div class="avatar">
+            <img class="avatar-img" :src="item.author.avatar">
+            <i class="icon">V</i>
+          </div>
+          <div class="name">
+            <p>{{ item.author.name }}</p>
+          </div>
+        </div>
+        <div class="content">
+          <p class="text">{{ item.text }}</p>
+          <div class="pictures">
+            <div v-for="pic in item.images" :key="pic" class="picture">
+              <img :src="pic">
+            </div>
+          </div>
+        </div>
+        <div class="desc">
+          <div class="publish">
+            <p>{{ item.time }}发布 来自<span>{{ item.origin }}</span></p>
+          </div>
+          <div class="operate">
+            <p class="like"><i class="fa fa-thumbs-o-up" aria-hidden="true" />{{ item.like }}</p>
+            <p class="comment"><i class="fa fa-commenting-o" aria-hidden="true" />{{ item.comment }}</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
 </template>
 <script>
-	export default {
-		data() {
-			return {
-				findData: '',
-				newData: '',
-				hotData: '',
-				templateData: ''
-			}
-		},
-		mounted() {
-			this.$http.get('/api/findData').then((response) => {
-				this.findData = response.data.data;
-				this.newData = this.findData.talk.new;
-				this.hotData = this.findData.talk.hot;
-				let currentRoute = this.$route.path;
-				if(currentRoute == '/find/talk/newtab') {
-					this.templateData = this.newData;
-				}else if(currentRoute == '/find/talk/hottab') {
-					this.templateData = this.hotData;
-				}
-			})
-		},
-		watch: {
-			'$route' (to, from) {
-				if(to.path == '/find/talk/newtab'){
-					this.templateData = this.newData;
-				}else if(to.path == '/find/talk/hottab') {
-					this.templateData = this.hotData;
-				}
-			}
-		}
-	}
+export default {
+  data() {
+    return {
+      findData: '',
+      newData: '',
+      hotData: '',
+      templateData: ''
+    }
+  },
+  watch: {
+    '$route'(to, from) {
+      if (to.path === '/find/talk/newtab') {
+        this.templateData = this.newData
+      } else if (to.path === '/find/talk/hottab') {
+        this.templateData = this.hotData
+      }
+    }
+  },
+  mounted() {
+    this.$http.get('/api/findData').then((response) => {
+      this.findData = response.data.data
+      this.newData = this.findData.talk.new
+      this.hotData = this.findData.talk.hot
+      const currentRoute = this.$route.path
+      if (currentRoute === '/find/talk/newtab') {
+        this.templateData = this.newData
+      } else if (currentRoute === '/find/talk/hottab') {
+        this.templateData = this.hotData
+      }
+    })
+  }
+}
 </script>
 <style lang="less">
 	.find-talk-tab-content {

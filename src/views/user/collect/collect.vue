@@ -1,29 +1,29 @@
 <template>
-	<div class="user-collect">
-		<header>
-			<router-link :to="'/user'" class="go-back">
-				<i class="fa fa-angle-left" aria-hidden="true"></i>
-			</router-link>
-			<div class="search-collect">
-				<i class="fa fa-search" aria-hidden="true"></i>
-				<input type="text" placeholder="搜索你的收藏" />
-			</div>
-			<div class="edit-collect">
-				<p>编辑</p>
-			</div>
-		</header>
-		<div class="user-collect-tab">
-			<router-link :to="'/user/collect/all'" class="tab-list">全部收藏</router-link>
-			<router-link :to="'/user/collect/my'" class="tab-list">我的菜单</router-link>
-			<router-link :to="'/user/collect/menu'" class="tab-list">收藏菜单</router-link>
-		</div>
-		<router-view></router-view>
-	</div>
+  <div class="user-collect">
+    <header>
+      <router-link :to="'/user'" class="go-back">
+        <i class="fa fa-angle-left" aria-hidden="true" />
+      </router-link>
+      <div class="search-collect">
+        <i class="fa fa-search" aria-hidden="true" />
+        <input type="text" placeholder="搜索你的收藏">
+      </div>
+      <div class="edit-collect">
+        <p>编辑</p>
+      </div>
+    </header>
+    <div class="user-collect-tab">
+      <router-link :to="'/user/collect/all'" class="tab-list">全部收藏</router-link>
+      <router-link :to="'/user/collect/my'" class="tab-list">我的菜单</router-link>
+      <router-link :to="'/user/collect/menu'" class="tab-list">收藏菜单</router-link>
+    </div>
+    <router-view />
+  </div>
 </template>
 <script>
-	export default {
-		
-	}
+export default {
+
+}
 </script>
 <style lang="less">
 	.user-collect {
@@ -109,5 +109,5 @@
 			}
 		}
 	}
-	
+
 </style>

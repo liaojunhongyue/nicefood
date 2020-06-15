@@ -1,37 +1,37 @@
 <template>
-	<div class="video-details">
-		<div class="video-close" @click="goHistory">
-			<i class="fa fa-times" aria-hidden="true"></i>
-		</div>
-		<div class="video-content">
-			<div class="video">
-				<video :poster="videoDetails.cover" :src="videoDetails.video" controls="controls" autoplay="autoplay"></video>
-			</div>
-		</div>
-	</div>
+  <div class="video-details">
+    <div class="video-close" @click="goHistory">
+      <i class="fa fa-times" aria-hidden="true" />
+    </div>
+    <div class="video-content">
+      <div class="video">
+        <video :poster="videoDetails.cover" :src="videoDetails.video" controls="controls" autoplay="autoplay" />
+      </div>
+    </div>
+  </div>
 </template>
 <script>
-	export default {
-		data(){
-			return {
-				videoData: '',
-				videoId: '',
-				videoDetails: ''
-			}
-		},
-		mounted(){
-			this.$http.get('/api/findData').then((response) => {
-				this.videoData = response.data.data.video;
-				this.videoId = this.$route.params.id;
-				this.videoDetails = this.videoData[this.videoId - 1];
-			})
-		},
-		methods: {
-			goHistory: function(){
-				this.$router.go(-1);
-			}
-		}
-	}
+export default {
+  data() {
+    return {
+      videoData: '',
+      videoId: '',
+      videoDetails: ''
+    }
+  },
+  mounted() {
+    this.$http.get('/api/findData').then((response) => {
+      this.videoData = response.data.data.video
+      this.videoId = this.$route.params.id
+      this.videoDetails = this.videoData[this.videoId - 1]
+    })
+  },
+  methods: {
+    goHistory: function() {
+      this.$router.go(-1)
+    }
+  }
+}
 </script>
 <style lang="less">
 	.video-details {

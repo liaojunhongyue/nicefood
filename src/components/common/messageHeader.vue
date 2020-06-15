@@ -1,23 +1,28 @@
 <template>
-	<header class="message-header">
-		<div @click="goHistory" class="go-back">
-			<i class="fa fa-angle-left" aria-hidden="true"></i>
-		</div>
-		{{message}}
-		<div class="ignore">
-			<p>忽略</p>
-		</div>
-	</header>
+  <header class="message-header">
+    <div class="go-back" @click="goHistory">
+      <i class="fa fa-angle-left" aria-hidden="true" />
+    </div>
+    {{ message }}
+    <div class="ignore">
+      <p>忽略</p>
+    </div>
+  </header>
 </template>
 <script>
-	export default {
-		props: ['message'],
-		methods: {
-			goHistory: function(){
-				this.$router.go(-1);
-			}
-		}
-	}
+export default {
+  props: {
+    message: {
+      type: String,
+      default: ''
+    }
+  },
+  methods: {
+    goHistory: function() {
+      this.$router.go(-1)
+    }
+  }
+}
 </script>
 <style lang="less">
 	.message-header {

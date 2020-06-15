@@ -1,14 +1,19 @@
 <template>
-	<transition name="prompt">
-		<div class="validate-prompt validate-prompt-animate">
-			<p class="prompt-text">{{prompttext}}</p>
-		</div>
-	</transition>
+  <transition name="prompt">
+    <div class="validate-prompt validate-prompt-animate">
+      <p class="prompt-text">{{ prompttext }}</p>
+    </div>
+  </transition>
 </template>
 <script>
-	export default {
-		props: ['prompttext']
-	}
+export default {
+  props: {
+    prompttext: {
+      type: String,
+      default: ''
+    }
+  }
+}
 </script>
 <style lang="less">
 	.validate-prompt {

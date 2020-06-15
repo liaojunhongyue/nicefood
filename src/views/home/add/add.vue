@@ -1,36 +1,36 @@
 <template>
-	<transition name="slidetop">
-		<div class="add-more-info" v-show="this.$store.state.add.showadd">
-			<div class="close" @click="hideAdd">
-				<i class="fa fa-times" aria-hidden="true"></i>
-			</div>
-			<p class="title">生活不止诗和远方，还有眼前的肉和汤</p>
-			<div class="go-operate">
-				<router-link :to="'/user/create/menu'" class="operate-item">
-					<i class="fa fa-coffee" aria-hidden="true"></i>
-					<span>传菜谱</span>
-				</router-link>
-				<router-link :to="'/user/create/works'" class="operate-item">
-					<i class="fa fa-shopping-basket" aria-hidden="true"></i>
-					<span>晒作品</span>
-				</router-link>
-				<router-link :to="'/user/create/article'" class="operate-item">
-					<i class="fa fa-book" aria-hidden="true"></i>
-					<span>发文章</span>
-				</router-link>
-			</div>
-		</div>
-	</transition>
+  <transition name="slidetop">
+    <div v-show="this.$store.state.add.showadd" class="add-more-info">
+      <div class="close" @click="hideAdd">
+        <i class="fa fa-times" aria-hidden="true" />
+      </div>
+      <p class="title">生活不止诗和远方，还有眼前的肉和汤</p>
+      <div class="go-operate">
+        <router-link :to="'/user/create/menu'" class="operate-item">
+          <i class="fa fa-coffee" aria-hidden="true" />
+          <span>传菜谱</span>
+        </router-link>
+        <router-link :to="'/user/create/works'" class="operate-item">
+          <i class="fa fa-shopping-basket" aria-hidden="true" />
+          <span>晒作品</span>
+        </router-link>
+        <router-link :to="'/user/create/article'" class="operate-item">
+          <i class="fa fa-book" aria-hidden="true" />
+          <span>发文章</span>
+        </router-link>
+      </div>
+    </div>
+  </transition>
 </template>
 <script>
-	export default {
-		methods: {
-			hideAdd: function() {
-				this.$store.state.add.showadd = false;
-				this.$store.state.add.addrotate = '';
-			}
-		}
-	}
+export default {
+  methods: {
+    hideAdd: function() {
+      this.$store.state.add.showadd = false
+      this.$store.state.add.addrotate = ''
+    }
+  }
+}
 </script>
 <style lang="less">
 	.add-more-info {
@@ -43,15 +43,15 @@
 		background-color: #fff;
 		.close {
 			position: absolute;
-	    top: 0px;
-	    left: 0px;
-	    height: 40px;
-	    width: 50px;
-	    text-align: center;
+      top: 0px;
+      left: 0px;
+      height: 40px;
+      width: 50px;
+      text-align: center;
 			i {
 				margin-top: 11px;
-		    color: #303030;
-		    font-size: 20px;
+        color: #303030;
+        font-size: 20px;
 			}
 		}
 		&>.title {
@@ -78,7 +78,7 @@
 					border: 2px solid #ddd;
 					border-radius: 200px;
 					&.fa-coffee {
-						color: #d4e966; 
+						color: #d4e966;
 					}
 					&.fa-shopping-basket {
 						color: #ffb381;

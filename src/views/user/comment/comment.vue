@@ -1,22 +1,22 @@
 <template>
-	<div class="user-comment">
-		<f-normal-header message="我的评论" historyurl="/user"></f-normal-header>
-		<ul class="user-comment-tab">
-			<router-link :to="'/user/comment/menu'" class="tab-item"><span>菜谱</span></router-link>
-			<router-link :to="'/user/comment/works'" class="tab-item"><span>作品</span></router-link>
-			<router-link :to="'/user/comment/talks'" class="tab-item"><span>食话</span></router-link>
-		</ul>
-		<router-view></router-view>
-	</div>
+  <div class="user-comment">
+    <f-normal-header message="我的评论" historyurl="/user" />
+    <ul class="user-comment-tab">
+      <router-link :to="'/user/comment/menu'" class="tab-item"><span>菜谱</span></router-link>
+      <router-link :to="'/user/comment/works'" class="tab-item"><span>作品</span></router-link>
+      <router-link :to="'/user/comment/talks'" class="tab-item"><span>食话</span></router-link>
+    </ul>
+    <router-view />
+  </div>
 </template>
 <script>
-	import fNormalHeader from '@/components/common/normalHeader.vue'
+import fNormalHeader from '@/components/common/normalHeader.vue'
 
-	export default {
-		components: {
-			'f-normal-header': fNormalHeader
-		}
-	}
+export default {
+  components: {
+    'f-normal-header': fNormalHeader
+  }
+}
 </script>
 <style lang="less">
 	.user-comment {

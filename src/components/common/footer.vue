@@ -1,27 +1,27 @@
 <template>
   <footer>
     <router-link class="footer-list" :to="'/'" replace exact>
-      <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+      <i class="fa fa-shopping-basket" aria-hidden="true" />
       <span>首页</span>
     </router-link>
     <router-link class="footer-list" :to="'/find'" replace>
-      <i class="fa fa-camera" aria-hidden="true"></i>
+      <i class="fa fa-camera" aria-hidden="true" />
       <span>发现</span>
     </router-link>
     <router-link class="footer-list" :to="'/challenge'" replace>
-      <i class="fa fa-cutlery" aria-hidden="true"></i>
+      <i class="fa fa-cutlery" aria-hidden="true" />
       <span>挑战</span>
     </router-link>
     <router-link class="footer-list" :to="'/user'" replace>
-      <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+      <i class="fa fa-user-circle-o" aria-hidden="true" />
       <span>我的</span>
     </router-link>
   </footer>
 </template>
 <script>
-  export default {
-    
-  }
+export default {
+
+}
 </script>
 <style lang="less">
   footer {
@@ -55,5 +55,5 @@
         color: #ff2323;
       }
     }
-  } 
+  }
 </style>

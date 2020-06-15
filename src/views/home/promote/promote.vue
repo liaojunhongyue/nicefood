@@ -1,48 +1,47 @@
 <template>
-	<div class="promote padding">
-		<p class="title">为你推荐</p>
-		<div class="promote-list">
-			<div v-for="item in menuData" :key="item.id">
-				<router-link class="promote-list-item" :to="{name: 'fooddetails', params: {id: item.id}}">
-					<div class="pic">
-						<img :src="item.image" />
-					</div>
-					<div class="info">
-						<p class="title">{{ item.title }}</p>
-						<p class="star">
-							<i v-for="star in item.star" :key="star" class="fa fa-star" aria-hidden="true"></i><i v-for="(star, index) in 5 - item.star" :key="index" class="fa fa-star-o" aria-hidden="true"></i>
-						</p>
-						<p class="operate">
-							<span class="like">
-								<i class="fa fa-heart-o" aria-hidden="true"></i>
-								{{ item.like }}
-							</span>
-							<span class="browse">
-								<i class="fa fa-eye" aria-hidden="true"></i>
-								{{ item.browse }}
-							</span>
-						</p>
-					</div>
-				</router-link>
-			</div>
-		</div>
-	</div>
+  <div class="promote padding">
+    <p class="title">为你推荐</p>
+    <div class="promote-list">
+      <div v-for="item in menuData" :key="item.id">
+        <router-link class="promote-list-item" :to="{name: 'fooddetails', params: {id: item.id}}">
+          <div class="pic">
+            <img :src="item.image">
+          </div>
+          <div class="info">
+            <p class="title">{{ item.title }}</p>
+            <p class="star">
+              <i v-for="star in item.star" :key="star" class="fa fa-star" aria-hidden="true" /><i v-for="(star, index) in 5 - item.star" :key="index" class="fa fa-star-o" aria-hidden="true" />
+            </p>
+            <p class="operate">
+              <span class="like">
+                <i class="fa fa-heart-o" aria-hidden="true" />
+                {{ item.like }}
+              </span>
+              <span class="browse">
+                <i class="fa fa-eye" aria-hidden="true" />
+                {{ item.browse }}
+              </span>
+            </p>
+          </div>
+        </router-link>
+      </div>
+    </div>
+  </div>
 </template>
 <script>
-	export default {
-		data() {
-			return {
-				menuData: '',
-				blankStar: ''
-			}
-		},
-		mounted() {
-			this.$http.get('/api/menuData').then((response) => {
-				this.menuData = response.data.data.slice(0, 3);
-			})
-
-		}
-	}
+export default {
+  data() {
+    return {
+      menuData: '',
+      blankStar: ''
+    }
+  },
+  mounted() {
+    this.$http.get('/api/menuData').then((response) => {
+      this.menuData = response.data.data.slice(0, 3)
+    })
+  }
+}
 </script>
 <style lang="less">
 	.promote {

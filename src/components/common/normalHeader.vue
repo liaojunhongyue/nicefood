@@ -1,24 +1,33 @@
 <template>
-	<header class="normal-header">
-		<div @click="goHistory" class="go-back">
-			<i class="fa fa-angle-left" aria-hidden="true"></i>
-		</div>
-		{{message}}
-	</header>
+  <header class="normal-header">
+    <div class="go-back" @click="goHistory">
+      <i class="fa fa-angle-left" aria-hidden="true" />
+    </div>
+    {{ message }}
+  </header>
 </template>
 <script>
-	export default {
-		props: ['message','historyurl'],
-		methods: {
-			goHistory: function(){
-				if(this.historyurl != '') {
-					this.$router.replace(this.historyurl)
-				}else{
-					this.$router.go(-1);
-				}
-			}
-		}
-	}
+export default {
+  props: {
+    message: {
+      type: String,
+      default: ''
+    },
+    historyurl: {
+      type: String,
+      default: ''
+    }
+  },
+  methods: {
+    goHistory: function() {
+      if (this.historyurl !== '') {
+        this.$router.replace(this.historyurl)
+      } else {
+        this.$router.go(-1)
+      }
+    }
+  }
+}
 </script>
 <style lang="less">
 	.normal-header {

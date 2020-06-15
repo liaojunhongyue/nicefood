@@ -12,12 +12,12 @@ Vue.config.productionTip = false
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
-	state: {
-		add: {
-			showadd: false,
-			addrotate: ''
-		}
-	}
+  state: {
+    add: {
+      showadd: false,
+      addrotate: ''
+    }
+  }
 })
 
 /* eslint-disable no-new */

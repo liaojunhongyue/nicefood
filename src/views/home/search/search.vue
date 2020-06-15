@@ -1,31 +1,31 @@
 <template>
-	<div class="search">
-		<div class="add" @click="showAdd" :class="this.$store.state.add.addrotate">
-			<i class="fa fa-plus" aria-hidden="true"></i>
-		</div>
-		<div class="input">
-			<i class="fa fa-search" aria-hidden="true"></i>
-			<input type="text" placeholder="菜谱、食材" />
-		</div>
-		<router-link :to="'/message'" class="message">
-			<i class="fa fa-envelope-o" aria-hidden="true"></i>
-		</router-link>
-	</div>
+  <div class="search">
+    <div class="add" :class="this.$store.state.add.addrotate" @click="showAdd">
+      <i class="fa fa-plus" aria-hidden="true" />
+    </div>
+    <div class="input">
+      <i class="fa fa-search" aria-hidden="true" />
+      <input type="text" placeholder="菜谱、食材">
+    </div>
+    <router-link :to="'/message'" class="message">
+      <i class="fa fa-envelope-o" aria-hidden="true" />
+    </router-link>
+  </div>
 </template>
 <script>
-	export default {
-		data() {
-			return {
-				rotateAdd: ''
-			}
-		},
-		methods: {
-			showAdd: function(){
-				this.$store.state.add.showadd = true;
-				this.$store.state.add.addrotate = 'rotate';
-			}
-		}
-	}
+export default {
+  data() {
+    return {
+      rotateAdd: ''
+    }
+  },
+  methods: {
+    showAdd: function() {
+      this.$store.state.add.showadd = true
+      this.$store.state.add.addrotate = 'rotate'
+    }
+  }
+}
 </script>
 <style lang="less">
 	.search {

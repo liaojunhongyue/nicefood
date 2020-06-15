@@ -1,168 +1,168 @@
 <template>
-	<div class="food-details">
-		<f-normal-header :message="menuDetails.title" historyurl=""></f-normal-header>
-		<div class="pic">
-			<img :src="menuDetails.image" />
-		</div>
-		<div class="food-title">
-			<p class="title">{{ menuDetails.title }}</p>
-			<p>
-				<span>{{ menuDetails.like }}人收藏</span>
-				<span>{{ menuDetails.browse }}次浏览</span>
-			</p>
-		</div>
-		<div class="food-author">
-			<div class="avatar">
-				<img :src="menuAuthor.avatar" />
-			</div>
-			<div class="info">
-				<p>{{ menuAuthor.name }}</p>
-				<p class="menu-number">{{ menuAuthor.desc }}</p>
-			</div>
-			<div class="follow-author">
-				<p>关注</p>
-			</div>
-		</div>
-		<div class="food-point">
-			<p>
-				<span>评分</span>
-				<i class="fa fa-star" aria-hidden="true" v-for="(item, index) in menuDetails.star" :key="index"></i>
-			</p>
-		</div>
-		<div class="food-footer">
-			<router-link :to="{name: 'menucomment', params: {commentid: menuDetails.id}}" class="food-footer-list">
-				<i class="fa fa-commenting-o" aria-hidden="true"></i>
-			</router-link>
-			<div class="food-footer-list" @click="likeMenu">
-				<i class="fa fa-heart" :class="{active: isLikedActive}" aria-hidden="true"></i>
-			</div>
-			<div class="food-footer-list" @click="shareMenuShow">
-				<i class="fa fa-share-square-o" aria-hidden="true"></i>
-			</div>
-		</div>
-		<!-- 点赞后返回的信息 -->
-		<toast v-show="isLikedShow" :prompttext="promptCallback"></toast>
-		<!-- 分享 -->
-		<transition name="prompt">
-			<div class="menu-share" v-show="isShareShow">
-				<div class="menu-share-content">
-					<p class="menu-share-title">好内容就应该与朋友分享</p>
-					<ul class="menu-share-list">
-						<li class="menu-share-item">
-							<i class="fa fa-file" aria-hidden="true"></i>
-							<p>菜谱整图分享</p>
-						</li>
-						<li class="menu-share-item">
-							<i class="fa fa-weixin" aria-hidden="true"></i>
-							<p>微信好友</p>
-						</li>
-						<li class="menu-share-item">
-							<i class="fa fa-qq" aria-hidden="true"></i>
-							<p>QQ好友</p>
-						</li>
-						<li class="menu-share-item">
-							<i class="fa fa-weibo" aria-hidden="true"></i>
-							<p>新浪微博</p>
-						</li>
-						<li class="menu-share-item">
-							<i class="fa fa-files-o" aria-hidden="true"></i>
-							<p>复制链接</p>
-						</li>
-					</ul>
-				</div>
-				<div class="menu-share-close">
-					<div class="close-icon" @click="shareMenuHide">
-						<i class="fa fa-times" aria-hidden="true"></i>
-					</div>
-				</div>
-			</div>
-		</transition>
-	</div>
+  <div class="food-details">
+    <f-normal-header :message="menuDetails.title" historyurl="" />
+    <div class="pic">
+      <img :src="menuDetails.image">
+    </div>
+    <div class="food-title">
+      <p class="title">{{ menuDetails.title }}</p>
+      <p>
+        <span>{{ menuDetails.like }}人收藏</span>
+        <span>{{ menuDetails.browse }}次浏览</span>
+      </p>
+    </div>
+    <div class="food-author">
+      <div class="avatar">
+        <img :src="menuAuthor.avatar">
+      </div>
+      <div class="info">
+        <p>{{ menuAuthor.name }}</p>
+        <p class="menu-number">{{ menuAuthor.desc }}</p>
+      </div>
+      <div class="follow-author">
+        <p>关注</p>
+      </div>
+    </div>
+    <div class="food-point">
+      <p>
+        <span>评分</span>
+        <i v-for="(item, index) in menuDetails.star" :key="index" class="fa fa-star" aria-hidden="true" />
+      </p>
+    </div>
+    <div class="food-footer">
+      <router-link :to="{name: 'menucomment', params: {commentid: menuDetails.id}}" class="food-footer-list">
+        <i class="fa fa-commenting-o" aria-hidden="true" />
+      </router-link>
+      <div class="food-footer-list" @click="likeMenu">
+        <i class="fa fa-heart" :class="{active: isLikedActive}" aria-hidden="true" />
+      </div>
+      <div class="food-footer-list" @click="shareMenuShow">
+        <i class="fa fa-share-square-o" aria-hidden="true" />
+      </div>
+    </div>
+    <!-- 点赞后返回的信息 -->
+    <toast v-show="isLikedShow" :prompttext="promptCallback" />
+    <!-- 分享 -->
+    <transition name="prompt">
+      <div v-show="isShareShow" class="menu-share">
+        <div class="menu-share-content">
+          <p class="menu-share-title">好内容就应该与朋友分享</p>
+          <ul class="menu-share-list">
+            <li class="menu-share-item">
+              <i class="fa fa-file" aria-hidden="true" />
+              <p>菜谱整图分享</p>
+            </li>
+            <li class="menu-share-item">
+              <i class="fa fa-weixin" aria-hidden="true" />
+              <p>微信好友</p>
+            </li>
+            <li class="menu-share-item">
+              <i class="fa fa-qq" aria-hidden="true" />
+              <p>QQ好友</p>
+            </li>
+            <li class="menu-share-item">
+              <i class="fa fa-weibo" aria-hidden="true" />
+              <p>新浪微博</p>
+            </li>
+            <li class="menu-share-item">
+              <i class="fa fa-files-o" aria-hidden="true" />
+              <p>复制链接</p>
+            </li>
+          </ul>
+        </div>
+        <div class="menu-share-close">
+          <div class="close-icon" @click="shareMenuHide">
+            <i class="fa fa-times" aria-hidden="true" />
+          </div>
+        </div>
+      </div>
+    </transition>
+  </div>
 </template>
 <script>
-	import fNormalHeader from '@/components/common/normalHeader.vue'
-	import toast from '@/components/toast/toast.vue'
+import fNormalHeader from '@/components/common/normalHeader.vue'
+import toast from '@/components/toast/toast.vue'
 
-	export default {
-		data() {
-			return {
-				menuData: '',
-				menuIndex: '',
-				menuDetails: '',
-				menuAuthor: '',
-				isLiked: false,
-				isLikedShow: false,
-				isLikedActive: false,
-				toast: '',
-				isShareShow: false
-			}
-		},
-		components: {
-			'f-normal-header': fNormalHeader,
-			'toast': toast
-		},
-		mounted() {
-			// 获取数据
-			this.$http.get('/api/menuData').then((response) => {
-				this.menuData = response.data.data;
-				this.menuIndex = this.$route.params.id - 1;
-				this.menuDetails = this.menuData[this.menuIndex];
-				this.menuAuthor = this.menuDetails.author;
-				// 判断是否收藏该菜谱
-				this.judgeLikedState();
-			})
-		},
-		methods: {
-			likeMenu: function(){
-				let that = this;
-				if(!this.isLiked) {
-					this.promptCallback = '收藏成功，请前往收藏夹查看';
-					this.isLikedActive = true;
-					this.isLiked = true;
-					this.isLikedShow = true;
-					setTimeout(function(){
-						that.isLikedShow = false;
-					}, 1500)
-					// 存入sessionStorage
-					this.saveSessionLiked(this.menuDetails.id);
-				}else{
-					this.promptCallback = '已取消收藏';
-					this.isLikedActive = false;
-					this.isLiked = false;
-					this.isLikedShow = true;
-					setTimeout(function(){
-						that.isLikedShow = false;
-					}, 1500)
-					// 移除sessionStorage
-					this.removeSessionLiked(this.menuDetails.id);
-				}
-			},
-			shareMenuShow: function(){
-				this.isShareShow = true;
-			},
-			shareMenuHide: function(){
-				this.isShareShow = false;
-			},
-			saveSessionLiked: function(likeid){
-				let likeIdArray = sessionStorage.getItem('likeMenuIds');
-				likeIdArray += likeid;
-				sessionStorage.setItem('likeMenuIds', likeIdArray);
-				console.log()
-			},
-			removeSessionLiked: function(likeid){
-				let likeIds = sessionStorage.getItem('likeMenuIds');
-				let newLikeIds = likeIds.replace(likeid, '');
-				sessionStorage.setItem('likeMenuIds', newLikeIds);
-			},
-			judgeLikedState: function(){
-				let likeIds = sessionStorage.getItem('likeMenuIds');
-				if(likeIds.indexOf(this.menuDetails.id) != -1){
-					this.isLikedActive = true;
-					this.isLiked = true;
-				}
-			}
-		}
-	}
+export default {
+  components: {
+    'f-normal-header': fNormalHeader,
+    'toast': toast
+  },
+  data() {
+    return {
+      menuData: '',
+      menuIndex: '',
+      menuDetails: '',
+      menuAuthor: '',
+      isLiked: false,
+      isLikedShow: false,
+      isLikedActive: false,
+      toast: '',
+      isShareShow: false
+    }
+  },
+  mounted() {
+    // 获取数据
+    this.$http.get('/api/menuData').then((response) => {
+      this.menuData = response.data.data
+      this.menuIndex = this.$route.params.id - 1
+      this.menuDetails = this.menuData[this.menuIndex]
+      this.menuAuthor = this.menuDetails.author
+      // 判断是否收藏该菜谱
+      this.judgeLikedState()
+    })
+  },
+  methods: {
+    likeMenu: function() {
+      const that = this
+      if (!this.isLiked) {
+        this.promptCallback = '收藏成功，请前往收藏夹查看'
+        this.isLikedActive = true
+        this.isLiked = true
+        this.isLikedShow = true
+        setTimeout(function() {
+          that.isLikedShow = false
+        }, 1500)
+        // 存入sessionStorage
+        this.saveSessionLiked(this.menuDetails.id)
+      } else {
+        this.promptCallback = '已取消收藏'
+        this.isLikedActive = false
+        this.isLiked = false
+        this.isLikedShow = true
+        setTimeout(function() {
+          that.isLikedShow = false
+        }, 1500)
+        // 移除sessionStorage
+        this.removeSessionLiked(this.menuDetails.id)
+      }
+    },
+    shareMenuShow: function() {
+      this.isShareShow = true
+    },
+    shareMenuHide: function() {
+      this.isShareShow = false
+    },
+    saveSessionLiked: function(likeid) {
+      let likeIdArray = sessionStorage.getItem('likeMenuIds')
+      likeIdArray += likeid
+      sessionStorage.setItem('likeMenuIds', likeIdArray)
+      console.log()
+    },
+    removeSessionLiked: function(likeid) {
+      const likeIds = sessionStorage.getItem('likeMenuIds')
+      const newLikeIds = likeIds.replace(likeid, '')
+      sessionStorage.setItem('likeMenuIds', newLikeIds)
+    },
+    judgeLikedState: function() {
+      const likeIds = sessionStorage.getItem('likeMenuIds')
+      if (likeIds.indexOf(this.menuDetails.id) !== -1) {
+        this.isLikedActive = true
+        this.isLiked = true
+      }
+    }
+  }
+}
 </script>
 <style lang="less">
 	.food-details {

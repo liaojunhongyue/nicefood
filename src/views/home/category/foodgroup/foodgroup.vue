@@ -1,20 +1,20 @@
 <template>
-	<div class="food-group">
-		<f-normal-header message="智能组菜" historyurl=""></f-normal-header>
-		<form id="foodGroup" class="food-group-form">
-			<input class="food-item" type="text" placeholder="输入食材" />
-			<input class="go-foodgroup" type="submit" value="去组菜" />
-		</form>
-	</div>
+  <div class="food-group">
+    <f-normal-header message="智能组菜" historyurl="" />
+    <form id="foodGroup" class="food-group-form">
+      <input class="food-item" type="text" placeholder="输入食材">
+      <input class="go-foodgroup" type="submit" value="去组菜">
+    </form>
+  </div>
 </template>
 <script>
-	import fNormalHeader from '@/components/common/normalHeader.vue'
+import fNormalHeader from '@/components/common/normalHeader.vue'
 
-	export default {
-		components: {
-			'f-normal-header': fNormalHeader
-		}
-	}
+export default {
+  components: {
+    'f-normal-header': fNormalHeader
+  }
+}
 </script>
 <style lang="less">
 	.food-group {

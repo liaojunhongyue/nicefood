@@ -1,65 +1,65 @@
 <template>
-	<transition name="slideleft">
-		<div class="message-wrap">
-			<f-message-header message="消息通知"></f-message-header>
-			<div class="message-list">
-				<router-link :to="'/message/news'" class="message-list-item">
-					<div class="icon-text">
-						<i class="fa fa-envelope" aria-hidden="true"></i>
-						<span>消息</span>
-					</div>
-					<div class="goto">
-						<i class="fa fa-angle-right" aria-hidden="true"></i>
-					</div>
-				</router-link>
-				<router-link :to="'/message/activity'" class="message-list-item">
-					<div class="icon-text">
-						<i class="fa fa-cube" aria-hidden="true"></i>
-						<span>活动</span>
-					</div>
-					<div class="goto">
-						<i class="fa fa-angle-right" aria-hidden="true"></i>
-					</div>
-				</router-link>
-				<router-link :to="'/message/comment'" class="message-list-item">
-					<div class="icon-text">
-						<i class="fa fa-commenting" aria-hidden="true"></i>
-						<span>评论</span>
-					</div>
-					<div class="goto">
-						<i class="fa fa-angle-right" aria-hidden="true"></i>
-					</div>
-				</router-link>
-				<router-link :to="'/message/like'" class="message-list-item">
-					<div class="icon-text">
-						<i class="fa fa-thumbs-up" aria-hidden="true"></i>
-						<span>点赞</span>
-					</div>
-					<div class="goto">
-						<i class="fa fa-angle-right" aria-hidden="true"></i>
-					</div>
-				</router-link>
-				<router-link :to="'/message/collect'" class="message-list-item">
-					<div class="icon-text">
-						<i class="fa fa-heart" aria-hidden="true"></i>
-						<span>收藏</span>
-					</div>
-					<div class="goto">
-						<i class="fa fa-angle-right" aria-hidden="true"></i>
-					</div>
-				</router-link>
-			</div>
-		</div>
-	</transition>
+  <transition name="slideleft">
+    <div class="message-wrap">
+      <f-message-header message="消息通知" />
+      <div class="message-list">
+        <router-link :to="'/message/news'" class="message-list-item">
+          <div class="icon-text">
+            <i class="fa fa-envelope" aria-hidden="true" />
+            <span>消息</span>
+          </div>
+          <div class="goto">
+            <i class="fa fa-angle-right" aria-hidden="true" />
+          </div>
+        </router-link>
+        <router-link :to="'/message/activity'" class="message-list-item">
+          <div class="icon-text">
+            <i class="fa fa-cube" aria-hidden="true" />
+            <span>活动</span>
+          </div>
+          <div class="goto">
+            <i class="fa fa-angle-right" aria-hidden="true" />
+          </div>
+        </router-link>
+        <router-link :to="'/message/comment'" class="message-list-item">
+          <div class="icon-text">
+            <i class="fa fa-commenting" aria-hidden="true" />
+            <span>评论</span>
+          </div>
+          <div class="goto">
+            <i class="fa fa-angle-right" aria-hidden="true" />
+          </div>
+        </router-link>
+        <router-link :to="'/message/like'" class="message-list-item">
+          <div class="icon-text">
+            <i class="fa fa-thumbs-up" aria-hidden="true" />
+            <span>点赞</span>
+          </div>
+          <div class="goto">
+            <i class="fa fa-angle-right" aria-hidden="true" />
+          </div>
+        </router-link>
+        <router-link :to="'/message/collect'" class="message-list-item">
+          <div class="icon-text">
+            <i class="fa fa-heart" aria-hidden="true" />
+            <span>收藏</span>
+          </div>
+          <div class="goto">
+            <i class="fa fa-angle-right" aria-hidden="true" />
+          </div>
+        </router-link>
+      </div>
+    </div>
+  </transition>
 </template>
 <script>
-	import fMessageHeader from '@/components/common/messageHeader.vue'
+import fMessageHeader from '@/components/common/messageHeader.vue'
 
-	export default {
-		components: {
-			'f-message-header': fMessageHeader
-		}
-	}
+export default {
+  components: {
+    'f-message-header': fMessageHeader
+  }
+}
 </script>
 <style lang="less">
 	.message-wrap {

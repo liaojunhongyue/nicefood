@@ -1,44 +1,44 @@
 <template>
-	<div class="menu-more-list-wrapper">
-		<div class="title">
-			<p>美味 · {{ menuTitle }}</p>
-		</div>
-		<ul class="menu-more-list">
-			<router-link :to="{name: 'fooddetails', params: {id: item.id}}" class="menu-more-item" v-for="item in menuData.slice(0, 9)" :key="item.id">
-				<img :src="item.image" />
-				<p class="menu-title">{{ item.title }}</p>
-			</router-link>
-		</ul>
-	</div>
+  <div class="menu-more-list-wrapper">
+    <div class="title">
+      <p>美味 · {{ menuTitle }}</p>
+    </div>
+    <ul class="menu-more-list">
+      <router-link v-for="item in menuData.slice(0, 9)" :key="item.id" :to="{name: 'fooddetails', params: {id: item.id}}" class="menu-more-item">
+        <img :src="item.image">
+        <p class="menu-title">{{ item.title }}</p>
+      </router-link>
+    </ul>
+  </div>
 </template>
 <script>
-	export default {
-		data() {
-			return {
-				menuData: '',
-				menuTag: '',
-				menuTitle: ''
-			}
-		},
-		mounted() {
-			this.$http.get('/api/menuData').then((response) => {
-				this.menuData = response.data.data;
-				this.menuTitle = '早餐';
-			})
-		},
-		watch: {
-			'$route' (to, from) {
-				let routeName = to.name;
-				switch(routeName) {
-					case 'menubreakfast': this.menuTitle = '早餐'; break;
-					case 'menulunch': this.menuTitle = '午餐'; break;
-					case 'menuafternoontea': this.menuTitle = '下午茶'; break;
-					case 'menudinner': this.menuTitle = '晚餐'; break;
-					case 'menumidnight': this.menuTitle = '夜宵'; break;
-				}
-			}
-		}
-	}
+export default {
+  data() {
+    return {
+      menuData: '',
+      menuTag: '',
+      menuTitle: ''
+    }
+  },
+  watch: {
+    '$route'(to, from) {
+      const routeName = to.name
+      switch (routeName) {
+        case 'menubreakfast': this.menuTitle = '早餐'; break
+        case 'menulunch': this.menuTitle = '午餐'; break
+        case 'menuafternoontea': this.menuTitle = '下午茶'; break
+        case 'menudinner': this.menuTitle = '晚餐'; break
+        case 'menumidnight': this.menuTitle = '夜宵'; break
+      }
+    }
+  },
+  mounted() {
+    this.$http.get('/api/menuData').then((response) => {
+      this.menuData = response.data.data
+      this.menuTitle = '早餐'
+    })
+  }
+}
 </script>
 <style lang="less">
 	.menu-more-list-wrapper {

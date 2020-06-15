@@ -1,65 +1,65 @@
 <template>
-	<div class="create-talks">
-		<header class="create-talks-header">
-			<div @click="goHistory" class="go-back">
-				<i class="fa fa-angle-left" aria-hidden="true"></i>
-			</div>
-			发布食话
-			<div class="go-publish-talks">
-				发布
-			</div>
-		</header>
-		<div class="add-talks">
-			<form id="addTalksForm">
-				<div class="talks-content">
-					<textarea class="talks-content-textarea" placeholder="请输入文字"></textarea>
-					<div class="upload-pic">
-						<div class="upload-picbg">
-							<div class="upload-picbg-icon">
-								<i class="fa fa-file-image-o" aria-hidden="true"></i>
-							</div>
-							<input type="file" class="upload-pic-button" name="" />
-						</div>
-					</div>
-				</div>
-				<div class="talks-add-menu">
-					<p>
-						<i class="fa fa-plus-circle" aria-hidden="true"></i>
-						<span>添加相关菜谱</span>
-					</p>
-				</div>
-				<div class="talks-publish-position">
-					<p class="position-title">发布至</p>
-					<div class="publish-position">
-						<div class="position-list">
-							<input type="radio" name="position" id="table" />
-							<span class="radio-icon"></span>
-							<label for="table">餐桌时光</label>
-						</div>
-						<div class="position-list">
-							<input type="radio" name="position" id="bake" />
-							<span class="radio-icon"></span>
-							<label for="bake">玩转烘焙</label>
-						</div>
-						<div class="position-list">
-							<input type="radio" name="position" id="classroom" />
-							<span class="radio-icon"></span>
-							<label for="classroom">美食课堂</label>
-						</div>
-					</div>
-				</div>
-			</form>
-		</div>
-	</div>
+  <div class="create-talks">
+    <header class="create-talks-header">
+      <div class="go-back" @click="goHistory">
+        <i class="fa fa-angle-left" aria-hidden="true" />
+      </div>
+      发布食话
+      <div class="go-publish-talks">
+        发布
+      </div>
+    </header>
+    <div class="add-talks">
+      <form id="addTalksForm">
+        <div class="talks-content">
+          <textarea class="talks-content-textarea" placeholder="请输入文字" />
+          <div class="upload-pic">
+            <div class="upload-picbg">
+              <div class="upload-picbg-icon">
+                <i class="fa fa-file-image-o" aria-hidden="true" />
+              </div>
+              <input type="file" class="upload-pic-button" name="">
+            </div>
+          </div>
+        </div>
+        <div class="talks-add-menu">
+          <p>
+            <i class="fa fa-plus-circle" aria-hidden="true" />
+            <span>添加相关菜谱</span>
+          </p>
+        </div>
+        <div class="talks-publish-position">
+          <p class="position-title">发布至</p>
+          <div class="publish-position">
+            <div class="position-list">
+              <input id="table" type="radio" name="position">
+              <span class="radio-icon" />
+              <label for="table">餐桌时光</label>
+            </div>
+            <div class="position-list">
+              <input id="bake" type="radio" name="position">
+              <span class="radio-icon" />
+              <label for="bake">玩转烘焙</label>
+            </div>
+            <div class="position-list">
+              <input id="classroom" type="radio" name="position">
+              <span class="radio-icon" />
+              <label for="classroom">美食课堂</label>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
 </template>
 <script>
-	export default {
-		methods: {
-			goHistory: function(){
-				this.$router.go(-1);
-			}
-		}
-	}
+export default {
+  methods: {
+    goHistory: function() {
+      this.$router.go(-1)
+    }
+  }
+}
 </script>
 <style lang="less">
 	.create-talks {

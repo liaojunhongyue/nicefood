@@ -1,108 +1,109 @@
 <template>
-	<div class="create-works">
-		<header class="create-works-header">
-			<div @click="goHistory" class="go-back">
-				<i class="fa fa-angle-left" aria-hidden="true"></i>
-			</div>
-			发布作品
-			<div class="go-publish-works" @click="submitWorks">
-				发布
-			</div>
-		</header>
-		<div class="add-works">
-			<form id="addWorksForm">
-				<div class="works-content">
-					<div class="works-pic">
-						<div class="works-picbg">
-							<i class="fa fa-file-image-o" aria-hidden="true"></i>
-						</div>
-						<img v-show="isShowPic" src="" ref="worksimg" />
-						<input @change="fileSelect" type="file" class="upload-works-pic" ref="workspic" />
-					</div>
-					<div class="works-textarea">
-						<textarea placeholder="说说照片背后的故事" ref="workstext"></textarea>
-					</div>
-				</div>
-			</form>
-		</div>
-		<div class="join-activity">
-			<p class="join-activity-title">参加活动</p>
-			<div class="join-activity-content">
-				<p class="content-title">【每日签到】我的美食日记</p>
-				<p class="content-text">
-					从今天开始，自己动手，丰衣足食，生活不仅需要笑声，还有锅碗瓢的敲打声，不华丽，不复杂，我们都不是做饭的高手，只是认真生活的平常人。
-				</p>
-				<p class="content-time">01月01日-12月31日</p>
-			</div>
-		</div>
-		<!-- 验证返回信息 -->
-		<toast v-show="isShowPrompt" :prompttext="promptCallback"></toast>
-	</div>
+  <div class="create-works">
+    <header class="create-works-header">
+      <div class="go-back" @click="goHistory">
+        <i class="fa fa-angle-left" aria-hidden="true" />
+      </div>
+      发布作品
+      <div class="go-publish-works" @click="submitWorks">
+        发布
+      </div>
+    </header>
+    <div class="add-works">
+      <form id="addWorksForm">
+        <div class="works-content">
+          <div class="works-pic">
+            <div class="works-picbg">
+              <i class="fa fa-file-image-o" aria-hidden="true" />
+            </div>
+            <img v-show="isShowPic" ref="worksimg" src="">
+            <input ref="workspic" type="file" class="upload-works-pic" @change="fileSelect">
+          </div>
+          <div class="works-textarea">
+            <textarea ref="workstext" placeholder="说说照片背后的故事" />
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="join-activity">
+      <p class="join-activity-title">参加活动</p>
+      <div class="join-activity-content">
+        <p class="content-title">【每日签到】我的美食日记</p>
+        <p class="content-text">
+          从今天开始，自己动手，丰衣足食，生活不仅需要笑声，还有锅碗瓢的敲打声，不华丽，不复杂，我们都不是做饭的高手，只是认真生活的平常人。
+        </p>
+        <p class="content-time">01月01日-12月31日</p>
+      </div>
+    </div>
+    <!-- 验证返回信息 -->
+    <toast v-show="isShowPrompt" :prompttext="promptCallback" />
+  </div>
 </template>
 <script>
-	import toast from '@/components/toast/toast.vue'
+import toast from '@/components/toast/toast.vue'
 
-	export default {
-		data() {
-			return {
-				isShowPic: false,
-				isShowPrompt: false,
-				toast: ''
-			}
-		},
-		components: {
-			'toast': toast
-		},
-		methods: {
-			goHistory: function(){
-				this.$router.go(-1);
-			},
-			fileSelect: function(e){
-				e = e || window.event;
-				let that = this;
-				let files = e.target.files;
-				for(let i = 0, f; f = files[i]; i++){
-					let reader = new FileReader();
-					reader.onload = (function(file){
-			            return function(e){
-			            	if(this.result != ''){
-			            		that.isShowPic = true;
-			            		that.$refs.worksimg.src = this.result;
-			            	}
-			            };
-			        })(f);
-			        //读取文件内容
-		       		reader.readAsDataURL(f);
-				}
-			},
-			submitWorks: function(){
-				let that = this;
-				let picValue = this.$refs.workspic.value;
-				let textValue = this.$refs.workstext.value;
-				if(picValue == ''){
-					this.promptCallback = '请上传作品图片';
-					this.showPrompt();
-				}else if(textValue == ''){
-					this.promptCallback = '请发表您的感想';
-					this.showPrompt();
-				}else{
-					this.promptCallback = '作品提交成功，请等待管理员审核';
-					this.isShowPrompt = true;
-					setTimeout(function(){
-						that.isShowPrompt = false;
-						that.$router.replace('/user/publish/works');
-					}, 1500)
-				}
-			},
-			showPrompt: function(){
-				let that = this;
-				this.isShowPrompt = true;
-				setTimeout(function(){
-					that.isShowPrompt = false;
-				}, 1500)
-			}
-		}
-	}
+export default {
+  components: {
+    'toast': toast
+  },
+  data() {
+    return {
+      isShowPic: false,
+      isShowPrompt: false,
+      toast: ''
+    }
+  },
+  methods: {
+    goHistory: function() {
+      this.$router.go(-1)
+    },
+    fileSelect: function(e) {
+      e = e || window.event
+      const that = this
+      const files = e.target.files
+      for (let i = 0; i <= files.length; i++) {
+        const f = files[i]
+        const reader = new FileReader()
+        reader.onload = (function(file) {
+          return function(e) {
+            if (this.result !== '') {
+              that.isShowPic = true
+              that.$refs.worksimg.src = this.result
+            }
+          }
+        })(f)
+        // 读取文件内容
+        reader.readAsDataURL(f)
+      }
+    },
+    submitWorks: function() {
+      const that = this
+      const picValue = this.$refs.workspic.value
+      const textValue = this.$refs.workstext.value
+      if (picValue === '') {
+        this.promptCallback = '请上传作品图片'
+        this.showPrompt()
+      } else if (textValue === '') {
+        this.promptCallback = '请发表您的感想'
+        this.showPrompt()
+      } else {
+        this.promptCallback = '作品提交成功，请等待管理员审核'
+        this.isShowPrompt = true
+        setTimeout(function() {
+          that.isShowPrompt = false
+          that.$router.replace('/user/publish/works')
+        }, 1500)
+      }
+    },
+    showPrompt: function() {
+      const that = this
+      this.isShowPrompt = true
+      setTimeout(function() {
+        that.isShowPrompt = false
+      }, 1500)
+    }
+  }
+}
 </script>
 <style lang="less">
 	.create-works {
@@ -165,11 +166,11 @@
 					img {
 						position: absolute;
 						position: absolute;
-					    top: 50%;
-					    left: 50%;
-					    width: 100%;
-					    min-height: 100%;
-					    transform: translate3d(-50%,-50%,0);
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            min-height: 100%;
+            transform: translate3d(-50%,-50%,0);
 						border-radius: 5px;
 					}
 					.upload-works-pic {

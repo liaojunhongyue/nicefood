@@ -1,58 +1,58 @@
 <template>
-	<div class="my-footer">
-		<f-normal-header message="足迹" historyurl=""></f-normal-header>
-		<div class="my-footer-wrapper">
-			<router-link :to="{name: 'fooddetails', params: {id: item.id}}" class="user-footprint-list" v-for="item in menuData" v-bind:key="item.id">
-				<div class="user-footprint-title">
-					<i class="fa fa-circle" aria-hidden="true"></i>
-					<p class="title">浏览了这个菜谱</p>
-					<p class="date">2018-04-18</p>
-				</div>
-				<div class="menu-list-item">
-					<div class="menu-list-item-box">
-						<div class="pic">
-							<img :src="item.image" />
-						</div>
-						<div class="info">
-							<p class="title">{{ item.title }}</p>
-							<p class="star">
-								<i class="fa fa-star" aria-hidden="true" v-for="(star, index) in item.star" :key="index"></i>
-							</p>
-							<p class="operate">
-								<span class="like">
-									<i class="fa fa-heart-o" aria-hidden="true"></i>
-									{{ item.like }}
-								</span>
-								<span class="browse">
-									<i class="fa fa-eye" aria-hidden="true"></i>
-									{{ item.browse }}
-								</span>
-							</p>
-						</div>
-					</div>
-				</div>
-			</router-link>
-		</div>
-	</div>
+  <div class="my-footer">
+    <f-normal-header message="足迹" historyurl="" />
+    <div class="my-footer-wrapper">
+      <router-link v-for="item in menuData" :key="item.id" :to="{name: 'fooddetails', params: {id: item.id}}" class="user-footprint-list">
+        <div class="user-footprint-title">
+          <i class="fa fa-circle" aria-hidden="true" />
+          <p class="title">浏览了这个菜谱</p>
+          <p class="date">2018-04-18</p>
+        </div>
+        <div class="menu-list-item">
+          <div class="menu-list-item-box">
+            <div class="pic">
+              <img :src="item.image">
+            </div>
+            <div class="info">
+              <p class="title">{{ item.title }}</p>
+              <p class="star">
+                <i v-for="(star, index) in item.star" :key="index" class="fa fa-star" aria-hidden="true" />
+              </p>
+              <p class="operate">
+                <span class="like">
+                  <i class="fa fa-heart-o" aria-hidden="true" />
+                  {{ item.like }}
+                </span>
+                <span class="browse">
+                  <i class="fa fa-eye" aria-hidden="true" />
+                  {{ item.browse }}
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </router-link>
+    </div>
+  </div>
 </template>
 <script>
-	import fNormalHeader from '@/components/common/normalHeader.vue'
+import fNormalHeader from '@/components/common/normalHeader.vue'
 
-	export default {
-		data() {
-			return {
-				menuData: ''
-			}
-		},
-		components: {
-			'f-normal-header': fNormalHeader
-		},
-		mounted() {
-			this.$http.get('/api/menuData').then((response) => {
-				this.menuData = response.data.data;
-			})
-		}
-	}
+export default {
+  components: {
+    'f-normal-header': fNormalHeader
+  },
+  data() {
+    return {
+      menuData: ''
+    }
+  },
+  mounted() {
+    this.$http.get('/api/menuData').then((response) => {
+      this.menuData = response.data.data
+    })
+  }
+}
 </script>
 <style lang="less">
 	.my-footer-wrapper {

@@ -1,40 +1,40 @@
 <template>
-	<div class="find-carte padding">
-		<div class="find-carte-list">
-			<div class="find-carte-item" v-for="item in carteData" :key="item.id">
-				<div class="title">
-					<div class="text">
-						<p>{{ item.title }}</p>
-						<span>{{ item.desc }}</span>
-					</div>
-					<div class="avatar">
-						<img :src="item.avatar" />
-					</div>
-				</div>
-				<div class="pics">
-					<div class="pic" v-for="image in item.images" :key="image">
-						<img :src="image" />
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+  <div class="find-carte padding">
+    <div class="find-carte-list">
+      <div v-for="item in carteData" :key="item.id" class="find-carte-item">
+        <div class="title">
+          <div class="text">
+            <p>{{ item.title }}</p>
+            <span>{{ item.desc }}</span>
+          </div>
+          <div class="avatar">
+            <img :src="item.avatar">
+          </div>
+        </div>
+        <div class="pics">
+          <div v-for="image in item.images" :key="image" class="pic">
+            <img :src="image">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 <script>
-	export default {
-		data() {
-			return {
-				findData: '',
-				carteData: ''
-			}
-		},
-		mounted() {
-			this.$http.get('/api/findData').then((response) => {
-				this.findData = response.data.data;
-				this.carteData = this.findData.carte;
-			})
-		}
-	}
+export default {
+  data() {
+    return {
+      findData: '',
+      carteData: ''
+    }
+  },
+  mounted() {
+    this.$http.get('/api/findData').then((response) => {
+      this.findData = response.data.data
+      this.carteData = this.findData.carte
+    })
+  }
+}
 </script>
 <style lang="less">
 	.find-carte-list {

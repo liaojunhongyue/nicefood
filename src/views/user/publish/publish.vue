@@ -1,23 +1,23 @@
 <template>
-	<div class="user-publish">
-		<f-normal-header message="我的发布" historyurl="/user"></f-normal-header>
-		<div class="user-publish-tab">
-			<router-link :to="'/user/publish/menu'" class="tab-list">菜谱</router-link>
-			<router-link :to="'/user/publish/article'" class="tab-list">文章</router-link>
-			<router-link :to="'/user/publish/works'" class="tab-list">作品</router-link>
-			<router-link :to="'/user/publish/talks'" class="tab-list">食话</router-link>
-		</div>
-		<router-view></router-view>
-	</div>
+  <div class="user-publish">
+    <f-normal-header message="我的发布" historyurl="/user" />
+    <div class="user-publish-tab">
+      <router-link :to="'/user/publish/menu'" class="tab-list">菜谱</router-link>
+      <router-link :to="'/user/publish/article'" class="tab-list">文章</router-link>
+      <router-link :to="'/user/publish/works'" class="tab-list">作品</router-link>
+      <router-link :to="'/user/publish/talks'" class="tab-list">食话</router-link>
+    </div>
+    <router-view />
+  </div>
 </template>
 <script>
-	import fNormalHeader from '@/components/common/normalHeader.vue'
+import fNormalHeader from '@/components/common/normalHeader.vue'
 
-	export default {
-		components: {
-			'f-normal-header': fNormalHeader
-		}
-	}
+export default {
+  components: {
+    'f-normal-header': fNormalHeader
+  }
+}
 </script>
 <style lang="less">
 	.user-publish {

@@ -1,38 +1,38 @@
 <template>
-	<div class="hot-more">
-		<f-normal-header message="热门专题" historyurl=""></f-normal-header>
-		<div class="hot-list">
-			<router-link :to="{name: 'hotdetails', params: {id: item.id}}" class="hot-list-item" v-for="item in hotData" :key="item.id">
-				<div class="pic">
-					<img :src="item.image" />
-					<p class="pic-title">
-						<span class="main-title">{{ item.imageTitle }}</span>
-						<span class="sub-title">{{ item.imageDesc }}</span>
-					</p>
-				</div>
-				<p class="title">{{ item.title }}</p>
-			</router-link>
-		</div>
-	</div>
+  <div class="hot-more">
+    <f-normal-header message="热门专题" historyurl="" />
+    <div class="hot-list">
+      <router-link v-for="item in hotData" :key="item.id" :to="{name: 'hotdetails', params: {id: item.id}}" class="hot-list-item">
+        <div class="pic">
+          <img :src="item.image">
+          <p class="pic-title">
+            <span class="main-title">{{ item.imageTitle }}</span>
+            <span class="sub-title">{{ item.imageDesc }}</span>
+          </p>
+        </div>
+        <p class="title">{{ item.title }}</p>
+      </router-link>
+    </div>
+  </div>
 </template>
 <script>
-	import fNormalHeader from '@/components/common/normalHeader.vue'
+import fNormalHeader from '@/components/common/normalHeader.vue'
 
-	export default {
-		data() {
-			return {
-				hotData: ''
-			}
-		},
-		components: {
-			'f-normal-header': fNormalHeader
-		},
-		mounted() {
-			this.$http.get('/api/hotData').then((response) => {
-				this.hotData = response.data.data;
-			})
-		}
-	}
+export default {
+  components: {
+    'f-normal-header': fNormalHeader
+  },
+  data() {
+    return {
+      hotData: ''
+    }
+  },
+  mounted() {
+    this.$http.get('/api/hotData').then((response) => {
+      this.hotData = response.data.data
+    })
+  }
+}
 </script>
 <style lang="less">
 	.hot-more {
