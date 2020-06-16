@@ -51,44 +51,44 @@ export default {
 		.new-task-title {
 			display: flex;
 			justify-content: space-between;
-			line-height: 40px;
-			padding: 0 10px;
-			margin-top: 20px;
-			border-top: 10px solid #e7e7e7;
-			border-bottom: 1px solid #e7e7e7;
+			line-height: 12vw;
+			padding: 0 2.3vw;
+			margin-top: 4.6vw;
+			border-top: 2.3vw solid #e7e7e7;
+			.border-bottom-1px(#e7e7e7);
 			.title {
-				font-size: 16px;
+				font-size: 4vw;
 				color: #333;
 			}
 		}
 		.new-task-list {
 			.new-task-item {
 				position: relative;
-				padding-bottom: 10px;
-				border-bottom: 1px solid #e7e7e7;
+				padding-bottom: 2.3vw;
+				.border-bottom-1px(#e7e7e7);
 				&:last-child {
 					border-bottom: 0;
 				}
 				overflow: hidden;
 				.not-receive-outer {
 					position: absolute;
-					top: -20px;
-					right: -20px;
-					width: 80px;
-					height: 80px;
-					border-radius: 500px;
-					border: 5px solid #ff2323;
+					top: -5.5vw;
+					right: -5.5vw;
+					width: 22vw;
+					height: 22vw;
+					border-radius: 100vw;
+					border: 1vw solid #ff2323;
 					opacity: 0.6;
 					.not-receive-inner {
 						position: absolute;
-						top: 3px;
-						right: 3px;
-						width: 70px;
-						height: 70px;
-						border-radius: 500px;
+						top: 0.8vw;
+						right: 0.8vw;
+						width: 19vw;
+						height: 19vw;
+						border-radius: 100vw;
 						border: 1px solid #ff2323;
 						p {
-							line-height: 75px;
+							line-height: 20vw;
 							color: #ff2323;
 							font-weight: 700;
 							text-align: center;
@@ -98,7 +98,7 @@ export default {
 			}
 			.info {
 				display: flex;
-				padding: 10px;
+				padding: 2.3vw;
 				overflow: hidden;
 				.pic {
 					position: relative;
@@ -119,7 +119,7 @@ export default {
 						background-color: #000;
 						opacity: 0.5;
 						p {
-							font-size: 16px;
+							font-size: 4vw;
 							color: #fff;
 						}
 					}
@@ -127,16 +127,16 @@ export default {
 				.title {
 					flex-grow: 1.5;
 					width: 0;
-					padding: 5px 10px;
+					padding: 1.1vw 2.3vw;
 					p {
 						color: #333;
-						font-size: 16px;
+						font-size: 4vw;
 					}
 				}
 			}
 			.points {
-				padding: 0 10px;
-				line-height: 25px;
+				padding: 0 2.3vw;
+				line-height: 6vw;
 				overflow: hidden;
 				* {
 					color: #debc5a;

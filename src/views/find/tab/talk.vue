@@ -103,31 +103,31 @@ export default {
 			overflow: auto;
 			.icon-scroll {
 				display: flex;
-				padding: 10px 20px;
+				padding: 2.3vw 4.6vw;
 				.item {
-					width: 80px;
+					width: 22vw;
 					text-align: center;
 					i {
 						display: block;
-						width: 50px;
-						height: 50px;
-						margin: 0 auto 6px;
+						width: 12vw;
+						height: 12vw;
+						margin: 0 auto 1.5vw;
 						color: #fff;
-						font-size: 20px;
+						font-size: 5vw;
 						text-align: center;
-						line-height: 50px;
-						border-radius: 200px;
+						line-height: 12vw;
+						border-radius: 100vw;
 					}
 				}
 			}
 		}
 		.find-talk-tab {
 			display: flex;
-			margin: 15px auto;
-			width: 120px;
-			line-height: 25px;
+			margin: 1.35vw auto;
+			width: 35vw;
+			line-height: 7vw;
 			border: 1px solid #ff2323;
-			border-radius: 5px;
+			border-radius: 1.2vw;
 			box-sizing: border-box;
 			.item {
 				flex-grow: 1;
@@ -141,8 +141,8 @@ export default {
 		}
 		.find-talk-add {
 			position: fixed;
-			right: 20px;
-			bottom: 80px;
+			right: 4.6vw;
+			bottom: 22vw;
 			z-index: 101;
 			.slideshowadd-enter {
 				opacity: 0;
@@ -157,32 +157,31 @@ export default {
 			}
 			.add-list {
 				position: relative;
-				margin-bottom: 60px;
+				margin-bottom: 30vw;
 				.add-item {
 					display: block;
-					height: 40px;
-					line-height: 40px;
-					padding: 0 15px;
-					margin-bottom: 10px;
-					border: 1px solid #e7e7e7;
-					border-radius: 20px;
+					height: 10vw;
+					line-height: 10vw;
+					padding: 0 3.35vw;
+					margin-bottom: 2.3vw;
+					.border-1px(#e7e7e7, 4vw);
 					i {
-						margin-right: 6px;
+						margin-right: 1.35vw;
 					}
 				}
 			}
 			.add-icon {
 				position: fixed;
-				right: 20px;
-				bottom: 80px;
-				width: 50px;
-				height: 50px;
-				line-height: 50px;
+				right: 4.6vw;
+				bottom: 22vw;
+				width: 12vw;
+				height: 12vw;
+				line-height: 12vw;
 				text-align: center;
-				font-size: 30px;
+				font-size: 8vw;
 				color: #fff;
 				background-color: #ff2323;
-				border-radius: 300px;
+				border-radius: 100vw;
 				transition: all 0.3s;
 			}
 			.rotate {

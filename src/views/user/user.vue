@@ -100,11 +100,11 @@ export default {
 </script>
 <style lang="less">
 .user {
-	padding: 0 0 50px 0;
+	padding: 0 0 12vw 0;
 	.user-header {
 		position: relative;
 		width: 100%;
-		height: 150px;
+		height: 45vw;
 		background: url('/static/images/userbg.jpg') center center no-repeat;
 		background-size: cover;
 		.user-header-mask {
@@ -118,24 +118,24 @@ export default {
 		}
 		.user-operate {
 			position: absolute;
-			top: 10px;
-			right: 10px;
+			top: 2.3vw;
+			right: 2.3vw;
 			z-index: 1;
 			i {
 				color: #fff;
-				font-size: 20px;
+				font-size: 5vw;
 				&.fa-cog {
-					margin-right: 15px;
+					margin-right: 3.35vw;
 				}
 			}
 		}
 		.user-avatar {
 			position: relative;
-			top: 50px;
-			left: 20px;
-			width: 80px;
-			height: 80px;
-			border-radius: 300px;
+			top: 12vw;
+			left: 5vw;
+			width: 24vw;
+			height: 24vw;
+			border-radius: 100vw;
 			overflow: hidden;
 			img {
 				width: 100%;
@@ -144,37 +144,37 @@ export default {
 		}
 		.user-info {
 			position: relative;
-			top: -30px;
-			margin-left: 120px;
+			top: -6.9vw;
+			margin-left: 36vw;
 			* {
 				color: #fff;
 			}
 			.name {
-				font-size: 16px;
+				font-size: 4vw;
 			}
 			.slogan {
-				margin-top: 10px;
-				font-size: 12px;
+				margin-top: 2.3vw;
+				font-size: 3.2vw;
 				color: #ccc;
 			}
 			.fans {
-				margin-top: 5px;
+				margin-top: 1.1vw;
 			}
 		}
 	}
 	.user-menu {
 		display: flex;
 		flex-wrap: wrap;
-		padding: 10px;
+		padding: 2.3vw;
 		.user-menu-list {
 			width: 25%;
-			margin-top: 10px;
+			margin-top: 2.3vw;
 			text-align: center;
 			* {
 				color: #666;
 			}
 			i {
-				font-size: 18px;
+				font-size: 4.5vw;
 			}
 			span {
 				display: block;
@@ -182,10 +182,10 @@ export default {
 		}
 	}
 	.user-footprint {
-		padding: 10px;
+		padding: 2.3vw;
 		&>.title {
-			margin-bottom: 10px;
-			font-size: 16px;
+			margin-bottom: 2.3vw;
+			font-size: 4vw;
 			color: #333;
 		}
 		.user-footprint-list {
@@ -193,24 +193,24 @@ export default {
 				overflow: hidden;
 				i {
 					float: left;
-					margin: 5px 5px 0 0;
-					font-size: 12px;
+					margin: 1.1vw 1.1vw 0 0;
+					font-size: 3.2vw;
 					color: #ff2323;
 					opacity: 0.6;
 				}
 				&>.title {
 					float: left;
-					font-size: 12px;
+					font-size: 3.2vw;
 					color: #333;
 				}
 				.date {
 					float: right;
-					font-size: 12px;
+					font-size: 3.2vw;
 				}
 			}
 			.menu-list-item {
-				padding-left: 10px;
-				margin-left: 4px;
+				padding-left: 2.3vw;
+				margin-left: 1vw;
 				border-left: 2px solid #eee;
 			}
 		}

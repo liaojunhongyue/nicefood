@@ -65,10 +65,10 @@ export default {
 </script>
 <style lang="less">
 	.collect-menu {
-		padding: 85px 10px 10px 10px;
+		padding: 24vw 2.3vw 2.3vw 2.3vw;
 		.main-title {
 			p {
-				font-size: 12px;
+				font-size: 3.2vw;
 				color: #ff2323;
 				opacity: 0.8;
 			}
@@ -77,10 +77,10 @@ export default {
 			position: relative;
 			.delete-collect {
 				position: absolute;
-				bottom: 10px;
-				right: 10px;
+				bottom: 2.3vw;
+				right: 2.3vw;
 				i {
-					font-size: 20px;
+					font-size: 5vw;
 					color: #ff6453;
 				}
 			}

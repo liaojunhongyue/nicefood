@@ -8,6 +8,7 @@
       <div class="go-publish-talks">
         发布
       </div>
+      <div class="header-bottom" />
     </header>
     <div class="add-talks">
       <form id="addTalksForm">
@@ -63,7 +64,7 @@ export default {
 </script>
 <style lang="less">
 	.create-talks {
-		padding: 40px 0 0 0;
+		padding: 12vw 0 0 0;
 		min-height: 100%;
 		background-color: #f5f5f5;
 		box-sizing: border-box;
@@ -72,35 +73,37 @@ export default {
 			top: 0px;
 			left: 0px;
 			width: 100%;
-			height: 40px;
+			height: 12vw;
 			text-align: center;
-			line-height: 40px;
-			font-size: 16px;
+			line-height: 12vw;
+			font-size: @titleFontSize;
 			color: #333;
 			background-color: #fff;
-			border-bottom: 1px solid #e7e7e7;
-			z-index: 100;
+      z-index: 100;
+      .header-bottom {
+        .border-bottom-1px(#e7e7e7);
+      }
 			.go-back {
 				position: absolute;
-				left: 10px;
+				left: 2.3vw;
 				i {
-					font-size: 18px;
+					font-size: 5vw;
 					color: #ff2323;
 				}
 			}
 			.go-publish-talks {
 				position: absolute;
 				top: 0;
-				right: 10px;
-				height: 40px;
-				line-height: 40px;
+				right: 2.3vw;
+				height: 12vw;
+				line-height: 12vw;
 				color: #ff2323;
-			}
+      }
 		}
 		.add-talks {
 			.talks-content {
 				background-color: #fff;
-				padding-bottom: 5px;
+				padding-bottom: 1.1vw;
 				.talks-content-textarea {
 					padding: 10px;
 					width: 100%;
@@ -116,18 +119,17 @@ export default {
 						position: relative;
 						width: 33.3vw;
 						height: 33.3vw;
-						padding: 10px;
+						padding: 2.3vw;
 						text-align: center;
 						background-color: #fff;
 						box-sizing: border-box;
 						.upload-picbg-icon {
-							background-color: #fafafa;
-							border: 1px solid #a0a0a0;
-							border-radius: 5px;
-							box-sizing: border-box;
+              background-color: #fafafa;
+              box-sizing: border-box;
+							.border-1px(#a0a0a0, 2vw);
 							i {
 								line-height: 28vw;
-								font-size: 42px;
+								font-size: 13vw;
 							}
 						}
 						.upload-pic-button {

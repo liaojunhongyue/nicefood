@@ -46,30 +46,25 @@ export default {
 <style lang="less">
 	.promote {
 		&>.title {
-			font-size: 16px;
+			font-size: 4vw;
 			color: #333;
 		}
 		.promote-list-item {
 			display: flex;
-			padding: 10px 0;
-			border-bottom: 1px solid #e7e7e7;
-			&:first-child {
-				padding-top: 0;
-			}
-			&:last-child {
-				border-bottom: 0;
-			}
+			padding: 2.3vw 0;
+			.border-bottom-1px(#e7e7e7);
 			.pic {
 				flex-grow: 1;
 				width: 0;
 				img {
+          display: block;
 					width: 100%;
 				}
 			}
 			.info {
 				flex-grow: 2;
 				width: 0;
-				padding: 16px 0 16px 10px;
+				padding: 4vw 0 4vw 2.3vw;
 				&>.title {
 					color: #333;
 				}
@@ -83,11 +78,11 @@ export default {
 				}
 				.operate {
 					span {
-						margin-right: 16px;
-						font-size: 12px;
+						margin-right: 4vw;
+						font-size: 3.5vw;
 						color: #bbb;
 						i {
-							font-size: 12px;
+							font-size: 3.5vw;
 							color: #bbb;
 						}
 					}

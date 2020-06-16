@@ -11,11 +11,13 @@
       <div class="edit-collect">
         <p>编辑</p>
       </div>
+      <div class="header-bottom" />
     </header>
     <div class="user-collect-tab">
       <router-link :to="'/user/collect/all'" class="tab-list">全部收藏</router-link>
       <router-link :to="'/user/collect/my'" class="tab-list">我的菜单</router-link>
       <router-link :to="'/user/collect/menu'" class="tab-list">收藏菜单</router-link>
+      <div class="tab-bottom" />
     </div>
     <router-view />
   </div>
@@ -32,34 +34,36 @@ export default {
 			top: 0px;
 			left: 0px;
 			width: 100%;
-			height: 40px;
+			height: 12vw;
 			text-align: center;
-			line-height: 40px;
-			font-size: 16px;
+			line-height: 12vw;
+			font-size: @titleFontSize;
 			color: #333;
 			background-color: #fff;
-			border-bottom: 1px solid #e7e7e7;
-			z-index: 100;
+      z-index: 100;
+      .header-bottom {
+        .border-bottom-1px(#e7e7e7);
+      }
 			.go-back {
 				position: absolute;
-				left: 10px;
+				left: 2.3vw;
 				i {
 					color: #383838;
-					font-size: 18px;
+					font-size: 5vw;
 				}
 			}
 			.search-collect {
 				position: absolute;
-				top: 8px;
-				left: 50px;
-				right: 50px;
-				height: 24px;
+				top: 2.5vw;
+				left: 12vw;
+				right: 12vw;
+				height: 7vw;
 				background-color: #ececec;
 				i {
 					position: absolute;
 					left: 0;
 					top: 0;
-					margin: 4px 0 0 6px;
+					margin: 1.5vw 0 0 2vw;
 					background-color: #ececec;
 					z-index: 10;
 				}
@@ -67,8 +71,8 @@ export default {
 					position: absolute;
 					width: 100%;
 					left: 0;
-					padding-left: 25px;
-					height: 22px;
+					padding-left: 8vw;
+					height: 7vw;
 					border: 0;
 					background-color: #ececec;
 					box-sizing: border-box;
@@ -78,9 +82,9 @@ export default {
 				position: absolute;
 				right: 0px;
 				top: 0px;
-				width: 50px;
-				height: 40px;
-				line-height: 40px;
+				width: 12vw;
+				height: 12vw;
+				line-height: 12vw;
 				text-align: center;
 				p {
 					color: #ff2323;
@@ -89,15 +93,17 @@ export default {
 		}
 		.user-collect-tab {
 			position: fixed;
-			top: 40px;
+			top: 12vw;
 			left: 0;
 			width: 100%;
-			height: 35px;
-			line-height: 35px;
+			height: 10vw;
+			line-height: 10vw;
 			display: flex;
 			background-color: #fff;
-			border-bottom: 1px solid #e7e7e7;
-			z-index: 10;
+      z-index: 10;
+      .tab-bottom {
+        .border-bottom-1px(#e7e7e7);
+      }
 			.tab-list {
 				flex-grow: 1;
 				text-align: center;

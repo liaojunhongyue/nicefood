@@ -22,19 +22,19 @@ export default {
 </script>
 <style lang="less">
 	.article-section {
-		padding: 10px;
-		border-bottom: 1px solid #e7e7e7;
+		padding: 2.3vw;
+		.border-bottom-1px(#e7e7e7);
 		.article-section-textarea {
 			width: 100%;
-			height: 50px;
+			height: 12vw;
 			border: 0;
 			box-sizing: border-box;
 			resize: none;
 		}
 		i {
 			position: absolute;
-			right: 10px;
-			top: 10px;
+			right: 2.3vw;
+			top: 2.3vw;
 		}
 	}
 </style>

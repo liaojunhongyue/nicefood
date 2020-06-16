@@ -28,11 +28,11 @@ export default {
 		display: flex;
 		.category-list {
 			flex-grow: 1;
-			padding-top: 10px;
+			padding-top: 2.3vw;
 			text-align: center;
 			i {
-				font-size: 22px;
-				margin-bottom: 10px;
+				font-size: 6vw;
+				margin-bottom: 2.3vw;
 				&.fa-coffee {
 					color: #9a6666;
 				}

@@ -71,7 +71,12 @@ a {
 p {
   margin: 0;
 }
-input {
+input, textarea {
   outline: none;
+}
+ul, li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 </style>

@@ -39,8 +39,8 @@ export default {
 <style lang="less">
 	.find-carte-list {
 		.find-carte-item {
-			padding: 10px 0;
-			border-bottom: 1px solid #e7e7e7;
+			padding: 2.3vw 0;
+			.border-bottom-1px(#e7e7e7);
 			&:first-child {
 				padding-top: 0px;
 			}
@@ -51,19 +51,19 @@ export default {
 				display: flex;
 				justify-content: space-between;
 				.text {
-					line-height: 22px;
+					line-height: 5vw;
 					p {
 						color: #333;
 					}
 					span {
-						font-size: 12px;
+						font-size: 3.2vw;
 					}
 				}
 				.avatar {
 					img {
-						width: 40px;
-						height: 40px;
-						border-radius: 200px;
+						width: 12vw;
+						height: 12vw;
+						border-radius: 100vw;
 						overflow: hidden;
 					}
 				}
@@ -71,10 +71,10 @@ export default {
 			.pics {
 				display: flex;
 				flex-wrap: wrap;
-				margin-top: 5px;
+				margin-top: 1.1vw;
 				.pic {
 					width: 33.3%;
-					padding: 5px;
+					padding: 1.1vw;
 					box-sizing: border-box;
 					img {
 						width: 100%;

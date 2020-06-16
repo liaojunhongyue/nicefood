@@ -43,23 +43,23 @@ export default {
 </script>
 <style lang="less">
 	.comment-menu {
-		padding: 40px 0 0 0;
+		padding: 12vw 0 0 0;
 		box-sizing: border-box;
 		.comment-menu-content {
 			.evaluate-star {
 				display: flex;
-				padding: 10px 10px 0 10px;
+				padding: 2.3vw 2.3vw 0 2.3vw;
 				p {
 					color: #333;
 				}
 				.title {
-					margin-right: 15px;
+					margin-right: 3.35vw;
 					p {
-						font-size: 16px;
+						font-size: 4vw;
 					}
 				}
 				.star {
-					margin-right: 15px;
+					margin-right: 3.35vw;
 					i {
 						color: #fdeb99;
 						&.active {
@@ -69,11 +69,11 @@ export default {
 				}
 			}
 			.evaluate-content {
-				padding: 0 10px;
-				margin-top: 10px;
+				padding: 0 2.3vw;
+				margin-top: 2.3vw;
 				.evaluate-content-textarea {
 					width: 100%;
-					height: 90px;
+					height: 24vw;
 					resize: none;
 					border: 0;
 				}
@@ -85,18 +85,17 @@ export default {
 					position: relative;
 					width: 33.3vw;
 					height: 33.3vw;
-					padding: 10px;
+					padding: 2.3vw;
 					text-align: center;
 					background-color: #fff;
 					box-sizing: border-box;
 					.upload-picbg-icon {
-						background-color: #fafafa;
-						border: 1px solid #a0a0a0;
-						border-radius: 5px;
-						box-sizing: border-box;
+            background-color: #fafafa;
+            box-sizing: border-box;
+						.border-1px(#a0a0a0, 2.5vw);
 						i {
 							line-height: 28vw;
-							font-size: 42px;
+							font-size: 12vw;
 						}
 					}
 					.upload-pic-button {
@@ -110,19 +109,19 @@ export default {
 				}
 			}
 			.submit-button {
-				padding: 0 10px;
-				margin-top: 10px;
+				padding: 0 2.3vw;
+				margin-top: 2.3vw;
 				.submit-menu-comment {
 					display: block;
 					width: 100%;
-					height: 40px;
-					line-height: 40px;
+					height: 12vw;
+					line-height: 12vw;
 					text-align: center;
-					font-size: 16px;
+					font-size: 4vw;
 					color: #fff;
 					background-color: #ff6453;
 					border: 0;
-					border-radius: 30px;
+					border-radius: 10vw;
 				}
 			}
 		}

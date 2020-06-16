@@ -35,8 +35,8 @@ export default {
 <style lang="less">
 	.find-topic-list {
 		.find-topic-item {
-			padding: 10px 0;
-			border-bottom: 1px solid #e7e7e7;
+			padding: 2.3vw 0;
+			.border-bottom-1px(#e7e7e7);
 			&:first-child {
 				padding-top: 0px;
 			}
@@ -50,21 +50,21 @@ export default {
 				}
 				.pic-text {
 					position: absolute;
-					right: 10px;
-					bottom: 10px;
+					right: 2.3vw;
+					bottom: 2.3vw;
 					p, span {
 						color: #fff;
 						text-shadow: 1px 1px 3px #000;
 					}
 					span {
-						font-size: 12px;
+						font-size: 3.2vw;
 					}
 				}
 			}
 			.title {
 				p {
-					margin-top: 10px;
-					line-height: 25px;
+					margin-top: 2.3vw;
+					line-height: 5.5vw;
 					color: #333;
 				}
 			}

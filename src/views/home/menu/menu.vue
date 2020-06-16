@@ -70,22 +70,22 @@ export default {
 	.menu {
 		position: relative;
 		.title {
-			margin-bottom: 16px;
-			font-size: 16px;
+			margin-bottom: 3.4vw;
+			font-size: 3.8vw;
 			font-weight: 700;
 			color: #333;
 		}
 		.more {
 			position: absolute;
-			right: 10px;
-			top: 10px;
+			right: 2.3vw;
+			top: 2.3vw;
 		}
 		.menu-meal {
 			.swiper-container {
-				padding-bottom: 10px;
+				padding-bottom: 2.3vw;
 				.swiper-pagination-bullet {
-					bottom: -10px;
-					height: 20px;
+					bottom: -2.3vw;
+					height: 4.6vw;
 					color: #777;
 					background-color: #fff;
 					opacity: 1;
@@ -98,10 +98,10 @@ export default {
 				display: flex;
 				.menu-meal-pic {
 					&:first-child {
-						padding-right: 5px;
+						padding-right: 1.1vw;
 					}
 					&:last-child {
-						padding-left: 5px;
+						padding-left: 1.1vw;
 					}
 					flex-grow: 1;
 					width: 0;
@@ -114,7 +114,7 @@ export default {
 		.menu-list {
 			display: flex;
 			position: relative;
-			top: 10px;
+			top: 2.3vw;
 			text-align: center;
 			p {
 				flex-grow: 1;

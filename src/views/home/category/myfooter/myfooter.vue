@@ -56,21 +56,21 @@ export default {
 </script>
 <style lang="less">
 	.my-footer-wrapper {
-		padding: 50px 14px 0 10px;
+		padding: 14vw 4vw 0 2.3vw;
 		background-color: #f9f9f9;
 		.user-footprint-list {
 			.user-footprint-title {
 				overflow: hidden;
 				i {
 					float: left;
-					margin: 5px 5px 0 0;
-					font-size: 12px;
+					margin: 1.2vw 1.2vw 0 0;
+					font-size: 3.5vw;
 					color: #ff2323;
 					opacity: 0.6;
 				}
 				&>.title {
 					float: left;
-					font-size: 12px;
+					font-size: 3.2vw;
 					color: #333;
 				}
 				.date {
@@ -79,9 +79,9 @@ export default {
 				}
 			}
 			.menu-list-item {
-				padding-left: 10px;
-				margin-left: 4px;
-				border-left: 2px solid #eee;
+				padding-left: 2.3vw;
+				margin-left: 1.1vw;
+				border-left: 0.5vw solid #eee;
 				.menu-list-item-box {
 					display: flex;
 					flex-grow: 1;
@@ -89,7 +89,7 @@ export default {
 					box-shadow: 0 0 3px #cecece;
 				}
 				.pic {
-					padding: 10px;
+					padding: 2.3vw;
 				}
 			}
 		}

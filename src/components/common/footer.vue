@@ -29,7 +29,7 @@ export default {
     position: fixed;
     bottom: 0;
     left: 0;
-    height: 50px;
+    height: 12vw;
     width: 100%;
     background-color: #f9f9f9;
     .footer-list {
@@ -37,13 +37,13 @@ export default {
       text-align: center;
       vertical-align: middle;
       i {
-        margin-top: 9px;
-        font-size: 18px;
+        margin: 1.2vw 0 1.2vw 0;
+        font-size: 5vw;
         color: #555;
       }
       span {
         display: block;
-        font-size: 12px;
+        font-size: 3.2vw;
         color: #666;
       }
     }

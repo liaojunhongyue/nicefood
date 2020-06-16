@@ -166,7 +166,7 @@ export default {
 </script>
 <style lang="less">
 	.food-details {
-		padding: 40px 0 50px 0;
+		padding: 12vw 0 12vw 0;
 		width: 100%;
 		.pic {
 			img {
@@ -174,39 +174,39 @@ export default {
 			}
 		}
 		.food-title {
-			padding: 10px;
+			padding: 2.3vw;
 			background-color: #fdf4d5;
 			p {
 				color: #666;
-				line-height: 30px;
+				line-height: 6vw;
 			}
 			p.title {
 				color: #333;
-				font-size: 20px;
+				font-size: 4.6vw;
 				font-weight: 700;
 			}
 			span {
-				margin-right: 10px;
+				margin-right: 2.3vw;
 			}
 		}
 		.food-author {
 			position: relative;
 			justify-content: space-between;
-			padding: 10px;
+			padding: 2.3vw;
 			overflow: hidden;
 			.avatar {
 				float: left;
 				img {
-					width: 50px;
-					height: 50px;
-					border-radius: 200px;
+					width: 15vw;
+					height: 15vw;
+					border-radius: 100vw;
 				}
 			}
 			.info {
-				margin-left: 60px;
-				padding: 5px 10px;
+				margin-left: 17vw;
+				padding: 1.1vw 2.3vw;
 				color: #757575;
-				line-height: 22px;
+				line-height: 6vw;
 				.menu-number {
 					color: #b0b0b0;
 				}
@@ -214,13 +214,12 @@ export default {
 		}
 		.follow-author {
 			position: absolute;
-			top: 23px;
-			right: 10px;
+			top: 5.2vw;
+			right: 2.3vw;
 			p {
-				padding: 2px 7px;
-				border-radius: 20px;
+				padding: 0.5vw 1.5vw;
 				color: #ff2323;
-				border: 1px solid #ff2323;
+				.border-1px(#ff2323, 5vw);
 			}
 		}
 		.food-footer {
@@ -228,7 +227,7 @@ export default {
 			left: 0;
 			bottom: 0;
 			width: 100%;
-			height: 50px;
+			height: 12vw;
 			display: flex;
 			background-color: #fff;
 			border-top: 1px solid #e7e7e7;
@@ -236,8 +235,8 @@ export default {
 				flex-grow: 1;
 				text-align: center;
 				i {
-					font-size: 22px;
-					margin-top: 13px;
+					font-size: 6vw;
+					margin-top: 3vw;
 					&.fa-heart {
 						&.active {
 							color: #ff6453;
@@ -247,14 +246,14 @@ export default {
 			}
 		}
 		.food-point {
-			padding: 10px;
+			padding: 2.3vw;
 			p {
 				span {
-					font-size: 16px;
-					margin-right: 10px;
+					font-size: 4vw;
+					margin-right: 2.3vw;
 				}
 				i {
-					margin-left: 5px;
+					margin-left: 1.1vw;
 					color: #fbb81f;
 				}
 			}
@@ -274,26 +273,25 @@ export default {
 				margin: 0 auto;
 				background-color: #fff;
 				.menu-share-title {
-					height: 60px;
-					line-height: 60px;
+					height: 15vw;
+					line-height: 15vw;
 					text-align: center;
-					font-size: 16px;
+					font-size: 4vw;
 					color: #333;
 					background-color: #fdf8f5;
 				}
 				.menu-share-list {
 					.menu-share-item {
 						display: flex;
-						padding: 10px 30px 10px 30px;
-						border-bottom: 1px solid #e7e7e7;
+						padding: 2.3vw 6.9vw;
+						.border-bottom-1px(#e7e7e7);
 						i {
-							width: 40px;
-							height: 40px;
-							line-height: 40px;
+							width: 12vw;
+							height: 12vw;
+							line-height: 12vw;
 							text-align: center;
-							font-size: 18px;
-							border: 1px solid #e7e7e7;
-							border-radius: 300px;
+							font-size: 4vw;
+							.border-1px(#e7e7e7, 300vw);
 							&.fa-file {
 								color: #76b0b1;
 							}
@@ -311,8 +309,8 @@ export default {
 							}
 						}
 						p {
-							margin-left: 20px;
-							line-height: 40px;
+							margin-left: 4.6vw;
+							line-height: 12vw;
 						}
 					}
 				}
@@ -325,13 +323,12 @@ export default {
 				text-align: center;
 				.close-icon {
 					display: inline-block;
-					width: 40px;
-					height: 40px;
-					line-height: 40px;
-					border: 1px solid #ededed;
-					border-radius: 100px;
+					width: 12vw;
+					height: 12vw;
+					line-height: 12vw;
+					.border-1px(#ededed, 300vw);
 					i {
-						font-size: 18px;
+						font-size: 5vw;
 						color: #ededed;
 					}
 				}

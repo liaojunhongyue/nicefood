@@ -44,8 +44,8 @@ export default {
 <style lang="less">
 	.find-video-list {
 		.find-video-item {
-			padding: 10px 0 3px 0;
-			border-bottom: 1px solid #e7e7e7;
+			padding: 2.3vw 0 0.7vw 0;
+			.border-bottom-1px(#e7e7e7);
 			&:first-child {
 				padding-top: 0px;
 			}
@@ -61,31 +61,31 @@ export default {
 					position: absolute;
 					top: 50%;
 					left: 50%;
-					margin-top: -23px;
-					margin-left: -20px;
-					font-size: 46px;
+					margin-top: -7.5vw;
+					margin-left: -7.5vw;
+					font-size: 15vw;
 					color: #fff;
 				}
 			}
 			.title {
 				p {
-					font-size: 16px;
-					line-height: 25px;
+					font-size: 4vw;
+					line-height: 7vw;
 					color: #333;
 				}
 			}
 			.author {
 				display: flex;
 				justify-content: space-between;
-				padding: 7px 0;
-				line-height: 40px;
+				padding: 1.2vw 0;
+				line-height: 12vw;
 				.avatar-name {
 					display: flex;
 					img {
-						margin-right: 10px;
-						width: 40px;
-						height: 40px;
-						border-radius: 200px;
+						margin-right: 2.3vw;
+						width: 12vw;
+						height: 12vw;
+						border-radius: 100vw;
 					}
 				}
 			}

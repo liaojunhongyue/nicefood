@@ -43,18 +43,18 @@ export default {
 </script>
 <style lang="less">
 	.current-season-wrapper {
-		padding-top: 40px;
+		padding-top: 12vw;
 		.current-season-title {
-			padding: 0 10px;
-			line-height: 35px;
+			padding: 0 2.3vw;
+			line-height: 10vw;
 			color: #a7a7a7;
 			background-color: #f5f5f5;
 		}
 		.current-season-list {
 			.current-season-item {
 				display: flex;
-				padding: 10px;
-				border-bottom: 1px solid #f5f5f5;
+				padding: 2.3vw;
+				.border-bottom-1px(#f5f5f5);
 				.pic {
 					width: 0;
 					flex-grow: 1;
@@ -65,18 +65,18 @@ export default {
 				.info {
 					width: 0;
 					flex-grow: 2;
-					padding-left: 10px;
+					padding-left: 2.3vw;
 					.title {
-						margin: 7px 0 5px 0;
-						font-size: 16px;
+						margin: 1.2vw 0 1.1vw 0;
+						font-size: 4vw;
 						color: #333;
 						font-weight: 700;
 					}
 					.effect {
 						span {
 							display: inline-block;
-							margin: 0 3px 5px 0;
-							padding: 2px 10px;
+							margin: 0 0.7vw 1.1vw 0;
+							padding: 0.5vw 2.3vw;
 							color: #808080;
 							background-color: #ececec;
 							&.heat {

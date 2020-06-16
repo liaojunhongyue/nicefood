@@ -64,18 +64,18 @@ export default {
     i {
       &.fa-times {
         position: absolute;
-        left: 10px;
-        top: 10px;
+        left: 2.3vw;
+        top: 2.3vw;
         color: #303030;
-        font-size: 20px;
+        font-size: 5.5vw;
       }
     }
     .go-register {
       position: absolute;
-      top: 10px;
-      right: 10px;
-      height: 20px;
-      line-height: 20px;
+      top: 2.3vw;
+      right: 2.3vw;
+      height: 5vw;
+      line-height: 5vw;
       color: #ff2323;
     }
     .login-content {

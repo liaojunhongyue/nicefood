@@ -42,37 +42,37 @@ export default {
 </script>
 <style lang="less">
 	.find-trends-item {
-		padding: 10px 0;
-		border-bottom: 1px solid #e7e7e7;
+		padding: 2.3vw 0;
+		.border-bottom-1px(#e7e7e7);
 		&:last-child {
 			border-bottom: 0;
 		}
 		.title {
 			i {
-				font-size: 18px;
+				font-size: 4.5vw;
 				color: #333;
-				margin-right: 5px;
+				margin-right: 1.1vw;
 			}
 			span {
 				color: #333;
-				font-size: 16px;
+				font-size: 4vw;
 			}
 		}
 		.pic {
 			width: 100%;
-			margin-top: 10px;
+			margin-top: 2.3vw;
 			img {
 				width: 100%;
 			}
 		}
 		.author {
 			display: flex;
-			padding: 7px 0;
-			line-height: 40px;
+			padding: 1.2vw 0;
+			line-height: 12vw;
 			.avatar {
-				width: 40px;
-				height: 40px;
-				border-radius: 200px;
+				width: 12vw;
+				height: 12vw;
+				border-radius: 100vw;
 				overflow: hidden;
 				img {
 					width: 100%;
@@ -81,10 +81,10 @@ export default {
 			}
 			.name {
 				display: flex;
-				margin-left: 10px;
+				margin-left: 2.3vw;
 				&:after {
 					content: '·';
-					margin: 0 5px;
+					margin: 0 1.1vw;
 				}
 			}
 		}

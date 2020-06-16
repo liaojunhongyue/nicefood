@@ -45,38 +45,38 @@ export default {
 			position: absolute;
       top: 0px;
       left: 0px;
-      height: 40px;
-      width: 50px;
+      height: 12vw;
+      width: 12vw;
       text-align: center;
 			i {
-				margin-top: 11px;
+        margin-top: 2.3vw;
         color: #303030;
-        font-size: 20px;
+        font-size: 6vw;
 			}
 		}
 		&>.title {
 			position: absolute;
-			top: 60px;
-			padding: 0 20px;
-			font-size: 22px;
-			line-height: 35px;
+			top: 15vw;
+			padding: 0 4.6vw;
+			font-size: 5.5vw;
+			line-height: 8vw;
 			color: #333;
 		}
 		.go-operate {
 			position: absolute;
-			bottom: 90px;
+			bottom: 15vw;
 			width: 100%;
-			padding: 0 30px;
+			padding: 0 6.9vw;
 			display: flex;
 			justify-content: space-between;
 			box-sizing: border-box;
 			.operate-item {
 				text-align: center;
 				i {
-					font-size: 30px;
-					padding: 10px;
+					font-size: 10vw;
+					padding: 2.3vw;
 					border: 2px solid #ddd;
-					border-radius: 200px;
+					border-radius: 100vw;
 					&.fa-coffee {
 						color: #d4e966;
 					}
@@ -89,8 +89,8 @@ export default {
 				}
 				span {
 					display: block;
-					margin-top: 10px;
-					font-size: 16px;
+					margin-top: 2.3vw;
+					font-size: 4vw;
 					color: #666;
 				}
 			}

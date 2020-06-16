@@ -63,7 +63,7 @@ export default {
 </script>
 <style lang="less">
 	.food-category {
-		padding-top: 40px;
+		padding-top: 12vw;
 		height: 100%;
 		box-sizing: border-box;
 		.food-category-all {
@@ -74,11 +74,11 @@ export default {
 				width: 100px;
 				height: 100%;
 				text-align: center;
-				border-right: 1px solid #e7e7e7;
+				.border-right-1px(#e7e7e7);
 				box-sizing: border-box;
 				overflow: hidden;
 				.main-category-item {
-					padding: 20px 0;
+					padding: 4.6vw 0;
 					&.active {
 						color: #ff2323;
 						font-weight: 700;
@@ -90,39 +90,39 @@ export default {
 				height: 100%;
 				overflow: hidden;
 				.sub-category-list {
-					padding: 3px 3px 0;
+					padding: 0.6vw 0.6vw 0;
 					min-height: 100%;
 					overflow: hidden;
 					.sub-category-title {
 						display: flex;
 						width: 95%;
-						margin: 10px auto;
+						margin: 2.3vw auto;
 						.line {
 							position: relative;
 							flex-grow: 1;
-							border-bottom: 1px solid #e7e7e7;
-							top: -8px;
+							.border-bottom-1px(#e7e7e7);
+							top: -1.35vw;
 						}
 						.text {
-							padding: 0 15px;
-							font-size: 16px;
+							padding: 0 3.35px;
+							font-size: 4vw;
 							color: #ff2323;
 						}
 					}
 					.sub-category-item {
 						float: left;
-						width: 33.3%;
-						padding: 3px;
-						box-sizing: border-box;
+						width: 31%;
+						margin: 0.6vw;
+            box-sizing: border-box;
+            .border-1px(#e7e7e7, 0.5vw);
 						p {
-							height: 25px;
-							line-height: 25px;
+							height: 8vw;
+							line-height: 8vw;
 							white-space: nowrap;
 							overflow: hidden;
 							text-overflow: ellipsis;
 							text-align: center;
-							border: 1px solid #e7e7e7;
-							border-radius: 3px;
+              box-sizing: border-box;
 						}
 					}
 				}

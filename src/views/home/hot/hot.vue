@@ -34,15 +34,15 @@ export default {
 	.padding {
 		position: relative;
 		&>.title {
-			margin-bottom: 16px;
-			font-size: 16px;
+			margin-bottom: 3.6vw;
+			font-size: 4vw;
 			font-weight: 700;
 			color: #333;
 		}
 		.more {
 			position: absolute;
-			right: 10px;
-			top: 10px;
+			right: 2.3vw;
+			top: 2.3vw;
 		}
 		.hot-list-item {
 			position: relative;
@@ -53,14 +53,14 @@ export default {
 				}
 				.pic-title {
 					position: absolute;
-					bottom: 10px;
-					right: 10px;
+					bottom: 2.3vw;
+					right: 2.3vw;
 					span {
 						&.main-title {
 							font-weight: 700;
 						}
 						&.sub-title {
-							font-size: 12px;
+							font-size: 3.5vw;
 						}
 						display: block;
 						color: #fff;
@@ -70,7 +70,7 @@ export default {
 				}
 			}
 			&>.title {
-				line-height: 27px;
+				line-height: 7.5vw;
 				color: #333;
 			}
 		}

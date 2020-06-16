@@ -8,6 +8,7 @@
       <div class="clear-draft">
         清空
       </div>
+      <div class="header-bottom" />
     </header>
     <div class="user-draft-list" :class="{blank: isBlank}" />
   </div>
@@ -28,34 +29,36 @@ export default {
 </script>
 <style lang="less">
 	.user-draft {
-		padding: 40px 0 0 0;
+		padding: 12vw 0 0 0;
 		box-sizing: border-box;
 		.user-draft-header {
 			position: fixed;
 			top: 0px;
 			left: 0px;
 			width: 100%;
-			height: 40px;
+			height: 12vw;
 			text-align: center;
-			line-height: 40px;
-			font-size: 16px;
+			line-height: 12vw;
+			font-size: @titleFontSize;
 			color: #333;
 			background-color: #fff;
-			border-bottom: 1px solid #e7e7e7;
-			z-index: 100;
+      z-index: 100;
+      .header-bottom {
+        .border-bottom-1px(#e7e7e7);
+      }
 			.go-back {
 				position: absolute;
-				left: 10px;
+				left: 2.3vw;
 				i {
-					font-size: 18px;
+					font-size: 5vw;
 				}
 			}
 			.clear-draft {
 				position: absolute;
 				top: 0;
-				right: 10px;
-				height: 40px;
-				line-height: 40px;
+				right: 2.3vw;
+				height: 12vw;
+				line-height: 12vw;
 				color: #333;
 			}
 		}

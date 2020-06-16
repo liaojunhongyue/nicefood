@@ -128,13 +128,13 @@ export default {
 </script>
 <style lang="less">
 	.create-article {
-		padding: 40px 0 60px 0;
+		padding: 12vw 0 15vw 0;
 		.article-publish {
 			position: absolute;
 			top: 0;
-			right: 10px;
-			height: 40px;
-			line-height: 40px;
+			right: 2.3vw;
+			height: 12vw;
+			line-height: 12vw;
 			color: #ff2323;
 			z-index: 105;
 		}
@@ -142,19 +142,19 @@ export default {
 			.article-pic {
 				position: relative;
 				width: 100%;
-				height: 300px;
+				height: 67vw;
 				.article-picbg {
 					width: 100%;
-					height: 300px;
+					height: 67vw;
 					text-align: center;
 					i {
-						margin-top: 90px;
-						font-size: 56px;
+						margin-top: 22vw;
+						font-size: 19vw;
 						color: #bbb;
 					}
 					p {
-						margin-top: 5px;
-						font-size: 16px;
+						margin-top: 1.1vw;
+						font-size: 4vw;
 						color: #bbb;
 					}
 					.article-img {
@@ -176,9 +176,9 @@ export default {
 			}
 			.article-title {
 				width: 100%;
-				padding: 10px;
-				line-height: 35px;
-				font-size: 20px;
+				padding: 2.3vw;
+				line-height: 8vw;
+				font-size: 4.6vw;
 				font-weight: 700;
 				background-color: #fdf4d5;
 				border: 0;
@@ -189,14 +189,14 @@ export default {
 				.details-item {
 					flex-grow: 1;
 					width: 0;
-					padding: 20px 0;
+					padding: 4.6vw 0;
 					text-align: center;
 					i {
-						font-size: 30px;
+						font-size: 7vw;
 						color: #f15348;
 					}
 					p {
-						margin-top: 10px;
+						margin-top: 2.3vw;
 						color: #f15348;
 					}
 				}

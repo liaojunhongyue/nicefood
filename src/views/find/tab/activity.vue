@@ -25,13 +25,13 @@ export default {
 </script>
 <style lang="less">
 	.find-activity-list {
-		padding-bottom: 10px;
+		padding-bottom: 2.3vw;
 		&:last-child {
 			padding-bottom: 0;
 		}
 		.find-activity-item {
 			width: 100%;
-			margin-bottom: 10px;
+			margin-bottom: 2.3vw;
 			img {
 				width: 100%;
 			}

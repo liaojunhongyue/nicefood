@@ -20,7 +20,7 @@ export default {
 </script>
 <style lang="less">
 	.user-callback {
-		padding: 40px 0 0 0;
+		padding: 12vw 0 0 0;
 		box-sizing: border-box;
 	}
 </style>

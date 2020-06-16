@@ -7,6 +7,7 @@
       <router-link :to="'/user/publish/works'" class="tab-list">作品</router-link>
       <router-link :to="'/user/publish/talks'" class="tab-list">食话</router-link>
     </div>
+    <div class="tab-bottom" />
     <router-view />
   </div>
 </template>
@@ -21,36 +22,19 @@ export default {
 </script>
 <style lang="less">
 	.user-publish {
-		header {
-			position: fixed;
-			top: 0px;
-			left: 0px;
-			width: 100%;
-			height: 40px;
-			text-align: center;
-			line-height: 40px;
-			font-size: 16px;
-			color: #333;
-			background-color: #fff;
-			border-bottom: 1px solid #e7e7e7;
-			z-index: 100;
-			.go-back {
-				position: absolute;
-				left: 10px;
-				i {
-					font-size: 18px;
-				}
-			}
-		}
+    .tab-bottom {
+      position: relative;
+      top: 22vw;
+      .border-bottom-1px(#e7e7e7);
+    }
 		.user-publish-tab {
+      display: flex;
 			position: fixed;
-			top: 40px;
+			top: 12vw;
 			left: 0;
 			width: 100%;
-			height: 35px;
-			line-height: 35px;
-			border-bottom: 1px solid #e7e7e7;
-			display: flex;
+			height: 10vw;
+			line-height: 10vw;
 			.tab-list {
 				flex-grow: 1;
 				text-align: center;

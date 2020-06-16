@@ -18,6 +18,6 @@ export default {
 </script>
 <style lang="less">
 	.find {
-		padding: 80px 0 50px 0;
+		padding: 22vw 0 12vw 0;
 	}
 </style>

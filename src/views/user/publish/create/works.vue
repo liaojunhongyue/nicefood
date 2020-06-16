@@ -8,6 +8,7 @@
       <div class="go-publish-works" @click="submitWorks">
         发布
       </div>
+      <div class="header-bottom" />
     </header>
     <div class="add-works">
       <form id="addWorksForm">
@@ -107,7 +108,7 @@ export default {
 </script>
 <style lang="less">
 	.create-works {
-		padding: 40px 0 0 0;
+		padding: 12vw 0 0 0;
 		min-height: 100%;
 		background-color: #f5f5f5;
 		box-sizing: border-box;
@@ -116,35 +117,37 @@ export default {
 			top: 0px;
 			left: 0px;
 			width: 100%;
-			height: 40px;
+			height: 12vw;
 			text-align: center;
-			line-height: 40px;
-			font-size: 16px;
+			line-height: 12vw;
+			font-size: @titleFontSize;
 			color: #333;
 			background-color: #fff;
-			border-bottom: 1px solid #e7e7e7;
-			z-index: 100;
+      z-index: 100;
+      .header-bottom {
+        .border-bottom-1px(#e7e7e7);
+      }
 			.go-back {
 				position: absolute;
-				left: 10px;
+				left: 2.3vw;
 				i {
-					font-size: 18px;
+					font-size: 5vw;
 					color: #ff2323;
 				}
 			}
 			.go-publish-works {
 				position: absolute;
 				top: 0;
-				right: 10px;
-				height: 40px;
-				line-height: 40px;
+				right: 2.3vw;
+				height: 12vw;
+				line-height: 12vw;
 				color: #ff2323;
 			}
 		}
 		.add-works {
 			border-bottom: 2px solid #e8e8e8;
 			.works-content {
-				padding: 20px;
+				padding: 4.6vw;
 				overflow: hidden;
 				.works-pic {
 					position: relative;
@@ -155,12 +158,11 @@ export default {
 						width: 100%;
 						height: 100%;
 						text-align: center;
-						border: 1px solid #ababab;
-						border-radius: 5px;
+						.border-1px(#ababab, 2vw);
 						box-sizing: border-box;
 						i {
 							line-height: 15vh;
-							font-size: 50px;
+							font-size: 13vw;
 						}
 					}
 					img {
@@ -171,7 +173,7 @@ export default {
             width: 100%;
             min-height: 100%;
             transform: translate3d(-50%,-50%,0);
-						border-radius: 5px;
+						border-radius: 1.1vw;
 					}
 					.upload-works-pic {
 						position: absolute;
@@ -183,7 +185,7 @@ export default {
 					}
 				}
 				.works-textarea {
-					padding-left: 10px;
+					padding-left: 2.3vw;
 					margin-left: 15vh;
 					height: 15vh;
 					textarea {
@@ -195,23 +197,23 @@ export default {
 			}
 		}
 		.join-activity {
-			padding: 10px;
+			padding: 2.3vw;
 			.join-activity-title {
-				line-height: 35px;
+				line-height: 7vw;
 				color: #333;
 			}
 			.join-activity-content {
-				padding: 10px;
+				padding: 2.3vw;
 				background-color: #fff;
 				.content-title {
-					margin-bottom: 10px;
+					margin-bottom: 2.3vw;
 					color: #333;
 				}
 				.content-text {
 					text-align: justify;
 				}
 				.content-time {
-					margin-top: 10px;
+					margin-top: 2.3vw;
 					color: #ff2323;
 				}
 			}

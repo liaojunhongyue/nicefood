@@ -60,27 +60,26 @@ export default {
 </script>
 <style lang="less">
 	.user-publish-cont {
-		padding: 85px 10px 10px 10px;
+		padding: 24vw 2.3vw 2.3vw 2.3vw;
 		.text {
 			position: fixed;
 			top: 40%;
 			left: 0;
 			width: 100%;
-			padding: 0 30px;
-			line-height: 25px;
+			padding: 0 7.8vw;
+			line-height: 8.5vw;
 			text-align: center;
 			box-sizing: border-box;
 			.title {
-				font-size: 16px;
+				font-size: 4vw;
 				color: #333;
 			}
 			.router-text {
 				display: inline-block;
-				margin-top: 20px;
-				padding: 5px 15px;
+				margin-top: 5vw;
+				padding: 0.6vw 3.35vw;
 				color: #ff2323;
-				border: 1px solid #ff2323;
-				border-radius: 3px;
+				.border-1px(#ff2323, 2vw);
 			}
 		}
 	}

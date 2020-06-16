@@ -45,13 +45,13 @@ export default {
 			width: 100%;
 		}
 		.title {
-			padding: 6px 10px;
+			padding: 1.2vw 2.3vw;
 			p {
 				color: #333;
 			}
 		}
 		.swiper-pagination-bullets {
-			bottom: -15px;
+			bottom: -3.35vw;
 		}
 	}
 </style>

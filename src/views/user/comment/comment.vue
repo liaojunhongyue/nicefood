@@ -20,15 +20,15 @@ export default {
 </script>
 <style lang="less">
 	.user-comment {
-		padding: 80px 0 0 0;
+		padding: 24vw 0 0 0;
 		box-sizing: border-box;
 		.user-comment-tab {
 			position: fixed;
 			left: 0;
-			top: 40px;
+			top: 12vw;
 			width: 100%;
-			height: 40px;
-			line-height: 40px;
+			height: 10vw;
+			line-height: 10vw;
 			display: flex;
 			.tab-item {
 				flex-grow: 1;
@@ -36,7 +36,7 @@ export default {
 				text-align: center;
 				span {
 					display: inline-block;
-					height: 40px;
+					height: 10vw;
 				}
 			}
 			.router-link-active {

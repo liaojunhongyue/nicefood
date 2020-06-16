@@ -35,30 +35,30 @@ export default {
 </script>
 <style lang="less">
 	.menu-material {
-		margin-top: 20px;
+		margin-top: 4.6vw;
 		.menu-material-title {
-			line-height: 25px;
-			padding: 0 10px;
-			font-size: 18px;
+			line-height: 6vw;
+			padding: 0 2.3vw;
+			font-size: 4.5vw;
 			font-weight: 700;
 			color: #666;
 		}
 		.menu-material-list {
-			margin-top: 10px;
-			border-top: 1px solid #e7e7e7;
+			margin-top: 2.3vw;
+			.border-top-1px(#e7e7e7);
 			.menu-material-item {
 				position: relative;
-				padding: 10px 0;
-				border-bottom: 1px solid #e7e7e7;
+				padding: 2.3vw 0;
+				.border-bottom-1px(#e7e7e7);
 				box-sizing: border-box;
 				overflow: hidden;
 				.name {
 					float: left;
 					width: 45%;
-					padding: 0 10px;
-					line-height: 30px;
-					border-right: 1px solid #e7e7e7;
-					box-sizing: border-box;
+					padding: 0 2.3vw;
+          line-height: 6.9vw;
+          box-sizing: border-box;
+					.border-right-1px(#e7e7e7);
 					input {
 						width: 100%;
 						border: 0;
@@ -67,8 +67,8 @@ export default {
 				.quantity {
 					float: left;
 					width: 55%;
-					padding: 0 10px;
-					line-height: 30px;
+					padding: 0 2.3vw;
+					line-height: 6.9vw;
 					box-sizing: border-box;
 					input {
 						width: 100%;
@@ -79,16 +79,16 @@ export default {
 					position: absolute;
 					right: 0;
 					top: 0;
-					width: 30px;
-					height: 50px;
-					line-height: 50px;
+					width: 6.9vw;
+					height: 12vw;
+					line-height: 12vw;
 					text-align: center;
 				}
 			}
 		}
 		.menu-material-add {
-			line-height: 45px;
-			font-size: 16px;
+			line-height: 12vw;
+			font-size: 4vw;
 			color: #ff2323;
 			text-align: center;
 		}

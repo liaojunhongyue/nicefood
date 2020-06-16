@@ -63,22 +63,22 @@ export default {
 </script>
 <style lang="less">
 	.message-wrap {
-		padding: 40px 0 0 0;
+		padding: 12vw 0 0 0;
 		min-height: 100%;
 		background-color: #f9f9f9;
 		box-sizing: border-box;
 		.message-list-item {
 			display: flex;
 			justify-content: space-between;
-			padding: 10px;
+			padding: 2.3vw;
 			background-color: #fff;
-			border-bottom: 1px solid #e9e9e9;
+			.border-bottom-1px(#e9e9e9);
 			.icon-text {
 				i {
-					padding: 10px;
-					font-size: 18px;
+					padding: 2.3vw;
+					font-size: 4.5vw;
 					color: #fff;
-					border-radius: 200px;
+					border-radius: 100vw;
 					&.fa-envelope {
 						background-color: #1ece9f;
 					}
@@ -96,14 +96,14 @@ export default {
 					}
 				}
 				span {
-					margin-left: 10px;
+					margin-left: 2.3vw;
 					color: #333;
 				}
 			}
 			.goto {
 				i {
-					font-size: 16px;
-					line-height: 38px;
+					font-size: 4.6vw;
+					line-height: 10vw;
 				}
 			}
 		}

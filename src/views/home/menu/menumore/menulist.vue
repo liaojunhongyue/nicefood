@@ -42,26 +42,26 @@ export default {
 </script>
 <style lang="less">
 	.menu-more-list-wrapper {
-		padding-top: 80px;
+		padding-top: 22vw;
 		.title {
-			padding: 0 10px;
-			line-height: 35px;
-			color: #efefef;
+			padding: 0 2.3vw;
+			line-height: 8vw;
+			color: #787878;
 			background-color: #f5f5f5;
 		}
 		.menu-more-list {
-			padding: 10px;
+			padding: 2.3vw;
 			display: flex;
 			flex-wrap: wrap;
 			.menu-more-item {
-				padding: 5px;
+				padding: 1.1vw;
 				width: 33.3%;
 				box-sizing: border-box;
 				img {
 					width: 100%;
 				}
 				p {
-					line-height: 25px;
+					line-height: 7vw;
 					white-space: nowrap;
 					text-overflow: ellipsis;
 					overflow: hidden;

@@ -28,15 +28,14 @@ export default {
 <style lang="less">
 	.find-tab {
 		position: fixed;
-		top: 40px;
+		top: 12vw;
 		left: 0px;
 		width: 100%;
-		height: 40px;
+		height: 10vw;
 		display: flex;
-		padding: 10px;
+		padding: 2.3vw;
 		padding-bottom: 0px;
 		background-color: #fff;
-		border-bottom: 1px solid #e7e7e7;
 		box-sizing: border-box;
 		z-index: 100;
 		.find-tab-list {
@@ -49,7 +48,7 @@ export default {
 			}
 			span {
 				display: inline-block;
-				padding-bottom: 8px;
+				padding-bottom: 3vw;
 			}
 		}
 	}

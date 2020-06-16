@@ -18,25 +18,25 @@ export default {
 </script>
 <style lang="less">
 	.food-group {
-		padding: 40px 0 0 0;
+		padding: 12vw 0 0 0;
 		.food-group-form {
-			padding: 10px;
+			padding: 2.3vw;
 			.food-item {
 				width: 100%;
-				height: 30px;
-				line-height: 30px;
-				padding: 0 10px;
+				height: 10vw;
+				line-height: 10vw;
+				padding: 0 2.3vw;
 				background-color: #efefef;
 				border: 0;
 				box-sizing: border-box;
 			}
 			.go-foodgroup {
 				display: block;
-				padding: 6px 20px;
-				margin: 20px auto 0;
+				padding: 1.23vw 4.6vw;
+				margin: 4.6vw auto 0;
 				color: #fff;
 				background-color: #ff2323;
-				border-radius: 20px;
+				border-radius: 4vw;
 				border: 0;
 				opacity: 0.8;
 			}

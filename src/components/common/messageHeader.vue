@@ -7,6 +7,7 @@
     <div class="ignore">
       <p>忽略</p>
     </div>
+    <div class="header-bottom" />
   </header>
 </template>
 <script>
@@ -30,19 +31,22 @@ export default {
 		top: 0px;
 		left: 0px;
 		width: 100%;
-		height: 40px;
+		height: 12vw;
 		text-align: center;
-		line-height: 40px;
-		font-size: 16px;
+		line-height: 12vw;
+		font-size: @titleFontSize;
 		color: #333;
-		background-color: #fff;
-		border-bottom: 1px solid #e7e7e7;
-		z-index: 100;
+    background-color: #fff;
+    z-index: 100;
+    box-sizing: border-box;
+		.header-bottom {
+      .border-bottom-1px(#e7e7e7);
+    }
 		.go-back {
 			position: absolute;
-			left: 10px;
+			left: 2.3vw;
 			i {
-				font-size: 18px;
+				font-size: 5vw;
 				color: #ff6066;
 			}
 		}
@@ -50,9 +54,9 @@ export default {
 			position: absolute;
 			top: 0;
 			right: 0;
-			height: 40px;
-			line-height: 40px;
-			width: 50px;
+			height: 12vw;
+			line-height: 12vw;
+			width: 12vw;
 			text-align: center;
 		}
 	}

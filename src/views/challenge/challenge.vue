@@ -20,6 +20,6 @@ export default {
 </script>
 <style lang="less">
 	.challenge {
-		padding: 40px 0 50px 0;
+		padding: 12vw 0 12vw 0;
 	}
 </style>

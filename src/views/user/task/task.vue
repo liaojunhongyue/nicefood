@@ -19,24 +19,24 @@ export default {
 </script>
 <style lang="less">
 	.user-task {
-		padding: 40px 0 0 0;
+		padding: 12vw 0 0 0;
 		box-sizing: border-box;
 		.user-task-tab {
 			position: fixed;
 			left: 0;
-			top: 40px;
+			top: 12vw;
 			display: flex;
 			width: 100%;
-			height: 40px;
-			line-height: 40px;
+			height: 10vw;
+			line-height: 10vw;
 			.tab-item {
 				flex-grow: 1;
 				width: 0;
 				text-align: center;
 				span {
 					display: inline-block;
-					height: 40px;
-					line-height: 40px;
+					height: 10vw;
+					line-height: 10vw;
 				}
 			}
 			.router-link-active {

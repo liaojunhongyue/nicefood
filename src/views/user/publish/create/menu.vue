@@ -8,6 +8,7 @@
       <div class="go-publish-menu">
         发布
       </div>
+      <div class="header-bottom" />
     </header>
     <div class="add-menu">
       <form id="addMenuForm">
@@ -288,33 +289,35 @@ export default {
 </script>
 <style lang="less">
 	.create-menu {
-		padding: 40px 0 60px 0;
+		padding: 12vw 0 15vw 0;
 		.create-menu-header {
 			position: fixed;
 			top: 0px;
 			left: 0px;
 			width: 100%;
-			height: 40px;
+			height: 12vw;
 			text-align: center;
-			line-height: 40px;
-			font-size: 16px;
+			line-height: 12vw;
+			font-size: @titleFontSize;
 			color: #333;
 			background-color: #fff;
-			border-bottom: 1px solid #e7e7e7;
-			z-index: 100;
+      z-index: 100;
+      .header-bottom {
+        .border-bottom-1px(#e7e7e7);
+      }
 			.go-back {
 				position: absolute;
-				left: 10px;
+				left: 2.3vw;
 				i {
-					font-size: 18px;
+					font-size: 5vw;
 				}
 			}
 			.go-publish-menu {
 				position: absolute;
 				top: 0;
-				right: 10px;
-				height: 40px;
-				line-height: 40px;
+				right: 2.3vw;
+				height: 12vw;
+				line-height: 12vw;
 				color: #333;
 			}
 		}
@@ -322,37 +325,37 @@ export default {
 			.form-list-select {
 				display: flex;
 				width: 100%;
-				padding: 10px;
+				padding: 2.3vw;
 				justify-content: space-between;
 				box-sizing: border-box;
-				border-bottom: 1px solid #e7e7e7;
+				.border-bottom-1px(#e7e7e7);
 			}
 			.main-pic {
 				position: relative;
 				width: 100%;
-				height: 300px;
+				height: 67vw;
 				.menu-pic {
 					position: absolute;
 					top: 0;
 					left: 0;
 					width: 100%;
-					height: 300px;
+					height: 67vw;
 				}
 				.pic-bg {
 					position: absolute;
 					top: 0;
 					left: 0;
 					width: 100%;
-					height: 300px;
+					height: 67vw;
 					text-align: center;
 					i {
-						margin-top: 90px;
-						font-size: 56px;
+						margin-top: 22vw;
+						font-size: 19vw;
 						color: #bbb;
 					}
 					p {
-						margin-top: 5px;
-						font-size: 16px;
+						margin-top: 1.1vw;
+						font-size: 4vw;
 						color: #bbb;
 					}
 				}
@@ -367,9 +370,9 @@ export default {
 			}
 			.menu-title {
 				width: 100%;
-				padding: 10px;
-				line-height: 35px;
-				font-size: 20px;
+				padding: 2.3vw;
+				line-height: 8vw;
+				font-size: 4.6vw;
 				font-weight: 700;
 				background-color: #fdf4d5;
 				border: 0;
@@ -378,47 +381,31 @@ export default {
 			.menu-into {
 				width: 100%;
 				height: 100px;
-				padding: 10px;
+				padding: 2.3vw;
 				border: 0;
 				resize: none;
 				box-sizing: border-box;
-				border-bottom: 1px solid #e5e5e5;
+				.border-bottom-1px(#e5e5e5);
 			}
 			.menu-display-content {
-				.menu-display-title {
-					position: relative;
-					padding: 10px;
-					line-height: 30px;
-					font-size: 16px;
-					color: #666;
-					i {
-						position: absolute;
-						top: 0;
-						right: 0;
-						width: 30px;
-						height: 50px;
-						line-height: 50px;
-						text-align: center;
-					}
-				}
 				.menu-display-list {
 					.menu-display-item {
-						padding: 10px;
-						border-bottom: 1px solid #e7e7e7;
+						padding: 2.3vw;
+						.border-bottom-1px(#e7e7e7);
 						.menu-display-pic {
 							position: relative;
-							height: 160px;
+							height: 50vw;
 							text-align: center;
 							.menu-display-picbg {
 								height: 100%;
 								background-color: #f5f5f5;
 								i {
-									margin-top: 40px;
-									font-size: 56px;
+									margin-top: 15vw;
+									font-size: 16vw;
 									color: #999999;
 								}
 								p {
-									margin-top: 5px;
+									margin-top: 1.1vw;
 								}
 							}
 							.menu-display-img {
@@ -439,59 +426,59 @@ export default {
 						}
 						.menu-display-desc {
 							.menu-display-textarea {
-								line-height: 35px;
-								height: 35px;
+								line-height: 7vw;
+								height: 7vw;
 								width: 100%;
 								resize: none;
 								border: 0;
 							}
 						}
-					}
-				}
+          }
+        }
 			}
 			.menu-display {
-				margin-top: 20px;
+				margin-top: 4.6vw;
 				.menu-display-title {
 					position: relative;
-					padding: 10px;
-					line-height: 30px;
-					font-size: 16px;
+					padding: 2.3vw;
+					line-height: 6vw;
+					font-size: 4vw;
 					color: #666;
 					i {
 						position: absolute;
 						top: 0;
 						right: 0;
-						width: 30px;
-						height: 50px;
-						line-height: 50px;
+						width: 6vw;
+						height: 12vw;
+						line-height: 12vw;
 						text-align: center;
 					}
 				}
 				.menu-display-list {
 					.menu-display-item {
 						padding: 10px;
-						border-bottom: 1px solid #e7e7e7;
+						.border-bottom-1px(#e7e7e7);
 						.menu-display-pic {
 							position: relative;
-							height: 160px;
+							height: 50vw;
 							text-align: center;
 							.menu-display-picbg {
 								height: 100%;
 								background-color: #f5f5f5;
 								i {
-									margin-top: 40px;
-									font-size: 56px;
+									margin-top: 15vw;
+									font-size: 16vw;
 									color: #999999;
 								}
 								p {
-									margin-top: 5px;
+									margin-top: 1.1vw;
 								}
 							}
 						}
 						.menu-display-desc {
 							.menu-display-textarea {
-								line-height: 35px;
-								height: 35px;
+								line-height: 7vw;
+								height: 7vw;
 								width: 100%;
 								resize: none;
 								border: 0;
@@ -500,29 +487,26 @@ export default {
 					}
 				}
 				.menu-display-add {
-					line-height: 45px;
-					font-size: 16px;
+					line-height: 12vw;
+					font-size: 4vw;
 					color: #ff2323;
 					text-align: center;
 				}
 			}
 			.menu-tips {
-				padding: 5px 0;
+				padding: 1.1vw 0;
 				background-color: #f5f5f5;
-				border-top: 1px solid #e7e7e7;
-				border-bottom: 1px solid #e7e7e7;
 				.menu-tips-content {
-					padding: 15px 10px;
+					padding: 3.35vw 2.3vw;
 					background-color: #fff;
-					border-top: 1px solid #e7e7e7;
-					border-bottom: 1px solid #e7e7e7;
 					.menu-tips-title {
+            line-height: 7vw;
 						color: #666;
 					}
 					.menu-tips-textarea {
 						width: 100%;
-						height: 35px;
-						line-height: 35px;
+						height: 7vw;
+						line-height: 7vw;
 						resize: none;
 						border: 0;
 					}
@@ -540,8 +524,8 @@ export default {
 				display: flex;
 				justify-content: space-between;
 				width: 100%;
-				padding: 10px;
-				border-bottom: 1px solid #e7e7e7;
+				padding: 2.3vw;
+				.border-bottom-1px(#e7e7e7);
 				box-sizing: border-box;
 			}
 			.content {
@@ -551,12 +535,12 @@ export default {
 				overflow: hidden;
 				p {
 					float: left;
-					margin: 3px 10px 5px 0;
+					margin: 0.7vw 2.3vw 1.1vw 0;
 					span {
 						display: inline-block;
-						line-height: 30px;
-						padding: 0 10px;
-						border: 1px solid #e7e7e7;
+						line-height: 6vw;
+						padding: 0 2.3vw;
+						.border-1px(#e7e7e7, 0);
 					}
 				}
 			}

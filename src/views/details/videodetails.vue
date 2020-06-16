@@ -43,13 +43,13 @@ export default {
 			position: absolute;
 			top: 0;
 			left: 0;
-			width: 40px;
-			height: 40px;
+			width: 12vw;
+			height: 12vw;
 			text-align: center;
-			line-height: 40px;
+			line-height: 12vw;
 			z-index: 10;
 			i {
-				font-size: 20px;
+				font-size: 5vw;
 				color: #fff;
 			}
 		}
@@ -71,9 +71,9 @@ export default {
 					position: absolute;
 					top: 50%;
 					left: 50%;
-					margin-top: -23px;
-					margin-left: -20px;
-					font-size: 46px;
+					margin-top: -9vw;
+					margin-left: -9vw;
+					font-size: 18vw;
 					color: #fff;
 				}
 			}

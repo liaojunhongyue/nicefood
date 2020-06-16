@@ -39,7 +39,7 @@ export default {
 </script>
 <style lang="less">
 	.hot-details {
-		padding-top: 40px;
+		padding-top: 12vw;
 		.pic {
 			position: relative;
 			width: 100%;
@@ -52,27 +52,27 @@ export default {
 			}
 			.pic-title {
 				position: absolute;
-				top: 10px;
-				left: 10px;
-				font-size: 18px;
+				top: 2.3vw;
+				left: 2.3vw;
+				font-size: 4vw;
 			}
 			.pic-desc {
 				position: absolute;
-				bottom: 10px;
-				right: 10px;
+				bottom: 2.3vw;
+				right: 2.3vw;
 			}
 		}
 		.title {
-			font-size: 20px;
+			font-size: 5.5vw;
 			font-weight: 700;
-			padding: 0 10px;
-			line-height: 50px;
+			padding: 0 2.3vw;
+			line-height: 15vw;
 			color: #333;
 			background-color: #fdf4d5;
 		}
 		.details {
-			padding: 10px;
-			line-height: 25px;
+			padding: 2.3vw;
+			line-height: 7vw;
 			text-align: justify;
 		}
 	}

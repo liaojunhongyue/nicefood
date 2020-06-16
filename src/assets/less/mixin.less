@@ -1,4 +1,37 @@
 // 1px border 实现
+// 整体边线 带圆角
+.border-1px(@color, @radius) {
+  position: relative;
+  &:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 100%;
+    border: 1px solid @color;
+    border-radius: @radius;
+    transform-origin: 0 0;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  @media (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49) {
+    &::after {
+      width: 200%;
+      height: 200%;
+      transform: scale(0.5);
+    }
+  }
+  @media (-webkit-min-device-pixel-ratio: 2.5) {
+    &::after {
+      width: 300%;
+      height: 300%;
+      transform: scale(0.33333);
+    }
+  }
+}
 // 上边线
 .border-top-1px(@color) {
   position: relative;
@@ -44,6 +77,58 @@
   @media (-webkit-min-device-pixel-ratio: 2.5) {
     &::after {
       transform: scaleY(0.33333);
+    }
+  }
+}
+// 左边线
+.border-left-1px(@color) {
+  position: relative;
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    height: 100%;
+    border-left: 1px solid @color;
+    transform-origin: 0 0;
+    overflow: hidden;
+    -webkit-transform-origin: left top;
+    transform-origin: left top;
+  }
+  @media (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49) {
+    &::after {
+      transform: scale(0.5, 1);
+    }
+  }
+  @media (-webkit-min-device-pixel-ratio: 2.5) {
+    &::after {
+      transform: scale(0.3333, 1);
+    }
+  }
+}
+// 右边线
+.border-right-1px(@color) {
+  position: relative;
+  &:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: '';
+    height: 100%;
+    border-right: 1px solid @color;
+    transform-origin: 0 0;
+    overflow: hidden;
+    -webkit-transform-origin: right top;
+    transform-origin: right top;
+  }
+  @media (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49) {
+    &::after {
+      transform: scale(0.5, 1);
+    }
+  }
+  @media (-webkit-min-device-pixel-ratio: 2.5) {
+    &::after {
+      transform: scale(0.3333, 1);
     }
   }
 }

@@ -36,9 +36,9 @@ export default {
 </script>
 <style lang="less">
 	.hot-more {
-		padding-top: 40px;
+		padding-top: 12vw;
 		.hot-list {
-			padding: 10px;
+			padding: 2.3vw;
 			.hot-list-item {
 				position: relative;
 				.pic {
@@ -48,14 +48,14 @@ export default {
 					}
 					.pic-title {
 						position: absolute;
-						bottom: 10px;
-						right: 10px;
+						bottom: 2.3vw;
+						right: 2.3vw;
 						span {
 							&.main-title {
 								font-weight: 700;
 							}
 							&.sub-title {
-								font-size: 12px;
+								font-size: 3.5vw;
 							}
 							display: block;
 							color: #fff;
@@ -65,7 +65,7 @@ export default {
 					}
 				}
 				&>.title {
-					line-height: 27px;
+					line-height: 7.5vw;
 					color: #333;
 				}
 			}

@@ -5,7 +5,7 @@
         <div class="author">
           <div class="avatar">
             <img class="avatar-img" :src="item.author.avatar">
-            <i class="icon">V</i>
+            <span class="icon">V</span>
           </div>
           <div class="name">
             <p>{{ item.author.name }}</p>
@@ -70,20 +70,20 @@ export default {
 	.find-talk-tab-content {
 		.find-talk-tab-list {
 			width: 100%;
-			padding: 0 10px;
-			margin-bottom: 30px;
+			padding: 0 2.3vw;
+			margin-bottom: 6.9vw;
 			box-sizing: border-box;
 			overflow: hidden;
 			.find-talk-tab-item {
-				padding: 10px 0;
-				border-bottom: 1px solid #e7e7e7;
+				padding: 2.3vw 0;
+				.border-bottom-1px(#e7e7e7);
 				.author {
 					display: flex;
 					.avatar {
 						position: relative;
-						width: 40px;
-						height: 40px;
-						border-radius: 200px;
+						width: 12vw;
+						height: 12vw;
+						border-radius: 100vw;
 						.avatar-img {
 							width: 100%;
 							height: 100%;
@@ -92,42 +92,42 @@ export default {
 							position: absolute;
 							bottom: 0px;
 							right: 0px;
-							height: 15px;
-							width: 15px;
-							line-height: 15px;
+							height: 3.35vw;
+							width: 3.35vw;
+							line-height: 3.35vw;
 							text-align: center;
-							border-radius: 50px;
-							font-size: 12px;
+							border-radius: 100vw;
+							font-size: 3.2vw;
 							color: #fff;
 							background-color: #eb9605;
 						}
 					}
 					.name {
-						margin-left: 10px;
-						height: 40px;
-						line-height: 40px;
+						margin-left: 2.3vw;
+						height: 12vw;
+						line-height: 12vw;
 						p {
 							color: #ff2323;
 						}
 					}
 				}
 				.content {
-					padding: 10px 0;
+					padding: 2.3vw 0;
 					.pictures {
-						margin-top: 10px;
+						margin-top: 2.3vw;
 						width: 80%;
 						display: flex;
 						flex-wrap: wrap;
 						.picture {
 							width: 33.3%;
 							height: 33.3%;
-							padding: 2px;
+							padding: 0.5vw;
 							box-sizing: border-box;
 							overflow: hidden;
 							img {
 								width: 100%;
 								height: 100%;
-								border-radius: 5px;
+								border-radius: 1.2vw;
 							}
 						}
 					}
@@ -139,9 +139,9 @@ export default {
 						white-space: nowrap;
 						overflow: hidden;
 						p {
-							font-size: 12px;
+							font-size: 3.2vw;
 							span {
-								margin: 0 5px;
+								margin: 0 1.1vw;
 								color: #0088cc;
 							}
 						}
@@ -150,10 +150,10 @@ export default {
 						float: right;
 						p {
 							display: inline-block;
-							font-size: 12px;
+							font-size: 3.2vw;
 							color: #999;
 							i {
-								margin: 0 5px 0 5px;
+								margin: 0 1.1vw 0 1.1vw;
 							}
 						}
 					}
