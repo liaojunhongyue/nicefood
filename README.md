@@ -23,11 +23,12 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 ## 项目包含内容介绍
 
 项目中包含内容的大致介绍：
-> 数据mock
-> 移动端适配 less mixin 边框1px问题
+- 数据mock
+- axios的引入及封装（拦截器、get、post）
+- 移动端适配 less mixin 边框1px问题
+- vant的引入、主题UI的配置、vant组件的二次封装
 
 ### 数据mock
-
 此项目所有的数据采用mock的形式，修改`webpack.dev.conf.js`文件，将所有接口写在该文件中。
 ```
 const express = require('express')
@@ -51,8 +52,10 @@ devServer: {
 }
 ```
 
-### 移动端适配 边框1px问题
+### axios的引入及封装（拦截器、get、post）
+在`src/utils/http.js`中对`axios`进行了封装，封装了请求拦截器，返回拦截器，post，get方法。
 
+### 移动端适配 边框1px问题
 1. 采用`vw vh`适配移动端。
 2. 引入Css预处理器less，修改`build/utils.js`文件，全局混入less。
 ```
@@ -103,3 +106,17 @@ less: generateLoaders('less').concat({
 }
 ...
 ```
+### vant的引入、主题UI的配置、vant组件的二次封装
+1. 引入vant
+采用自动按需引入组件的方式引入。
+2. 配置vant的主题UI
+将vant的需要修改的UI写在了`src/assets/vant.less`中，并且在`build/utils.js`中引入该文件以覆盖默认主题。
+```
+less: generateLoaders('less', {
+  modifyVars: {
+    'hack': `true; @import "${path.resolve(__dirname,'./../src/assets/less/vant.less')}";`
+  }
+})
+```
+3. vant组件的二次封装
+在`src/components`对vant的部分组件进行二次封装。

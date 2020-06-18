@@ -1,26 +1,43 @@
 <template>
   <footer>
-    <router-link class="footer-list" :to="'/'" replace exact>
-      <i class="fa fa-shopping-basket" aria-hidden="true" />
-      <span>首页</span>
-    </router-link>
-    <router-link class="footer-list" :to="'/find'" replace>
-      <i class="fa fa-camera" aria-hidden="true" />
-      <span>发现</span>
-    </router-link>
-    <router-link class="footer-list" :to="'/challenge'" replace>
-      <i class="fa fa-cutlery" aria-hidden="true" />
-      <span>挑战</span>
-    </router-link>
-    <router-link class="footer-list" :to="'/user'" replace>
-      <i class="fa fa-user-circle-o" aria-hidden="true" />
-      <span>我的</span>
-    </router-link>
+    <van-tabbar route>
+      <van-tabbar-item replace to="/">
+        <template #icon>
+          <i class="fa fa-shopping-basket" aria-hidden="true" />
+        </template>
+        <span>首页</span>
+      </van-tabbar-item>
+      <van-tabbar-item replace to="/find/talk/newtab">
+        <template #icon>
+          <i class="fa fa-camera" aria-hidden="true" />
+        </template>
+        <span>发现</span>
+      </van-tabbar-item>
+      <van-tabbar-item replace to="/challenge">
+        <template #icon>
+          <i class="fa fa-cutlery" aria-hidden="true" />
+        </template>
+        <span>挑战</span>
+      </van-tabbar-item>
+      <van-tabbar-item replace to="/user">
+        <template #icon>
+          <i class="fa fa-user-circle-o" aria-hidden="true" />
+        </template>
+        <span>我的</span>
+      </van-tabbar-item>
+    </van-tabbar>
   </footer>
 </template>
 <script>
 export default {
-
+  props: {
+    footerDatas: {
+      type: Array,
+      default: function() {
+        return []
+      }
+    }
+  }
 }
 </script>
 <style lang="less">

@@ -98,7 +98,8 @@ export default {
       isLikedShow: false,
       isLikedActive: false,
       toast: '',
-      isShareShow: false
+      isShareShow: false,
+      promptCallback: ''
     }
   },
   mounted() {

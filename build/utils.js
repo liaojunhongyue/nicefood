@@ -58,7 +58,11 @@ exports.cssLoaders = function (options) {
   return {
     css: generateLoaders(),
     postcss: generateLoaders(),
-    less: generateLoaders('less').concat({
+    less: generateLoaders('less', {
+      modifyVars: {
+        'hack': `true; @import "${path.resolve(__dirname,'./../src/assets/less/vant.less')}";`
+      }
+    }).concat({
       loader: 'sass-resources-loader',
       options: {
         resources: [

@@ -16,6 +16,12 @@ Vue.prototype.http = http
 import api from './assets/api/index'
 Vue.prototype.api = api
 
+// vant
+import 'vant/lib/index.less'
+import { Tabbar, TabbarItem } from 'vant'
+Vue.use(Tabbar)
+Vue.use(TabbarItem)
+
 Vue.prototype.$http = axios
 Vue.config.productionTip = false
 
