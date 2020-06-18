@@ -24,7 +24,7 @@ export default {
     }
   },
   mounted() {
-    this.$http.get('/api/hotData').then((response) => {
+    this.http.get(this.api.query.hotData.url).then((response) => {
       this.hotData = response.data.data
     })
   }

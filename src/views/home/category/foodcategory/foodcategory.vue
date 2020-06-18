@@ -45,7 +45,7 @@ export default {
     })
   },
   mounted() {
-    this.$http.get('/api/foodCategoryData').then((response) => {
+    this.http.get(this.api.query.foodCategoryData.url).then((response) => {
       this.foodCategoryData = response.data.data
     })
   },

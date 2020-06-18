@@ -35,7 +35,7 @@ export default {
     }
   },
   mounted() {
-    this.$http.get('/api/currentSeasonData').then((response) => {
+    this.http.get(this.api.query.currentSeasonData.url).then((response) => {
       this.currentSeasonData = response.data.data
     })
   }

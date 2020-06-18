@@ -8,6 +8,14 @@ import axios from 'axios'
 import 'normalize.css/normalize.css'
 import 'font-awesome/css/font-awesome.min.css'
 
+// axios封装
+import http from './utils/http'
+Vue.prototype.http = http
+
+// api
+import api from './assets/api/index'
+Vue.prototype.api = api
+
 Vue.prototype.$http = axios
 Vue.config.productionTip = false
 

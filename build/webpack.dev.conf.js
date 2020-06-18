@@ -60,44 +60,58 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     before(app) {
       app.get('/api/menuData', (req, res) => {
         res.json({
-          errno: 0,
+          code: 0,
+          message: 'success',
           data: menuData
         })
       }),
       app.get('/api/hotData', (req, res) => {
         res.json({
-          errno: 0,
+          code: 0,
+          message: 'success',
           data: hotData
         })
       }),
       app.get('/api/currentSeasonData', (req, res) => {
         res.json({
-          errno: 0,
+          code: 0,
+          message: 'success',
           data: currentSeasonData
         })
       }),
       app.get('/api/foodCategoryData', (req, res) => {
         res.json({
-          errno: 0,
+          code: 0,
+          message: 'success',
           data: foodCategoryData
         })
       }),
       app.get('/api/findData', (req, res) => {
         res.json({
-          errno: 0,
+          code: 0,
+          message: 'success',
           data: findData
         })
       }),
       app.get('/api/challengeData', (req, res) => {
         res.json({
-          errno: 0,
+          code: 0,
+          message: 'success',
           data: challengeData
         })
       }),
       app.get('/api/userData', (req, res) => {
         res.json({
-          errno: 0,
+          code: 0,
+          message: 'success',
           data: userData
+        })
+      }),
+      app.get('/api/login', (req, res) => {
+        res.json({
+          code: 0,
+          message: 'success',
+          data: "testToken"
         })
       })
     }

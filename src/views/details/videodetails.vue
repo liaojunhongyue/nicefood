@@ -20,7 +20,7 @@ export default {
     }
   },
   mounted() {
-    this.$http.get('/api/findData').then((response) => {
+    this.http.get(this.api.query.findData.url).then((response) => {
       this.videoData = response.data.data.video
       this.videoId = this.$route.params.id
       this.videoDetails = this.videoData[this.videoId - 1]

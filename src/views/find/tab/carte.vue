@@ -29,7 +29,7 @@ export default {
     }
   },
   mounted() {
-    this.$http.get('/api/findData').then((response) => {
+    this.http.get(this.api.query.findData.url).then((response) => {
       this.findData = response.data.data
       this.carteData = this.findData.carte
     })

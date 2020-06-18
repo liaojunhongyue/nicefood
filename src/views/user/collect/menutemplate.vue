@@ -57,7 +57,7 @@ export default {
     }
   },
   mounted() {
-    this.$http.get('/api/menuData').then((response) => {
+    this.http.get(this.api.query.menuData.url).then((response) => {
       this.collectData = response.data.data
     })
   }

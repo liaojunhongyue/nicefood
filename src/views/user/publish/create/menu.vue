@@ -196,7 +196,7 @@ export default {
     }
   },
   mounted() {
-    this.$http.get('/api/userData').then((response) => {
+    this.http.get(this.api.query.userData.url).then((response) => {
       this.menuTech = response.data.data.publish.menu.technology
       this.menuTaste = response.data.data.publish.menu.taste
       this.menuTime = response.data.data.publish.menu.time

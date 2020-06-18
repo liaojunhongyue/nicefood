@@ -32,7 +32,7 @@ export default {
     }
   },
   mounted() {
-    this.$http.get('/api/challengeData').then((response) => {
+    this.http.get(this.api.query.challengeData.url).then((response) => {
       this.challengeData = response.data.data
       this.bannerData = this.challengeData.banner
     })

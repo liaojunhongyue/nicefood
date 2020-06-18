@@ -33,7 +33,7 @@ export default {
     }
   },
   mounted() {
-    this.$http.get('/api/menuData').then((response) => {
+    this.http.get(this.api.query.menuData.url).then((response) => {
       this.menuData = response.data.data
       this.menuTitle = '早餐'
     })
