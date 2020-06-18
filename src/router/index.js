@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+const Main = r => require.ensure([], () => r(require('@/views/main/main')))
 const Home = r => require.ensure([], () => r(require('@/views/home/home')))
 const foodGroup = r => require.ensure([], () => r(require('@/views/home/category/foodgroup/foodgroup')))
 const currentSeason = r => require.ensure([], () => r(require('@/views/home/category/currentseason/currentseason')))
@@ -56,79 +57,96 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home', // 首页
-      component: Home
-    },
-    {
-      path: '/find',
-      redirect: '/find/talk/newtab',
-      name: 'find', // 发现 > 食话
-      component: Find,
+      name: 'main',
+      redirect: '/home',
+      component: Main,
       children: [
         {
-          path: 'talk',
+          path: '/home',
+          name: 'home', // 首页
+          component: Home
+        },
+        {
+          path: '/find',
           redirect: '/find/talk/newtab',
-          name: 'findTalk', // 发现 > 食话
-          component: findTalk,
+          name: 'find', // 发现 > 食话
+          component: Find,
           children: [
             {
-              path: 'newtab',
-              name: 'findNewTab',
-              component: findTalkTab
+              path: 'talk',
+              redirect: '/find/talk/newtab',
+              name: 'findTalk', // 发现 > 食话
+              component: findTalk,
+              children: [
+                {
+                  path: 'newtab',
+                  name: 'findNewTab',
+                  component: findTalkTab
+                },
+                {
+                  path: 'hottab',
+                  name: 'findHotTab',
+                  component: findTalkTab
+                }
+              ]
             },
             {
-              path: 'hottab',
-              name: 'findHotTab',
-              component: findTalkTab
+              path: 'trends',
+              name: 'findTrends', // 发现 > 动态
+              component: findTrends
+            },
+            {
+              path: 'activity',
+              name: 'findActivity', // 发现 > 活动
+              component: findActivity
+            },
+            {
+              path: 'video',
+              name: 'findVideo', // 发现 > 视频
+              component: findVideo
+            },
+            {
+              path: 'carte',
+              name: 'findCarte', // 发现 > 菜单
+              component: findCarte
+            },
+            {
+              path: 'topic',
+              name: 'findTopic', // 发现 > 专题
+              component: findTopic
             }
           ]
         },
         {
-          path: 'trends',
-          name: 'findTrends', // 发现 > 动态
-          component: findTrends
+          path: '/challenge',
+          name: 'challenge', // 挑战
+          component: Challenge
         },
         {
-          path: 'activity',
-          name: 'findActivity', // 发现 > 活动
-          component: findActivity
-        },
-        {
-          path: 'video',
-          name: 'findVideo', // 发现 > 视频
-          component: findVideo
-        },
-        {
-          path: 'carte',
-          name: 'findCarte', // 发现 > 菜单
-          component: findCarte
-        },
-        {
-          path: 'topic',
-          name: 'findTopic', // 发现 > 专题
-          component: findTopic
+          path: '/user',
+          name: 'user', // 我的
+          component: User,
+          meta: {
+            requireLogin: true
+          }
         }
       ]
-    },
-    {
-      path: '/challenge',
-      name: 'challenge', // 挑战
-      component: Challenge
-    },
-    {
-      path: '/user',
-      name: 'user', // 我的
-      component: User
     },
     {
       path: '/user/collect',
       name: 'usercollect', // 我的 > 收藏
       component: userCollect,
+      meta: {
+        requireLogin: true
+      },
       children: [
         {
           path: 'all',
           name: 'usercollectall',
-          component: userCollectMenu
+          component: userCollectMenu,
+          meta: {
+            requireLogin: true
+          }
         },
         {
           path: 'my',

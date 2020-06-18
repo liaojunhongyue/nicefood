@@ -120,3 +120,4 @@ less: generateLoaders('less', {
 ```
 3. vant组件的二次封装
 在`src/components`对vant的部分组件进行二次封装。
+- footer的封装，在`components/common/footer.vue`中。

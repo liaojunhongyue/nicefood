@@ -1,7 +1,7 @@
 <template>
   <div class="search">
     <div class="search-border-bottom">
-      <div class="add" :class="this.$store.state.add.addrotate" @click="showAdd">
+      <div class="add" :class="addrotateGetters" @click="showAdd">
         <i class="fa fa-plus" aria-hidden="true" />
       </div>
       <div class="input">
@@ -15,16 +15,20 @@
   </div>
 </template>
 <script>
+import { mapGetters } from 'vuex'
 export default {
   data() {
     return {
       rotateAdd: ''
     }
   },
+  computed: {
+    ...mapGetters(['addrotateGetters'])
+  },
   methods: {
     showAdd: function() {
-      this.$store.state.add.showadd = true
-      this.$store.state.add.addrotate = 'rotate'
+      this.$store.commit('setShowadd', true)
+      this.$store.commit('setAddrotate', 'rotate')
     }
   }
 }

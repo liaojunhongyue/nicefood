@@ -1,6 +1,6 @@
 <template>
   <transition name="slidetop">
-    <div v-show="this.$store.state.add.showadd" class="add-more-info">
+    <div v-show="showaddGetters" class="add-more-info">
       <div class="close" @click="hideAdd">
         <i class="fa fa-times" aria-hidden="true" />
       </div>
@@ -23,11 +23,15 @@
   </transition>
 </template>
 <script>
+import { mapGetters } from 'vuex'
 export default {
+  computed: {
+    ...mapGetters(['showaddGetters'])
+  },
   methods: {
     hideAdd: function() {
-      this.$store.state.add.showadd = false
-      this.$store.state.add.addrotate = ''
+      this.$store.commit('setShowadd', false)
+      this.$store.commit('setAddrotate', '')
     }
   }
 }

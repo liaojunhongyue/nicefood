@@ -1,29 +1,11 @@
 <template>
   <footer>
     <van-tabbar route>
-      <van-tabbar-item replace to="/">
+      <van-tabbar-item v-for="item in footerDatas" :key="item.name" replace :to="item.link">
         <template #icon>
-          <i class="fa fa-shopping-basket" aria-hidden="true" />
+          <i class="fa" :class="item.icon" aria-hidden="true" />
         </template>
-        <span>首页</span>
-      </van-tabbar-item>
-      <van-tabbar-item replace to="/find/talk/newtab">
-        <template #icon>
-          <i class="fa fa-camera" aria-hidden="true" />
-        </template>
-        <span>发现</span>
-      </van-tabbar-item>
-      <van-tabbar-item replace to="/challenge">
-        <template #icon>
-          <i class="fa fa-cutlery" aria-hidden="true" />
-        </template>
-        <span>挑战</span>
-      </van-tabbar-item>
-      <van-tabbar-item replace to="/user">
-        <template #icon>
-          <i class="fa fa-user-circle-o" aria-hidden="true" />
-        </template>
-        <span>我的</span>
+        <span>{{ item.name }}</span>
       </van-tabbar-item>
     </van-tabbar>
   </footer>
