@@ -27,7 +27,20 @@ Vue.config.productionTip = false
 
 // 路由守卫
 router.beforeEach((to, from, next) => {
-  next()
+  if (window.sessionStorage.getItem('userToken')) {
+    next()
+  } else {
+    if (to.meta.requireLogin) {
+      next({
+        path: '/login',
+        query: {
+          redirect: to.fullPath
+        }
+      })
+    } else {
+      next()
+    }
+  }
 })
 /* eslint-disable no-new */
 new Vue({

@@ -1,6 +1,6 @@
 <template>
   <div class="login">
-    <i class="fa fa-times" aria-hidden="true" />
+    <i class="fa fa-times" aria-hidden="true" @click="goHistory()" />
     <p class="go-register">注册</p>
     <div class="login-content">
       <p class="title">欢迎来到美食杰</p>
@@ -8,14 +8,18 @@
         <form class="login-form">
           <div class="form-list">
             <input v-model="userName" type="text" class="form-text" placeholder="请输入手机号/邮箱/昵称">
-            <p class="validator">{{ validator.name }}</p>
           </div>
           <div class="form-list">
             <input v-model="userPassword" type="password" class="form-text" placeholder="请输入密码">
-            <i class="fa fa-eye" aria-hidden="true" />
-            <p class="validator">{{ validator.password }}</p>
+            <!-- <i class="fa fa-eye" aria-hidden="true" /> -->
           </div>
-          <input type="submit" :disabled="submitDisabled" :class="['login-submit', {'active': isSubmitActive}]" value="登录">
+          <p class="discription">用户名和密码可随意输入</p>
+          <input
+            type="submit"
+            :class="['login-submit', {'active': isSubmitActive}]"
+            value="登录"
+            @click.prevent="loginSubmit()"
+          >
         </form>
         <p class="login-method">
           <span class="forget-password">忘记密码？</span>
@@ -47,13 +51,43 @@ export default {
   data() {
     return {
       userName: '',
-      userPassword: '',
-      validator: {
-        name: '',
-        password: ''
-      },
-      submitDisabled: true,
-      isSubmitActive: false
+      userPassword: ''
+    }
+  },
+  computed: {
+    isSubmitActive() {
+      return this.userName && this.userPassword
+    }
+  },
+  methods: {
+    goHistory() {
+      this.$router.go(-1)
+    },
+    loginSubmit() {
+      if (!this.userName) {
+        this.Toast('请输入手机号/邮箱/昵称')
+        return false
+      } else if (!this.userPassword) {
+        this.Toast('请输入密码')
+        return false
+      } else {
+        // 真实项目中用POST 因为这个是mock的数据
+        this.api.user.login.data = {
+          account: this.userName,
+          password: this.userPassword
+        }
+        this.http.post(this.api.user.login.url, this.api.user.login.data).then((response) => {
+          const { code, data } = response.data
+          if (code === 0) {
+            this.$store.commit('setUserToken', data)
+            if (this.$route.query.redirect) {
+              this.$router.push(this.$route.query.redirect)
+            } else {
+              this.$router.push('/login')
+            }
+          }
+        })
+      }
     }
   }
 }
@@ -61,6 +95,8 @@ export default {
 <style lang="less">
   .login {
     position: relative;
+    height: 100%;
+    background-color: #ffffff;
     i {
       &.fa-times {
         position: absolute;
@@ -91,6 +127,7 @@ export default {
         margin: 10vw 15vw 0 15vw;
         .form-list {
           position: relative;
+          margin-bottom: 6vw;
           .form-text {
             width: 100%;
             height: 9vw;
@@ -102,11 +139,6 @@ export default {
               color: #dcdcdc;
             }
           }
-          .validator {
-            height: 6vw;
-            line-height: 6vw;
-            color: #ff2323;
-          }
           i {
             &.fa {
               position: absolute;
@@ -116,6 +148,9 @@ export default {
               line-height: 9vw;
             }
           }
+        }
+        .discription {
+          color: @themeColor;
         }
         .login-submit {
           margin-top: 5vw;

@@ -107,11 +107,18 @@ const devWebpackConfig = merge(baseWebpackConfig, {
           data: userData
         })
       }),
-      app.get('/api/login', (req, res) => {
+      app.post('/api/login', (req, res) => {
         res.json({
           code: 0,
           message: 'success',
           data: "testToken"
+        })
+      }),
+      app.post('/api/logout', (req, res) => {
+        res.json({
+          code: 0,
+          message: 'success',
+          data: null
         })
       })
     }

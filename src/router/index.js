@@ -46,6 +46,7 @@ const messageComment = r => require.ensure([], () => r(require('@/views/message/
 const messageLike = r => require.ensure([], () => r(require('@/views/message/like/like')))
 const messageCollect = r => require.ensure([], () => r(require('@/views/message/collect/collect')))
 const menuComment = r => require.ensure([], () => r(require('@/views/comment/menucomment')))
+const settings = r => require.ensure([], () => r(require('@/views/settings/settings')))
 const Login = r => require.ensure([], () => r(require('@/views/user/login/login')))
 Vue.use(Router)
 
@@ -151,12 +152,18 @@ export default new Router({
         {
           path: 'my',
           name: 'usercollectmy',
-          component: userCollectMenu
+          component: userCollectMenu,
+          meta: {
+            requireLogin: true
+          }
         },
         {
           path: 'menu',
           name: 'usercollectmenu',
-          component: userCollectMenu
+          component: userCollectMenu,
+          meta: {
+            requireLogin: true
+          }
         }
       ]
     },
@@ -164,107 +171,167 @@ export default new Router({
       path: '/user/publish',
       name: 'userpublish', // 我的 > 发布
       component: userPublish,
+      meta: {
+        requireLogin: true
+      },
       children: [
         {
           path: 'menu',
           name: 'userpublishmenu', // 我的 > 发布 > 菜谱
-          component: userPublishCont
+          component: userPublishCont,
+          meta: {
+            requireLogin: true
+          }
         },
         {
           path: 'article',
           name: 'userpublisharticle', // 我的 > 发布 > 文章
-          component: userPublishCont
+          component: userPublishCont,
+          meta: {
+            requireLogin: true
+          }
         },
         {
           path: 'works',
           name: 'userpublishworks', // 我的 > 发布 > 作品
-          component: userPublishCont
+          component: userPublishCont,
+          meta: {
+            requireLogin: true
+          }
         },
         {
           path: 'talks',
           name: 'userpublishtalks', // 我的 > 发布 > 食话
-          component: userPublishCont
+          component: userPublishCont,
+          meta: {
+            requireLogin: true
+          }
         }
       ]
     },
     {
       path: '/user/create/menu',
       name: 'usercreatemenu',
-      component: userCreateMenu
+      component: userCreateMenu,
+      meta: {
+        requireLogin: true
+      }
     },
     {
       path: '/user/create/article',
       name: 'usercreatearticle',
-      component: userCreateArticle
+      component: userCreateArticle,
+      meta: {
+        requireLogin: true
+      }
     },
     {
       path: '/user/create/works',
       name: 'usercreateworks',
-      component: userCreateWorks
+      component: userCreateWorks,
+      meta: {
+        requireLogin: true
+      }
     },
     {
       path: '/user/create/talks',
       name: 'usercreateTalks',
-      component: userCreateTalks
+      component: userCreateTalks,
+      meta: {
+        requireLogin: true
+      }
     },
     {
       path: '/user/task',
       name: 'usertask',
       component: userTask,
+      meta: {
+        requireLogin: true
+      },
       children: [
         {
           path: 'unfinished',
           name: 'taskunfinished',
-          component: userTaskList
+          component: userTaskList,
+          meta: {
+            requireLogin: true
+          }
         },
         {
           path: 'finished',
           name: 'taskfinished',
-          component: userTaskList
+          component: userTaskList,
+          meta: {
+            requireLogin: true
+          }
         }
       ]
     },
     {
       path: '/user/point',
       name: 'userpoint',
-      component: userPoint
+      component: userPoint,
+      meta: {
+        requireLogin: true
+      }
     },
     {
       path: '/user/draft',
       name: 'userdraft',
-      component: userDraft
+      component: userDraft,
+      meta: {
+        requireLogin: true
+      }
     },
     {
       path: '/user/basket',
       name: 'userbasket',
-      component: userBasket
+      component: userBasket,
+      meta: {
+        requireLogin: true
+      }
     },
     {
       path: '/user/comment',
       name: 'usercomment',
       component: userComment,
+      meta: {
+        requireLogin: true
+      },
       children: [
         {
           path: 'menu',
           name: 'commentmenu',
-          component: userCommentList
+          component: userCommentList,
+          meta: {
+            requireLogin: true
+          }
         },
         {
           path: 'works',
           name: 'commentworks',
-          component: userCommentList
+          component: userCommentList,
+          meta: {
+            requireLogin: true
+          }
         },
         {
           path: 'talks',
           name: 'commenttalks',
-          component: userCommentList
+          component: userCommentList,
+          meta: {
+            requireLogin: true
+          }
         }
       ]
     },
     {
       path: '/user/callback',
       name: 'usercallback',
-      component: userCallback
+      component: userCallback,
+      meta: {
+        requireLogin: true
+      }
     },
     {
       path: '/fooddetails/:id',
@@ -279,7 +346,10 @@ export default new Router({
     {
       path: '/comment/menu/:id',
       name: 'menucomment',
-      component: menuComment
+      component: menuComment,
+      meta: {
+        requireLogin: true
+      }
     },
     {
       path: '/foodgroup',
@@ -346,32 +416,58 @@ export default new Router({
     {
       path: '/message',
       name: 'message', // 消息
-      component: Message
+      component: Message,
+      meta: {
+        requireLogin: true
+      }
     },
     {
       path: '/message/news',
       name: 'messagenews',
-      component: messageNews
+      component: messageNews,
+      meta: {
+        requireLogin: true
+      }
     },
     {
       path: '/message/activity',
       name: 'messageactivity',
-      component: messageActivity
+      component: messageActivity,
+      meta: {
+        requireLogin: true
+      }
     },
     {
       path: '/message/comment',
       name: 'messagecomment',
-      component: messageComment
+      component: messageComment,
+      meta: {
+        requireLogin: true
+      }
     },
     {
       path: '/message/like',
       name: 'messagelike',
-      component: messageLike
+      component: messageLike,
+      meta: {
+        requireLogin: true
+      }
     },
     {
       path: '/message/collect',
       name: 'messagecollect',
-      component: messageCollect
+      component: messageCollect,
+      meta: {
+        requireLogin: true
+      }
+    },
+    {
+      path: '/settings',
+      name: 'settings',
+      component: settings,
+      meta: {
+        requireLogin: true
+      }
     },
     {
       path: '/login',

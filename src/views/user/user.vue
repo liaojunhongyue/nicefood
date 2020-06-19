@@ -3,7 +3,9 @@
     <div class="user-header">
       <div class="user-header-mask" />
       <div class="user-operate">
-        <!-- <i class="fa fa-cog" aria-hidden="true"></i> -->
+        <router-link :to="'/settings'">
+          <i class="fa fa-cog" aria-hidden="true" />
+        </router-link>
         <router-link :to="'/message'">
           <i class="fa fa-envelope-o" aria-hidden="true" />
         </router-link>

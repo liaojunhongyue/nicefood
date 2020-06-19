@@ -25,8 +25,11 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 项目中包含内容的大致介绍：
 - 数据mock
 - axios的引入及封装（拦截器、get、post）
+- Vuex的引入
+- Vue-router的引入以及路由守卫
 - 移动端适配 less mixin 边框1px问题
-- vant的引入、主题UI的配置、vant组件的二次封装
+- vant的引入、主题UI的配置
+- 通用组件的封装
 
 ### 数据mock
 此项目所有的数据采用mock的形式，修改`webpack.dev.conf.js`文件，将所有接口写在该文件中。
@@ -54,6 +57,16 @@ devServer: {
 
 ### axios的引入及封装（拦截器、get、post）
 在`src/utils/http.js`中对`axios`进行了封装，封装了请求拦截器，返回拦截器，post，get方法。
+
+### Vuex的引入
+在`src/store`引入vuex，主要存入用户的token信息。
+
+### Vue-router的引入以及路由守卫
+1. 引入vue-router，采用按需加载的方式。
+```
+require.ensure([], () => r(require('@/views/main/main')))
+```
+2. 在`src/main.js`中用路由守卫进行拦截，用户未登录时如果请求到了需要登录的页面则会跳转到登录页面。
 
 ### 移动端适配 边框1px问题
 1. 采用`vw vh`适配移动端。
@@ -106,7 +119,7 @@ less: generateLoaders('less').concat({
 }
 ...
 ```
-### vant的引入、主题UI的配置、vant组件的二次封装
+### vant的引入、主题UI的配置
 1. 引入vant
 采用自动按需引入组件的方式引入。
 2. 配置vant的主题UI
@@ -118,6 +131,7 @@ less: generateLoaders('less', {
   }
 })
 ```
-3. vant组件的二次封装
-在`src/components`对vant的部分组件进行二次封装。
-- footer的封装，在`components/common/footer.vue`中。
+
+### 通用组件的封装
+1. 通用header
+2. 通用footer

@@ -41,18 +41,17 @@ export default {
               case 3: text = '晚餐'; break
               case 4: text = '夜宵'; break
             }
-            return '<p class="' + classname + '">' + text + '</p>'
+            return `<p class="${classname}">${text}</p>`
           }
         },
         on: {
           slideChangeTransitionStart: function(title) {
-            const titleObj = document.getElementById('menuTitle')
             switch (this.activeIndex) {
-              case 0: titleObj.innerHTML = '早餐'; break
-              case 1: titleObj.innerHTML = '午餐'; break
-              case 2: titleObj.innerHTML = '下午茶'; break
-              case 3: titleObj.innerHTML = '晚餐'; break
-              case 4: titleObj.innerHTML = '夜宵'; break
+              case 0: title = '早餐'; break
+              case 1: title = '午餐'; break
+              case 2: title = '下午茶'; break
+              case 3: title = '晚餐'; break
+              case 4: title = '夜宵'; break
             }
           }
         }

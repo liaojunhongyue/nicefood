@@ -1,13 +1,9 @@
 <template>
   <footer>
-    <van-tabbar route>
-      <van-tabbar-item v-for="item in footerDatas" :key="item.name" replace :to="item.link">
-        <template #icon>
-          <i class="fa" :class="item.icon" aria-hidden="true" />
-        </template>
-        <span>{{ item.name }}</span>
-      </van-tabbar-item>
-    </van-tabbar>
+    <router-link v-for="item in footerDatas" :key="item.name" class="footer-list" :to="item.link" replace>
+      <i class="fa" :class="item.icon" aria-hidden="true" />
+      <span>{{ item.name }}</span>
+    </router-link>
   </footer>
 </template>
 <script>
