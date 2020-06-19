@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 // 基础信息
-axios.defaults.baseURL = 'http://192.168.18.9:8080/'
+axios.defaults.baseURL = 'http://192.168.18.9:9000/'
 axios.defaults.timeout = 10000
 
 // 请求拦截器

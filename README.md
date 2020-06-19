@@ -1,6 +1,6 @@
 # Vue-cli实战：搭建仿照美食杰的WebApp
 
-> 此项目参考美食杰APP，项目中所有的接口请求的数据采用mock的方式。运用Vue-cli搭建，技术栈：Vue-cli + Vue-router + Vuex + Axios。用Vue-router做路由守卫，Vuex存储全局信息，对Axios进行二次封装，并且解决移动端1px边线等问题。
+> 此项目参考美食杰APP，项目中所有的接口请求的数据采用mock的方式。运用Vue-cli搭建，技术栈：Vue-cli + Vue-router + Vuex + Axios。用Vue-router做路由守卫，Vuex存储全局信息，对Axios进行二次封装，并且解决移动端1px边线等问题。并且还提供了node服务的启动文件，文件中包含接口的定义以及跨域问题的解决。
 
 ## 项目启动
 
@@ -30,6 +30,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 - 移动端适配 less mixin 边框1px问题
 - vant的引入、主题UI的配置
 - 通用组件的封装
+- node启动文件`prod.server.js`
 
 ### 数据mock
 此项目所有的数据采用mock的形式，修改`webpack.dev.conf.js`文件，将所有接口写在该文件中。
@@ -135,3 +136,7 @@ less: generateLoaders('less', {
 ### 通用组件的封装
 1. 通用header
 2. 通用footer
+
+### node启动文件prod.server.js
+该文件用node+express，是为了解决项目打包成`dist`文件包时，请求接口的问题。该文件包括跨域问题的解决，以及接口的提供。
+使用方法：在`prod.server.js`文件所在文件夹下，执行`node prod.server.js`，看到控制台打印出success说明成功。
