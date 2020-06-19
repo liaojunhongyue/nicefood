@@ -29,7 +29,12 @@ export default {
   },
   mounted() {
     this.http.get(this.api.query.hotData.url).then((response) => {
-      this.hotData = response.data.data
+      const { code, data } = response.data
+      if (code === 0) {
+        this.hotData = data
+      } else {
+        this.Toast.fail('数据异常')
+      }
     })
   }
 }

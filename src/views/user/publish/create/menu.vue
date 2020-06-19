@@ -197,9 +197,14 @@ export default {
   },
   mounted() {
     this.http.get(this.api.query.userData.url).then((response) => {
-      this.menuTech = response.data.data.publish.menu.technology
-      this.menuTaste = response.data.data.publish.menu.taste
-      this.menuTime = response.data.data.publish.menu.time
+      const { code, data } = response.data
+      if (code === 0) {
+        this.menuTech = data.publish.menu.technology
+        this.menuTaste = data.publish.menu.taste
+        this.menuTime = data.publish.menu.time
+      } else {
+        this.Toast.fail('数据异常')
+      }
     })
     this.mainMaterial.push({
       'component': menuMaterial

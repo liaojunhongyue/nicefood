@@ -93,7 +93,12 @@ export default {
   },
   mounted() {
     this.http.get(this.api.query.menuData.url).then((response) => {
-      this.browseData = response.data.data
+      const { code, data } = response.data
+      if (code === 0) {
+        this.browseData = data
+      } else {
+        this.Toast.fail('数据异常')
+      }
     })
   }
 }

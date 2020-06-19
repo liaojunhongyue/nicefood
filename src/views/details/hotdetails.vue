@@ -29,10 +29,15 @@ export default {
   },
   mounted() {
     this.http.get(this.api.query.hotData.url).then((response) => {
-      this.hotData = response.data.data
-      this.hotId = this.$route.params.id
-      this.hotIndex = this.hotId - 1
-      this.hotDetails = this.hotData[this.hotIndex]
+      const { code, data } = response.data
+      if (code === 0) {
+        this.hotData = data
+        this.hotId = this.$route.params.id
+        this.hotIndex = this.hotId - 1
+        this.hotDetails = this.hotData[this.hotIndex]
+      } else {
+        this.Toast.fail('数据异常')
+      }
     })
   }
 }

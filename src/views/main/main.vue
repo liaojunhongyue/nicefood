@@ -41,3 +41,9 @@ export default {
   }
 }
 </script>
+<style lang="less" scoped>
+#main {
+  height: 100%;
+  overflow: auto;
+}
+</style>

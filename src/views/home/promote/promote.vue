@@ -38,7 +38,12 @@ export default {
   },
   mounted() {
     this.http.get(this.api.query.menuData.url).then((response) => {
-      this.menuData = response.data.data.slice(0, 3)
+      const { code, data } = response.data
+      if (code === 0) {
+        this.menuData = data.slice(0, 3)
+      } else {
+        this.Toast.fail('数据异常')
+      }
     })
   }
 }

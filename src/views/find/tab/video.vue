@@ -35,8 +35,13 @@ export default {
   },
   mounted() {
     this.http.get(this.api.query.findData.url).then((response) => {
-      this.findData = response.data.data
-      this.videoData = this.findData.video
+      const { code, data } = response.data
+      if (code === 0) {
+        this.findData = data
+        this.videoData = this.findData.video
+      } else {
+        this.Toast.fail('数据异常')
+      }
     })
   }
 }

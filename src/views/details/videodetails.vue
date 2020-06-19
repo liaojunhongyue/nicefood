@@ -21,9 +21,14 @@ export default {
   },
   mounted() {
     this.http.get(this.api.query.findData.url).then((response) => {
-      this.videoData = response.data.data.video
-      this.videoId = this.$route.params.id
-      this.videoDetails = this.videoData[this.videoId - 1]
+      const { code, data } = response.data
+      if (code === 0) {
+        this.videoData = data.video
+        this.videoId = this.$route.params.id
+        this.videoDetails = this.videoData[this.videoId - 1]
+      } else {
+        this.Toast.fail('数据异常')
+      }
     })
   },
   methods: {

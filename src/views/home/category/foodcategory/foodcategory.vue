@@ -46,7 +46,12 @@ export default {
   },
   mounted() {
     this.http.get(this.api.query.foodCategoryData.url).then((response) => {
-      this.foodCategoryData = response.data.data
+      const { code, data } = response.data
+      if (code === 0) {
+        this.foodCategoryData = data
+      } else {
+        this.Toast.fail('数据异常')
+      }
     })
   },
   methods: {

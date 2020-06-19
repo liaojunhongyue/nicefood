@@ -33,8 +33,13 @@ export default {
   },
   mounted() {
     this.http.get(this.api.query.challengeData.url).then((response) => {
-      this.challengeData = response.data.data
-      this.bannerData = this.challengeData.banner
+      const { code, data } = response.data
+      if (code === 0) {
+        this.challengeData = data
+        this.bannerData = this.challengeData.banner
+      } else {
+        this.Toast.fail('数据异常')
+      }
     })
   }
 }

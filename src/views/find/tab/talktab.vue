@@ -53,14 +53,19 @@ export default {
   },
   mounted() {
     this.http.get(this.api.query.findData.url).then((response) => {
-      this.findData = response.data.data
-      this.newData = this.findData.talk.new
-      this.hotData = this.findData.talk.hot
-      const currentRoute = this.$route.path
-      if (currentRoute === '/find/talk/newtab') {
-        this.templateData = this.newData
-      } else if (currentRoute === '/find/talk/hottab') {
-        this.templateData = this.hotData
+      const { code, data } = response.data
+      if (code === 0) {
+        this.findData = data
+        this.newData = this.findData.talk.new
+        this.hotData = this.findData.talk.hot
+        const currentRoute = this.$route.path
+        if (currentRoute === '/find/talk/newtab') {
+          this.templateData = this.newData
+        } else if (currentRoute === '/find/talk/hottab') {
+          this.templateData = this.hotData
+        }
+      } else {
+        this.Toast.fail('数据异常')
       }
     })
   }

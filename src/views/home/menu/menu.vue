@@ -61,14 +61,20 @@ export default {
   },
   mounted() {
     this.http.get(this.api.query.menuData.url).then((response) => {
-      this.swiperData = response.data.data
+      const { code, data } = response.data
+      if (code === 0) {
+        this.swiperData = data
+      } else {
+        this.Toast.fail('数据异常')
+      }
     })
   }
 }
 </script>
 <style lang="less">
 	.menu {
-		position: relative;
+    position: relative;
+    background-color: #ffffff;
 		.title {
 			margin-bottom: 3.4vw;
 			font-size: 3.8vw;
@@ -88,7 +94,8 @@ export default {
 					height: 4.6vw;
 					color: #777;
 					background-color: #fff;
-					opacity: 1;
+          opacity: 1;
+          outline: none;
 				}
 				.swiper-pagination-bullet-active {
 					color: #333;

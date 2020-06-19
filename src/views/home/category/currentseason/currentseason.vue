@@ -36,7 +36,12 @@ export default {
   },
   mounted() {
     this.http.get(this.api.query.currentSeasonData.url).then((response) => {
-      this.currentSeasonData = response.data.data
+      const { code, data } = response.data
+      if (code === 0) {
+        this.currentSeasonData = data
+      } else {
+        this.Toast.fail('数据异常')
+      }
     })
   }
 }

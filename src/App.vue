@@ -20,7 +20,7 @@ a {
 p {
   margin: 0;
 }
-input, textarea {
+input, textarea, button {
   outline: none;
 }
 ul, li {

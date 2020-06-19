@@ -105,12 +105,17 @@ export default {
   mounted() {
     // 获取数据
     this.http.get(this.api.query.menuData.url).then((response) => {
-      this.menuData = response.data.data
-      this.menuIndex = this.$route.params.id - 1
-      this.menuDetails = this.menuData[this.menuIndex]
-      this.menuAuthor = this.menuDetails.author
-      // 判断是否收藏该菜谱
-      this.judgeLikedState()
+      const { code, data } = response.data
+      if (code === 0) {
+        this.menuData = data
+        this.menuIndex = this.$route.params.id - 1
+        this.menuDetails = this.menuData[this.menuIndex]
+        this.menuAuthor = this.menuDetails.author
+        // 判断是否收藏该菜谱
+        this.judgeLikedState()
+      } else {
+        this.Toast.fail('数据异常')
+      }
     })
   },
   methods: {
@@ -157,7 +162,7 @@ export default {
     },
     judgeLikedState: function() {
       const likeIds = sessionStorage.getItem('likeMenuIds')
-      if (likeIds.indexOf(this.menuDetails.id) !== -1) {
+      if (likeIds && likeIds.indexOf(this.menuDetails.id) !== -1) {
         this.isLikedActive = true
         this.isLiked = true
       }

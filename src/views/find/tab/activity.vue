@@ -17,8 +17,13 @@ export default {
   },
   mounted() {
     this.http.get(this.api.query.findData.url).then((response) => {
-      this.findData = response.data.data
-      this.activityData = this.findData.activity
+      const { code, data } = response.data
+      if (code === 0) {
+        this.findData = data
+        this.activityData = this.findData.activity
+      } else {
+        this.Toast.fail('数据异常')
+      }
     })
   }
 }
