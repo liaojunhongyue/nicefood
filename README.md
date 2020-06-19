@@ -1,6 +1,6 @@
-# 运用vue-cli搭建仿照美食杰的移动端APP
+# Vue-cli实战：搭建仿照美食杰的WebApp
 
-> 此项目参考美食杰APP，运用Vue-cli搭建，技术栈：Vue-cli + Vue-router + Vuex + Axios
+> 此项目参考美食杰APP，项目中所有的接口请求的数据采用mock的方式。运用Vue-cli搭建，技术栈：Vue-cli + Vue-router + Vuex + Axios。用Vue-router做路由守卫，Vuex存储全局信息，对Axios进行二次封装，并且解决移动端1px边线等问题。
 
 ## 项目启动
 
