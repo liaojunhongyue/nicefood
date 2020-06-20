@@ -25,6 +25,12 @@ Vue.prototype.Toast = Toast
 Vue.prototype.$http = axios
 Vue.config.productionTip = false
 
+// filter
+import vueFilter from './utils/filter'
+Object.keys(vueFilter).forEach((key) => {
+  Vue.filter(key, vueFilter[key])
+})
+
 // 路由守卫
 router.beforeEach((to, from, next) => {
   if (window.sessionStorage.getItem('userToken')) {

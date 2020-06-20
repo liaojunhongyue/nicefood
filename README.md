@@ -1,6 +1,8 @@
 # Vue-cli实战：搭建仿照美食杰的WebApp
 
-> 此项目参考美食杰APP，项目中所有的接口请求的数据采用mock的方式。运用Vue-cli搭建，技术栈：Vue-cli + Vue-router + Vuex + Axios。用Vue-router做路由守卫，Vuex存储全局信息，对Axios进行二次封装，并且解决移动端1px边线等问题。并且还提供了node服务的启动文件，文件中包含接口的定义以及跨域问题的解决。
+1. 此项目参考美食杰APP，项目中所有的接口请求的数据采用mock的方式。
+2. 运用Vue-cli搭建，技术栈：Vue-cli + Vue-router + Vuex + Axios。用Vue-router做路由守卫，Vuex存储全局信息，对Axios进行二次封装，配置全局filter，并且解决移动端1px边线等问题。
+3. 项目中提供了node服务的启动文件，文件中包含接口的定义以及跨域问题的解决。
 
 ## 项目启动
 
@@ -27,6 +29,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 - axios的引入及封装（拦截器、get、post）
 - Vuex的引入
 - Vue-router的引入以及路由守卫
+- 全局filter的配置
 - 移动端适配 less mixin 边框1px问题
 - vant的引入、主题UI的配置
 - 通用组件的封装
@@ -69,6 +72,36 @@ devServer: {
 require.ensure([], () => r(require('@/views/main/main')))
 ```
 2. 在`src/main.js`中用路由守卫进行拦截，用户未登录时如果请求到了需要登录的页面则会跳转到登录页面。
+```
+// 路由守卫
+router.beforeEach((to, from, next) => {
+  if (window.sessionStorage.getItem('userToken')) {
+    next()
+  } else {
+    if (to.meta.requireLogin) {
+      next({
+        path: '/login',
+        query: {
+          redirect: to.fullPath
+        }
+      })
+    } else {
+      next()
+    }
+  }
+})
+```
+
+### 全局filter的配置
+配置全局filter以便在任何组件内部都可调用。
+filter的方法写在`src/utils/filter.js`中，然后在`main.js`中配置：
+```
+// filter
+import vueFilter from './utils/filter'
+Object.keys(vueFilter).forEach((key) => {
+  Vue.filter(key, vueFilter[key])
+})
+```
 
 ### 移动端适配 边框1px问题
 1. 采用`vw vh`适配移动端。

@@ -21,7 +21,7 @@
         </div>
         <div class="desc">
           <div class="publish">
-            <p>{{ item.time }}发布 来自<span>{{ item.origin }}</span></p>
+            <p>{{ item.time | dateFormatToDay }}发布 来自<span>{{ item.origin }}</span></p>
           </div>
           <div class="operate">
             <p class="like"><i class="fa fa-thumbs-o-up" aria-hidden="true" />{{ item.like }}</p>

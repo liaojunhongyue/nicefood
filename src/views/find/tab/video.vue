@@ -18,7 +18,7 @@
             <p>{{ item.author.name }}</p>
           </div>
           <div class="date">
-            <p>{{ item.time }}</p>
+            <p>{{ item.time | dateFormatToDay }}</p>
           </div>
         </div>
       </router-link>
