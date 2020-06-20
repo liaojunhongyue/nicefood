@@ -37,11 +37,11 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 ```
 const express = require('express')
 const app = express()
-...
+... // 此处省略
 let apiRoutes = express.Router()
 app.use('/api', apiRoutes)
 
-...
+... // 此处省略
 
 devServer: {
   before(app) {
@@ -55,6 +55,7 @@ devServer: {
   }
 }
 ```
+注意：此处如果没有安装express会报错，需要安装express。
 
 ### axios的引入及封装（拦截器、get、post）
 在`src/utils/http.js`中对`axios`进行了封装，封装了请求拦截器，返回拦截器，post，get方法。
