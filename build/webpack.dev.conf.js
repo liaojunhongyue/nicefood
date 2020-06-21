@@ -11,18 +11,18 @@ const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const portfinder = require('portfinder')
 
 // 模拟接口
-const express = require('express')
-const app = express()
-let appData = require('../data.json')
-let menuData = appData.menuData
-let hotData = appData.hotData
-let currentSeasonData = appData.currentSeasonData
-let foodCategoryData = appData.foodCategoryData
-let findData = appData.findData
-let challengeData = appData.challengeData
-let userData = appData.userData
-let apiRoutes = express.Router()
-app.use('/api', apiRoutes)
+// const express = require('express')
+// const app = express()
+// let appData = require('../data.json')
+// let menuData = appData.menuData
+// let hotData = appData.hotData
+// let currentSeasonData = appData.currentSeasonData
+// let foodCategoryData = appData.foodCategoryData
+// let findData = appData.findData
+// let challengeData = appData.challengeData
+// let userData = appData.userData
+// let apiRoutes = express.Router()
+// app.use('/api', apiRoutes)
 
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
@@ -57,71 +57,71 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     watchOptions: {
       poll: config.dev.poll,
     },
-    before(app) {
-      app.get('/api/menuData', (req, res) => {
-        res.json({
-          code: 0,
-          message: 'success',
-          data: menuData
-        })
-      }),
-      app.get('/api/hotData', (req, res) => {
-        res.json({
-          code: 0,
-          message: 'success',
-          data: hotData
-        })
-      }),
-      app.get('/api/currentSeasonData', (req, res) => {
-        res.json({
-          code: 0,
-          message: 'success',
-          data: currentSeasonData
-        })
-      }),
-      app.get('/api/foodCategoryData', (req, res) => {
-        res.json({
-          code: 0,
-          message: 'success',
-          data: foodCategoryData
-        })
-      }),
-      app.get('/api/findData', (req, res) => {
-        res.json({
-          code: 0,
-          message: 'success',
-          data: findData
-        })
-      }),
-      app.get('/api/challengeData', (req, res) => {
-        res.json({
-          code: 0,
-          message: 'success',
-          data: challengeData
-        })
-      }),
-      app.get('/api/userData', (req, res) => {
-        res.json({
-          code: 0,
-          message: 'success',
-          data: userData
-        })
-      }),
-      app.post('/api/login', (req, res) => {
-        res.json({
-          code: 0,
-          message: 'success',
-          data: "testToken"
-        })
-      }),
-      app.post('/api/logout', (req, res) => {
-        res.json({
-          code: 0,
-          message: 'success',
-          data: null
-        })
-      })
-    }
+    // before(app) {
+    //   app.get('/api/menuData', (req, res) => {
+    //     res.json({
+    //       code: 0,
+    //       message: 'success',
+    //       data: menuData
+    //     })
+    //   }),
+    //   app.get('/api/hotData', (req, res) => {
+    //     res.json({
+    //       code: 0,
+    //       message: 'success',
+    //       data: hotData
+    //     })
+    //   }),
+    //   app.get('/api/currentSeasonData', (req, res) => {
+    //     res.json({
+    //       code: 0,
+    //       message: 'success',
+    //       data: currentSeasonData
+    //     })
+    //   }),
+    //   app.get('/api/foodCategoryData', (req, res) => {
+    //     res.json({
+    //       code: 0,
+    //       message: 'success',
+    //       data: foodCategoryData
+    //     })
+    //   }),
+    //   app.get('/api/findData', (req, res) => {
+    //     res.json({
+    //       code: 0,
+    //       message: 'success',
+    //       data: findData
+    //     })
+    //   }),
+    //   app.get('/api/challengeData', (req, res) => {
+    //     res.json({
+    //       code: 0,
+    //       message: 'success',
+    //       data: challengeData
+    //     })
+    //   }),
+    //   app.get('/api/userData', (req, res) => {
+    //     res.json({
+    //       code: 0,
+    //       message: 'success',
+    //       data: userData
+    //     })
+    //   }),
+    //   app.post('/api/login', (req, res) => {
+    //     res.json({
+    //       code: 0,
+    //       message: 'success',
+    //       data: "testToken"
+    //     })
+    //   }),
+    //   app.post('/api/logout', (req, res) => {
+    //     res.json({
+    //       code: 0,
+    //       message: 'success',
+    //       data: null
+    //     })
+    //   })
+    // }
   },
   plugins: [
     new webpack.DefinePlugin({

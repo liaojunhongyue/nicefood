@@ -1,0 +1,31 @@
+@charset "utf-8";
+/* ---------清空默认样式----------- */
+html, body, div, a, p, ul, ol, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, form, select, button, textarea, iframe, table, th, td, blockquote, fieldset, a { margin:0px; padding:0px;font-family:"Microsoft YaHei"; font-size:14px; color: #767676;}
+input { color: #000; }
+img { border:0 none; vertical-align: top; }
+ul, ol, li { list-style-type: none; }
+body, input, select, button, textarea { font-size: 13px; }
+h1, h2, h3, h4, p, span, label, del, a, strong, em, li, dt, dd { white-space:normal; word-wrap:break-word; word-break:break-all; }
+
+table, tr, th, td { /* border: 0 none; */ padding: 4px; border-collapse:collapse; border-spacing:0; }
+
+fieldset { border:0 none; }
+button { cursor: pointer; }
+i, em, cite, address { font-style: normal; }
+a, a:link { color: #767676;text-decoration:none; cursor: pointer; border:0; }
+a:visited {  }
+a:hover, a:active { text-decoration: none; filter:alpha(opacity=80); -moz-opacity: 0.8; -khtml-opacity: 0.8; opacity: 0.8; }
+a:focus,input,textarea { outline: none; }
+
+a{ blr:expression(this.onFocus=this.blur()); /* IE Opera */ outline:none; /* FF Opera */ }
+a:focus{ -moz-outline-style: none; /* FF */ }
+
+.clearfix { overflow: hidden; zoom: 1 }
+
+/*去掉input边框*/
+input:focus{ -webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-user-modify:read-write-plaintext-only;}
+*:focus {outline: none;}
+
+/*去掉所有圆角*/
+*{border-radius: 0px;}
+

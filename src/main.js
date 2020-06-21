@@ -8,6 +8,9 @@ import store from './store/index'
 import 'normalize.css/normalize.css'
 import 'font-awesome/css/font-awesome.min.css'
 
+// mock
+require('./mock/index')
+
 // axios封装
 import http from './utils/http'
 Vue.prototype.http = http

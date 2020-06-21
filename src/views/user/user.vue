@@ -11,7 +11,7 @@
         </router-link>
       </div>
       <div class="user-avatar">
-        <img src="/static/upload/avatar.jpg">
+        <img src="../../../static/upload/avatar.jpg">
       </div>
       <div class="user-info">
         <p class="name">路很长（来自微信...）</p>
@@ -112,7 +112,7 @@ export default {
 		position: relative;
 		width: 100%;
 		height: 45vw;
-		background: url('/static/images/userbg.jpg') center center no-repeat;
+		background: url('../../../static/images/userbg.jpg') center center no-repeat;
 		background-size: cover;
 		.user-header-mask {
 			position: absolute;
