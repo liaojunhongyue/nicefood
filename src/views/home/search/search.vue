@@ -6,7 +6,7 @@
       </div>
       <div class="input">
         <i class="fa fa-search" aria-hidden="true" />
-        <input type="text" placeholder="菜谱、食材">
+        <input v-debounce="[() => {getResult(2)}, 2000]" type="text" placeholder="菜谱、食材">
       </div>
       <router-link :to="'/message'" class="message">
         <i class="fa fa-envelope-o" aria-hidden="true" />
@@ -26,9 +26,12 @@ export default {
     ...mapGetters(['addrotateGetters'])
   },
   methods: {
-    showAdd: function() {
+    showAdd() {
       this.$store.commit('setShowadd', true)
       this.$store.commit('setAddrotate', 'rotate')
+    },
+    getResult(count) {
+      console.log(count)
     }
   }
 }

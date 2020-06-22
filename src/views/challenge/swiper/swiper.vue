@@ -1,11 +1,11 @@
 <template>
   <swiper ref="mySwiper" :options="swiperOption" class="challenge-swiper">
     <swiper-slide v-for="item in bannerData" :key="item.id">
-      <img class="pic" :src="item.image">
-      <div class="title">
-        <p>{{ item.title }}</p>
-      </div>
-    </swiper-slide>
+      <van-image class="pic" :src="item.image">
+        <div class="title">
+          <p>{{ item.title }}</p>
+        </div>
+      </van-image></swiper-slide>
     <div slot="pagination" class="swiper-pagination" />
   </swiper>
 </template>

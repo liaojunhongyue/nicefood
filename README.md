@@ -1,5 +1,7 @@
 # Vue-cli实战：搭建仿照美食杰的WebApp
 
+项目演示地址：https://liaojunhongyue.github.io/nicefood/
+
 1. 此项目参考美食杰APP，项目中所有的接口请求的数据采用mock的方式。
 2. 运用Vue-cli搭建，技术栈：Vue-cli + Vue-router + Vuex + Axios。用Vue-router做路由守卫，Vuex存储全局信息，对Axios进行二次封装，配置全局filter，并且解决移动端1px边线等问题。
 3. 项目中提供了node服务的启动文件，文件中包含接口的定义以及跨域问题的解决。
@@ -25,40 +27,67 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 ## 项目包含内容介绍
 
 项目中包含内容的大致介绍：
-- 数据mock
+- 数据mock（提供了express和mockjs两种方式）
 - axios的引入及封装（拦截器、get、post）
 - Vuex的引入
 - Vue-router的引入以及路由守卫
 - 全局filter的配置
+- 自定义指令directive的配置
 - 移动端适配 less mixin 边框1px问题
 - vant的引入、主题UI的配置
 - 通用组件的封装
 - node启动文件`prod.server.js`
 
 ### 数据mock
-此项目所有的数据采用mock的形式，修改`webpack.dev.conf.js`文件，将所有接口写在该文件中。
-```
-const express = require('express')
-const app = express()
-... // 此处省略
-let apiRoutes = express.Router()
-app.use('/api', apiRoutes)
+项目提供两种方式进行数据mock，下面分别介绍这两种方式的实现：
+步骤一：新建`data.json`文件，将mock的数据信息写在该文件中。
 
-... // 此处省略
+步骤二：mock接口：
+-  方法一：用express进行数据mock：修改`webpack.dev.conf.js`文件，将所有接口写在该文件中。
+    ```
+    const express = require('express')
+    const app = express()
+    ... // 此处省略
+    let apiRoutes = express.Router()
+    app.use('/api', apiRoutes)
 
-devServer: {
-  before(app) {
-    app.get('/api/menuData', (req, res) => {
-      res.json({
-        errno: 0,
+    ... // 此处省略
+
+    devServer: {
+      before(app) {
+        app.get('/api/menuData', (req, res) => {
+          res.json({
+            errno: 0,
+            data: menuData
+          })
+        }),
+        ...
+      }
+    }
+    ```
+    注意：
+    此处如果没有安装express会报错，需要安装express。
+    该方法打包成dist文件后直接访问该文件中的`index.html`，mock的数据不显示，所以介绍下第二种mock的方法。
+- 方法二：用`mockjs`进行数据mock：
+    先执行`npm install mockjs --save-dev`安装`mockjs`，
+    然后新建`mock/index.js`文件，将`mockjs`和`data.json`都引入进来，代码如下：
+    ```
+    const Mock = require('mockjs')
+    const appData = require('../../data.json')
+
+    const menuData = appData.menuData
+    Mock.mock('/api/menuData', 'get', () => {
+      return {
+        code: 0,
+        message: 'success',
         data: menuData
-      })
-    }),
-    ...
-  }
-}
-```
-注意：此处如果没有安装express会报错，需要安装express。
+      }
+    })
+
+    export default Mock
+    ```
+    注意：
+    此方法mock的数据在浏览器中无法看到请求，但是打包成dist文件夹后，访问`index.html`，mock的数据还存在。
 
 ### axios的引入及封装（拦截器、get、post）
 在`src/utils/http.js`中对`axios`进行了封装，封装了请求拦截器，返回拦截器，post，get方法。
@@ -102,6 +131,9 @@ Object.keys(vueFilter).forEach((key) => {
   Vue.filter(key, vueFilter[key])
 })
 ```
+
+### 自定义指令directive的配置
+提供了防抖的自定义指令，在`src/utils/common.js`里面写了通用方法，`src/directive/index.js`中将方法挂载到vue的自定义指令中，然后在`main.js`中引入，就可以用`v-`去调用自定义指令了。
 
 ### 移动端适配 边框1px问题
 1. 采用`vw vh`适配移动端。

@@ -5,7 +5,7 @@
       <div v-for="item in menuData" :key="item.id">
         <router-link class="promote-list-item" :to="{name: 'fooddetails', params: {id: item.id}}">
           <div class="pic">
-            <img :src="item.image">
+            <van-image :src="item.image" />
           </div>
           <div class="info">
             <p class="title">{{ item.title }}</p>

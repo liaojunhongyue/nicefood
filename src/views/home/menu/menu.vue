@@ -7,8 +7,7 @@
         <swiper-slide v-for="n in 5" :key="n" class="menu-meal-list">
           <div v-for="(item, index) in swiperData.slice(2*n-2,2*n)" :key="index" class="menu-meal-pic">
             <router-link :to="{name: 'fooddetails', params: {id: item.id}}">
-              <img :src="item.image">
-            </router-link>
+              <van-image :src="item.image" /></router-link>
           </div>
         </swiper-slide>
         <div slot="pagination" class="menu-list swiper-pagination" />
@@ -46,12 +45,13 @@ export default {
         },
         on: {
           slideChangeTransitionStart: function(title) {
+            const titleObj = document.getElementById('menuTitle')
             switch (this.activeIndex) {
-              case 0: title = '早餐'; break
-              case 1: title = '午餐'; break
-              case 2: title = '下午茶'; break
-              case 3: title = '晚餐'; break
-              case 4: title = '夜宵'; break
+              case 0: titleObj.innerHTML = '早餐'; break
+              case 1: titleObj.innerHTML = '午餐'; break
+              case 2: titleObj.innerHTML = '下午茶'; break
+              case 3: titleObj.innerHTML = '晚餐'; break
+              case 4: titleObj.innerHTML = '夜宵'; break
             }
           }
         }

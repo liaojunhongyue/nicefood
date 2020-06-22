@@ -21,8 +21,8 @@ Vue.prototype.api = api
 
 // vant
 import 'vant/lib/index.less'
-import { Tabbar, TabbarItem, Toast } from 'vant'
-Vue.use(Tabbar).use(TabbarItem).use(Toast)
+import { Tabbar, TabbarItem, Toast, Image as VanImage, Lazyload } from 'vant'
+Vue.use(Tabbar).use(TabbarItem).use(Toast).use(VanImage).use(Lazyload)
 Vue.prototype.Toast = Toast
 
 Vue.prototype.$http = axios
@@ -33,6 +33,9 @@ import vueFilter from './utils/filter'
 Object.keys(vueFilter).forEach((key) => {
   Vue.filter(key, vueFilter[key])
 })
+
+// directive
+import './directive/index'
 
 // 路由守卫
 router.beforeEach((to, from, next) => {

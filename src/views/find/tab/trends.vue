@@ -7,12 +7,10 @@
           <span>{{ item.title }}</span>
         </div>
         <div class="pic">
-          <img :src="item.image">
-        </div>
+          <van-image :src="item.image" /></div>
         <div class="author">
           <div class="avatar">
-            <img :src="item.author.avatar">
-          </div>
+            <van-image :src="item.author.avatar" /></div>
           <div class="name">
             <p>{{ item.author.name }}</p>
           </div>

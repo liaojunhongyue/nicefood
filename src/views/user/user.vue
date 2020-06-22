@@ -11,7 +11,7 @@
         </router-link>
       </div>
       <div class="user-avatar">
-        <img src="../../../static/upload/avatar.jpg">
+        <van-image src="../../../static/upload/avatar.jpg" />
       </div>
       <div class="user-info">
         <p class="name">路很长（来自微信...）</p>
@@ -63,7 +63,7 @@
         </div>
         <div class="menu-list-item">
           <div class="pic">
-            <img :src="item.image">
+            <van-image :src="item.image" />
           </div>
           <div class="info">
             <p class="title">{{ item.title }}</p>

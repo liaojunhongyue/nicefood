@@ -5,7 +5,7 @@
     <div class="hot-list">
       <router-link v-for="item in hotData" :key="item.id" :to="{name: 'hotdetails', params: {id: item.id}}" class="hot-list-item">
         <div class="pic">
-          <img :src="item.image">
+          <van-image lazy-load :src="item.image" />
           <p class="pic-title">
             <span class="main-title">{{ item.imageTitle }}</span>
             <span class="sub-title">{{ item.imageDesc }}</span>

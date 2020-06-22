@@ -2,7 +2,7 @@
   <div class="find-activity padding">
     <div class="find-activity-list">
       <div v-for="item in activityData" :key="item.id" class="find-activity-item">
-        <img :src="item.image">
+        <van-image :src="item.image" />
       </div>
     </div>
   </div>

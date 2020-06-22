@@ -12,11 +12,11 @@
         </div>
         <div class="info">
           <div class="pic">
-            <img :src="item.image">
-            <div class="pic-mask">
-              <p>{{ item.imageTitle }}</p>
-            </div>
-          </div>
+            <van-image :src="item.image">
+              <div class="pic-mask">
+                <p>{{ item.imageTitle }}</p>
+              </div>
+            </van-image></div>
           <div class="title">
             <p>{{ item.title }}</p>
           </div>

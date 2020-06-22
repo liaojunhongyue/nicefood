@@ -18,9 +18,9 @@
               <i class="fa fa-plus-square" aria-hidden="true" />
               <p>添加封面图</p>
             </div>
-            <img v-show="false" id="mianpic" class="menu-pic">
-            <input objId="mianpic" type="file" name="menuPic" @change="fileSelect">
-          </div>
+            <van-image v-show="false" id="mianpic" class="menu-pic">
+              <input objId="mianpic" type="file" name="menuPic" @change="fileSelect">
+            </van-image></div>
         </div>
         <div class="form-list">
           <input type="text" class="menu-title" name="menuTitle" placeholder="添加菜谱标题">
@@ -83,9 +83,9 @@
                       <i class="fa fa-plus-square" aria-hidden="true" />
                       <p>添加步骤图</p>
                     </div>
-                    <img v-show="item.img" class="menu-display-img" :src="item.img">
-                    <input type="file" class="pic-upload" value="item.img" :objIndex="index" @change="fileSelect">
-                  </div>
+                    <van-image v-show="item.img" class="menu-display-img" :src="item.img">
+                      <input type="file" class="pic-upload" value="item.img" :objIndex="index" @change="fileSelect">
+                    </van-image></div>
                   <div class="menu-display-desc">
                     <textarea ref="textObg" v-model="item.text" class="menu-display-textarea" placeholder="请填写步骤描述" />
                   </div>
@@ -109,8 +109,7 @@
                     <i class="fa fa-plus-square" aria-hidden="true" />
                     <p>添加成品图</p>
                   </div>
-                  <img v-if="true" src="">
-                </div>
+                  <van-image v-if="true" src="" /></div>
               </li>
             </ul>
             <p class="menu-display-add">

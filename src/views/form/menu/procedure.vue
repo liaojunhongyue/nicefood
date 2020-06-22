@@ -8,9 +8,9 @@
             <i class="fa fa-plus-square" aria-hidden="true" />
             <p>添加步骤图</p>
           </div>
-          <img v-show="isShowPic" ref="menuImg" class="menu-display-img" :src="dataImg">
-          <input type="file" class="pic-upload" @change="fileSelect">
-        </div>
+          <van-image v-show="isShowPic" ref="menuImg" class="menu-display-img" :src="dataImg">
+            <input type="file" class="pic-upload" @change="fileSelect">
+          </van-image></div>
         <div class="menu-display-desc">
           <textarea ref="textObg" v-model="datas[dataindex].textValue" class="menu-display-textarea" placeholder="请填写步骤描述" @input="textChange" />
         </div>

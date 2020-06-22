@@ -4,9 +4,9 @@
       <li v-for="item in templateData" :key="item.id" class="find-talk-tab-item">
         <div class="author">
           <div class="avatar">
-            <img class="avatar-img" :src="item.author.avatar">
-            <span class="icon">V</span>
-          </div>
+            <van-image class="avatar-img" :src="item.author.avatar">
+              <span class="icon">V</span>
+            </van-image></div>
           <div class="name">
             <p>{{ item.author.name }}</p>
           </div>
@@ -15,8 +15,7 @@
           <p class="text">{{ item.text }}</p>
           <div class="pictures">
             <div v-for="pic in item.images" :key="pic" class="picture">
-              <img :src="pic">
-            </div>
+              <van-image :src="pic" /></div>
           </div>
         </div>
         <div class="desc">

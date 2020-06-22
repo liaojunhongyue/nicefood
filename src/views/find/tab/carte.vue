@@ -8,12 +8,12 @@
             <span>{{ item.desc }}</span>
           </div>
           <div class="avatar">
-            <img :src="item.avatar">
+            <van-image :src="item.avatar" />
           </div>
         </div>
         <div class="pics">
           <div v-for="image in item.images" :key="image" class="pic">
-            <img :src="image">
+            <van-image :src="image" />
           </div>
         </div>
       </div>

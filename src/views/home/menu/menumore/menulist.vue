@@ -5,9 +5,9 @@
     </div>
     <ul class="menu-more-list">
       <router-link v-for="item in menuData.slice(0, 9)" :key="item.id" :to="{name: 'fooddetails', params: {id: item.id}}" class="menu-more-item">
-        <img :src="item.image">
-        <p class="menu-title">{{ item.title }}</p>
-      </router-link>
+        <van-image :src="item.image">
+          <p class="menu-title">{{ item.title }}</p>
+        </van-image></router-link>
     </ul>
   </div>
 </template>

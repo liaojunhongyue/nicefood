@@ -1,7 +1,7 @@
 <template>
   <div class="find-talk">
     <div class="find-talk-banner">
-      <img :src="talkBanner">
+      <van-image :src="talkBanner" />
     </div>
     <div class="find-talk-icon">
       <div class="icon-scroll" style="width: 560px;">

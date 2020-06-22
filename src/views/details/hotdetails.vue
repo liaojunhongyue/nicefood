@@ -3,10 +3,10 @@
     <f-normal-header message="热门专题" historyurl="" />
     <div class="hot-details">
       <div class="pic">
-        <img :src="hotDetails.image">
-        <p class="pic-title">{{ hotDetails.imageTitle }}</p>
-        <p class="pic-desc">{{ hotDetails.imageDesc }}</p>
-      </div>
+        <van-image :src="hotDetails.image">
+          <p class="pic-title">{{ hotDetails.imageTitle }}</p>
+          <p class="pic-desc">{{ hotDetails.imageDesc }}</p>
+        </van-image></div>
       <p class="title">{{ hotDetails.title }}</p>
       <p class="details">{{ hotDetails.details }}</p>
     </div>

@@ -2,7 +2,7 @@
 	"menuData": [{
 		"id": 1,
 		"title": "小蒸包",
-		"image": "../static/upload/food1.jpg",
+		"image": "./static/upload/food1.jpg",
 		"star": 5,
 		"like": "36",
 		"browse": "610",

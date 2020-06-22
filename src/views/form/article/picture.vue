@@ -4,9 +4,9 @@
       <div class="article-content-picbg">
         <i class="fa fa-plus-square" aria-hidden="true" />
         <p>添加图片</p>
-        <img v-show="isShowImg" ref="articleImg" class="article-img" src="">
-        <input type="file" class="article-content-pic-upload" @change="selectFile">
-      </div>
+        <van-image v-show="isShowImg" ref="articleImg" class="article-img" src="">
+          <input type="file" class="article-content-pic-upload" @change="selectFile">
+        </van-image></div>
       <i class="fa fa-times" aria-hidden="true" @click="removeThis" />
     </div>
   </div>

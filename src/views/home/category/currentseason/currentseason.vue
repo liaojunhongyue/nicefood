@@ -8,8 +8,7 @@
       <ul class="current-season-list">
         <li v-for="item in currentSeasonData" :key="item.id" class="current-season-item">
           <div class="pic">
-            <img :src="item.image">
-          </div>
+            <van-image :src="item.image" /></div>
           <div class="info">
             <p class="title">{{ item.title }}</p>
             <p class="effect">

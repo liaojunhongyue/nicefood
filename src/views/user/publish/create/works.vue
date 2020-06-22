@@ -17,9 +17,9 @@
             <div class="works-picbg">
               <i class="fa fa-file-image-o" aria-hidden="true" />
             </div>
-            <img v-show="isShowPic" ref="worksimg" src="">
-            <input ref="workspic" type="file" class="upload-works-pic" @change="fileSelect">
-          </div>
+            <van-image v-show="isShowPic" ref="worksimg" src="">
+              <input ref="workspic" type="file" class="upload-works-pic" @change="fileSelect">
+            </van-image></div>
           <div class="works-textarea">
             <textarea ref="workstext" placeholder="说说照片背后的故事" />
           </div>

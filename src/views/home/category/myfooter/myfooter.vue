@@ -11,8 +11,7 @@
         <div class="menu-list-item">
           <div class="menu-list-item-box">
             <div class="pic">
-              <img :src="item.image">
-            </div>
+              <van-image :src="item.image" /></div>
             <div class="info">
               <p class="title">{{ item.title }}</p>
               <p class="star">

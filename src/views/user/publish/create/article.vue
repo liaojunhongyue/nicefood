@@ -9,9 +9,9 @@
             <div class="article-picbg">
               <i class="fa fa-plus-square" aria-hidden="true" />
               <p>添加封面图</p>
-              <img v-show="isShowPic" ref="mainpic" class="article-img">
-              <input ref="mainImg" type="file" class="article-pic-upload" @change="mainPicSelect">
-            </div>
+              <van-image v-show="isShowPic" ref="mainpic" class="article-img">
+                <input ref="mainImg" type="file" class="article-pic-upload" @change="mainPicSelect">
+              </van-image></div>
           </div>
         </div>
         <div class="form-list">

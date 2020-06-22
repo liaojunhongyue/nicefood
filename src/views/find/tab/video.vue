@@ -14,9 +14,9 @@
         </div>
         <div class="author">
           <div class="avatar-name">
-            <img :src="item.author.avatar">
-            <p>{{ item.author.name }}</p>
-          </div>
+            <van-image :src="item.author.avatar">
+              <p>{{ item.author.name }}</p>
+            </van-image></div>
           <div class="date">
             <p>{{ item.time | dateFormatToDay }}</p>
           </div>

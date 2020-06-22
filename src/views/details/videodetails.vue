@@ -3,15 +3,15 @@
     <div class="video-close" @click="goHistory">
       <i class="fa fa-times" aria-hidden="true" />
     </div>
-    <div class="video-content">
-      <div class="video">
-        <video :poster="videoDetails.cover" :src="videoDetails.video" controls="controls" autoplay="autoplay" />
-      </div>
-    </div>
+    <videoDetails :cover="videoDetails.cover" :video-src="videoDetails.video" />
   </div>
 </template>
 <script>
+import videoDetails from '@/components/video/video'
 export default {
+  components: {
+    videoDetails
+  },
   data() {
     return {
       videoData: '',
@@ -58,30 +58,6 @@ export default {
 				color: #fff;
 			}
 		}
-		.video-content {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			.video {
-				position: relative;
-				video {
-					width: 100%;
-				}
-				i {
-					position: absolute;
-					top: 50%;
-					left: 50%;
-					margin-top: -9vw;
-					margin-left: -9vw;
-					font-size: 18vw;
-					color: #fff;
-				}
-			}
-		}
+
 	}
 </style>

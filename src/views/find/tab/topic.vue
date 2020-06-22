@@ -3,12 +3,12 @@
     <div class="find-topic-list">
       <div v-for="item in topicData" :key="item.id" class="find-topic-item">
         <div class="pic">
-          <img :src="item.image">
-          <div class="pic-text">
-            <p>{{ item.imageTitle }}</p>
-            <span>{{ item.imageDesc }}</span>
-          </div>
-        </div>
+          <van-image :src="item.image">
+            <div class="pic-text">
+              <p>{{ item.imageTitle }}</p>
+              <span>{{ item.imageDesc }}</span>
+            </div>
+          </van-image></div>
         <div class="title">
           <p>{{ item.title }}</p>
         </div>

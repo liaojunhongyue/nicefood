@@ -4,12 +4,12 @@
     <div class="hot-list">
       <router-link v-for="item in hotData" :key="item.id" :to="{name: 'hotdetails', params: {id: item.id}}" class="hot-list-item">
         <div class="pic">
-          <img :src="item.image">
-          <p class="pic-title">
-            <span class="main-title">{{ item.imageTitle }}</span>
-            <span class="sub-title">{{ item.imageDesc }}</span>
-          </p>
-        </div>
+          <van-image :src="item.image">
+            <p class="pic-title">
+              <span class="main-title">{{ item.imageTitle }}</span>
+              <span class="sub-title">{{ item.imageDesc }}</span>
+            </p>
+          </van-image></div>
         <p class="title">{{ item.title }}</p>
       </router-link>
     </div>

@@ -3,7 +3,7 @@
     <div class="main-title"><p><i class="fa fa-star" aria-hidden="true" /> {{ collectCategory }}</p></div>
     <div v-for="item in collectData" :key="item.id" class="menu-list-item">
       <div class="pic">
-        <img :src="item.image">
+        <van-image :src="item.image" />
       </div>
       <div class="info">
         <p class="title">{{ item.title }}</p>

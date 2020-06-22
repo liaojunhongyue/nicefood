@@ -2,7 +2,7 @@
   <div class="food-details">
     <f-normal-header :message="menuDetails.title" historyurl="" />
     <div class="pic">
-      <img :src="menuDetails.image">
+      <van-image :src="menuDetails.image" />
     </div>
     <div class="food-title">
       <p class="title">{{ menuDetails.title }}</p>
@@ -13,7 +13,7 @@
     </div>
     <div class="food-author">
       <div class="avatar">
-        <img :src="menuAuthor.avatar">
+        <van-image :src="menuAuthor.avatar" />
       </div>
       <div class="info">
         <p>{{ menuAuthor.name }}</p>
