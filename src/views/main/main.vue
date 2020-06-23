@@ -19,7 +19,7 @@ export default {
         {
           name: '首页',
           icon: 'fa-shopping-basket',
-          link: '/home'
+          link: '/'
         },
         {
           name: '发现',

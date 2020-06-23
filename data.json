@@ -2,12 +2,12 @@
 	"menuData": [{
 		"id": 1,
 		"title": "小蒸包",
-		"image": "./static/upload/food1.jpg",
+		"image": "/static/upload/food1.jpg",
 		"star": 5,
 		"like": "36",
 		"browse": "610",
 		"author": {
-			"avatar": "./static/upload/avatar.jpg",
+			"avatar": "/static/upload/avatar.jpg",
 			"name": "凝儿",
 			"desc": "共发布636篇菜谱"
 		}
@@ -15,12 +15,12 @@
 	{
 		"id": 2,
 		"title": "小米炖辽参",
-		"image": "./static/upload/food2.jpg",
+		"image": "/static/upload/food2.jpg",
 		"star": 5,
 		"like": "32",
 		"browse": "510",
 		"author": {
-			"avatar": "./static/upload/avatar.jpg",
+			"avatar": "/static/upload/avatar.jpg",
 			"name": "小颖",
 			"desc": "共发布36篇菜谱"
 		}
@@ -28,12 +28,12 @@
 	{
 		"id": 3,
 		"title": "巧克力慕斯",
-		"image": "./static/upload/food3.jpg",
+		"image": "/static/upload/food3.jpg",
 		"star": 4,
 		"like": "26",
 		"browse": "320",
 		"author": {
-			"avatar": "./static/upload/avatar.jpg",
+			"avatar": "/static/upload/avatar.jpg",
 			"name": "秋儿",
 			"desc": "共发布32篇菜谱"
 		}
@@ -41,12 +41,12 @@
 	{
 		"id": 4,
 		"title": "虾饺",
-		"image": "./static/upload/food4.jpg",
+		"image": "/static/upload/food4.jpg",
 		"star": 4,
 		"like": "31",
 		"browse": "310",
 		"author": {
-			"avatar": "./static/upload/avatar.jpg",
+			"avatar": "/static/upload/avatar.jpg",
 			"name": "凝儿",
 			"desc": "共发布636篇菜谱"
 		}
@@ -54,12 +54,12 @@
 	{
 		"id": 5,
 		"title": "三文鱼",
-		"image": "./static/upload/food5.jpg",
+		"image": "/static/upload/food5.jpg",
 		"star": 4,
 		"like": "29",
 		"browse": "306",
 		"author": {
-			"avatar": "./static/upload/avatar.jpg",
+			"avatar": "/static/upload/avatar.jpg",
 			"name": "秋儿",
 			"desc": "共发布32篇菜谱"
 		}
@@ -67,12 +67,12 @@
 	{
 		"id": 6,
 		"title": "草莓布丁",
-		"image": "./static/upload/food6.jpg",
+		"image": "/static/upload/food6.jpg",
 		"star": 4,
 		"like": "21",
 		"browse": "263",
 		"author": {
-			"avatar": "./static/upload/avatar.jpg",
+			"avatar": "/static/upload/avatar.jpg",
 			"name": "凝儿",
 			"desc": "共发布636篇菜谱"
 		}
@@ -80,12 +80,12 @@
 	{
 		"id": 7,
 		"title": "烤牛排",
-		"image": "./static/upload/food7.jpg",
+		"image": "/static/upload/food7.jpg",
 		"star": 4,
 		"like": "19",
 		"browse": "236",
 		"author": {
-			"avatar": "./static/upload/avatar.jpg",
+			"avatar": "/static/upload/avatar.jpg",
 			"name": "秋儿",
 			"desc": "共发布32篇菜谱"
 		}
@@ -93,12 +93,12 @@
 	{
 		"id": 8,
 		"title": "香煎牛排",
-		"image": "./static/upload/food8.jpg",
+		"image": "/static/upload/food8.jpg",
 		"star": 4,
 		"like": "16",
 		"browse": "226",
 		"author": {
-			"avatar": "./static/upload/avatar.jpg",
+			"avatar": "/static/upload/avatar.jpg",
 			"name": "凝儿",
 			"desc": "共发布636篇菜谱"
 		}
@@ -106,12 +106,12 @@
 	{
 		"id": 9,
 		"title": "千层巧克力",
-		"image": "./static/upload/food9.jpg",
+		"image": "/static/upload/food9.jpg",
 		"star": 4,
 		"like": "12",
 		"browse": "196",
 		"author": {
-			"avatar": "./static/upload/avatar.jpg",
+			"avatar": "/static/upload/avatar.jpg",
 			"name": "秋儿",
 			"desc": "共发布32篇菜谱"
 		}
@@ -119,19 +119,19 @@
 	{
 		"id": 10,
 		"title": "芒果班戟",
-		"image": "./static/upload/food10.jpg",
+		"image": "/static/upload/food10.jpg",
 		"star": 4,
 		"like": "9",
 		"browse": "136",
 		"author": {
-			"avatar": "./static/upload/avatar.jpg",
+			"avatar": "/static/upload/avatar.jpg",
 			"name": "凝儿",
 			"desc": "共发布636篇菜谱"
 		}
 	}],
 	"hotData": [{
 		"id": 1,
-		"image": "./static/upload/hot1.jpg",
+		"image": "/static/upload/hot1.jpg",
 		"title": "享受全麦早餐",
 		"imageTitle": "早餐 · 从全麦面包开始",
 		"imageDesc": "告诉大家如何制作全麦面包",
@@ -139,7 +139,7 @@
 	},
 	{
 		"id": 2,
-		"image": "./static/upload/hot2.jpg",
+		"image": "/static/upload/hot2.jpg",
 		"title": "享受宁静的下午茶时光",
 		"imageTitle": "下午茶 · 感受精致生活",
 		"imageDesc": "介绍各类小点心",
@@ -147,7 +147,7 @@
 	},
 	{
 		"id": 3,
-		"image": "./static/upload/hot3.jpg",
+		"image": "/static/upload/hot3.jpg",
 		"title": "享受暖暖的汤",
 		"imageTitle": "煲汤 · 感受到暖暖的爱",
 		"imageDesc": "介绍各种靓汤",
@@ -155,37 +155,37 @@
 	}],
 	"currentSeasonData": [{
     "id": 1,
-		"image": "./static/upload/currentSeason1.jpg",
+		"image": "/static/upload/currentSeason1.jpg",
 		"title": "藕",
 		"heat": "较低热量",
 		"tags": ["强健胃黏膜","预防贫血","改善肠胃"]
 	},{
     "id": 2,
-		"image": "./static/upload/currentSeason2.jpg",
+		"image": "/static/upload/currentSeason2.jpg",
 		"title": "白萝卜",
 		"heat": "较低热量",
 		"tags": ["促进消化","保护肠胃","预防富贵病"]
 	},{
     "id": 3,
-		"image": "./static/upload/currentSeason3.jpg",
+		"image": "/static/upload/currentSeason3.jpg",
 		"title": "土豆",
 		"heat": "中等热量",
 		"tags": ["瘦身","美容","吃出好性格"]
 	},{
     "id": 4,
-		"image": "./static/upload/currentSeason4.jpg",
+		"image": "/static/upload/currentSeason4.jpg",
 		"title": "南瓜",
 		"heat": "较低热量",
 		"tags": ["预防癌症","保护胃黏膜"]
 	},{
     "id": 5,
-		"image": "./static/upload/currentSeason5.jpg",
+		"image": "/static/upload/currentSeason5.jpg",
 		"title": "四季豆",
 		"heat": "较低热量",
 		"tags": ["增进食欲","养胃下气","利水消肿"]
 	},{
     "id": 6,
-		"image": "./static/upload/currentSeason6.jpg",
+		"image": "/static/upload/currentSeason6.jpg",
 		"title": "山药",
 		"heat": "较低热量",
 		"tags": ["滋肾益精","降低血糖","延年益寿"]
@@ -477,15 +477,15 @@
 	}],
 	"findData": {
 		"talk": {
-			"banner": "./static/upload/findTalkBanner.jpg",
+			"banner": "/static/upload/findTalkBanner.jpg",
 			"new": [{
 				"id": 1,
 				"author": {
-					"avatar": "./static/upload/avatar.jpg",
+					"avatar": "/static/upload/avatar.jpg",
 					"name": "小C"
 				},
 				"text": "我的早餐日记～小米粥，烤鸡翅，千层饼，香菇丁。",
-				"images": ["./static/upload/food1.jpg","./static/upload/food2.jpg","./static/upload/food3.jpg","./static/upload/food4.jpg","./static/upload/food5.jpg","./static/upload/food6.jpg","./static/upload/food7.jpg","./static/upload/food8.jpg","./static/upload/food9.jpg"],
+				"images": ["/static/upload/food1.jpg","/static/upload/food2.jpg","/static/upload/food3.jpg","/static/upload/food4.jpg","/static/upload/food5.jpg","/static/upload/food6.jpg","/static/upload/food7.jpg","/static/upload/food8.jpg","/static/upload/food9.jpg"],
 				"time": 1511280000000,
 				"origin": "餐桌时光",
 				"like": 889,
@@ -493,11 +493,11 @@
 			},{
 				"id": 2,
 				"author": {
-					"avatar": "./static/upload/avatar.jpg",
+					"avatar": "/static/upload/avatar.jpg",
 					"name": "家和万事兴顺顺顺"
 				},
 				"text": "一缕晨光，移动的树影，新鲜的味道、漂亮的造型，寿司满足了味蕾的一切想象。",
-				"images": ["./static/upload/food1.jpg","./static/upload/food2.jpg","./static/upload/food3.jpg","./static/upload/food4.jpg","./static/upload/food5.jpg","./static/upload/food6.jpg","./static/upload/food7.jpg","./static/upload/food8.jpg","./static/upload/food9.jpg"],
+				"images": ["/static/upload/food1.jpg","/static/upload/food2.jpg","/static/upload/food3.jpg","/static/upload/food4.jpg","/static/upload/food5.jpg","/static/upload/food6.jpg","/static/upload/food7.jpg","/static/upload/food8.jpg","/static/upload/food9.jpg"],
 				"time": 1511280000000,
 				"origin": "餐桌时光",
 				"like": 538,
@@ -505,11 +505,11 @@
 			},{
 				"id": 3,
 				"author": {
-					"avatar": "./static/upload/avatar.jpg",
+					"avatar": "/static/upload/avatar.jpg",
 					"name": "小C"
 				},
 				"text": "我的早餐日记～大阪烧，奶茶，橙子，每天为自己而活。",
-				"images": ["./static/upload/food1.jpg","./static/upload/food2.jpg","./static/upload/food3.jpg","./static/upload/food4.jpg","./static/upload/food5.jpg","./static/upload/food6.jpg","./static/upload/food7.jpg","./static/upload/food8.jpg","./static/upload/food9.jpg"],
+				"images": ["/static/upload/food1.jpg","/static/upload/food2.jpg","/static/upload/food3.jpg","/static/upload/food4.jpg","/static/upload/food5.jpg","/static/upload/food6.jpg","/static/upload/food7.jpg","/static/upload/food8.jpg","/static/upload/food9.jpg"],
 				"time": 1511280000000,
 				"origin": "餐桌时光",
 				"like": 473,
@@ -518,11 +518,11 @@
 			"hot": [{
 				"id": 1,
 				"author": {
-					"avatar": "./static/upload/avatar.jpg",
+					"avatar": "/static/upload/avatar.jpg",
 					"name": "雨夕之家"
 				},
 				"text": "保留一颗感恩的心，它不仅让你怜惜一沙一石、一草一枝，它会让你淡漠某种无形的压力。",
-				"images": ["./static/upload/food1.jpg","./static/upload/food2.jpg","./static/upload/food3.jpg","./static/upload/food4.jpg","./static/upload/food5.jpg","./static/upload/food6.jpg","./static/upload/food7.jpg","./static/upload/food8.jpg","./static/upload/food9.jpg"],
+				"images": ["/static/upload/food1.jpg","/static/upload/food2.jpg","/static/upload/food3.jpg","/static/upload/food4.jpg","/static/upload/food5.jpg","/static/upload/food6.jpg","/static/upload/food7.jpg","/static/upload/food8.jpg","/static/upload/food9.jpg"],
 				"time": 1511280000000,
 				"origin": "餐桌时光",
 				"like": 889,
@@ -530,11 +530,11 @@
 			},{
 				"id": 2,
 				"author": {
-					"avatar": "./static/upload/avatar.jpg",
+					"avatar": "/static/upload/avatar.jpg",
 					"name": "七十二变小菊子"
 				},
 				"text": "美好的生活从吃开始",
-				"images": ["./static/upload/food1.jpg","./static/upload/food2.jpg","./static/upload/food3.jpg","./static/upload/food4.jpg","./static/upload/food5.jpg","./static/upload/food6.jpg","./static/upload/food7.jpg","./static/upload/food8.jpg","./static/upload/food9.jpg"],
+				"images": ["/static/upload/food1.jpg","/static/upload/food2.jpg","/static/upload/food3.jpg","/static/upload/food4.jpg","/static/upload/food5.jpg","/static/upload/food6.jpg","/static/upload/food7.jpg","/static/upload/food8.jpg","/static/upload/food9.jpg"],
 				"time": 1511280000000,
 				"origin": "餐桌时光",
 				"like": 880,
@@ -542,11 +542,11 @@
 			},{
 				"id": 3,
 				"author": {
-					"avatar": "./static/upload/avatar.jpg",
+					"avatar": "/static/upload/avatar.jpg",
 					"name": "荷风竹路"
 				},
 				"text": "最近一周的早餐。认真做早餐，也是对家人的一种爱。",
-				"images": ["./static/upload/food1.jpg","./static/upload/food2.jpg","./static/upload/food3.jpg","./static/upload/food4.jpg","./static/upload/food5.jpg","./static/upload/food6.jpg","./static/upload/food7.jpg","./static/upload/food8.jpg","./static/upload/food9.jpg"],
+				"images": ["/static/upload/food1.jpg","/static/upload/food2.jpg","/static/upload/food3.jpg","/static/upload/food4.jpg","/static/upload/food5.jpg","/static/upload/food6.jpg","/static/upload/food7.jpg","/static/upload/food8.jpg","/static/upload/food9.jpg"],
 				"time": 1511280000000,
 				"origin": "餐桌时光",
 				"like": 710,
@@ -556,47 +556,47 @@
 		"trends": [{
 			"id": 1,
 			"title": "粥",
-			"image": "./static/upload/trends1.jpg",
+			"image": "/static/upload/trends1.jpg",
 			"time": "05月16日",
 			"author": {
-				"avatar": "./static/upload/avatar.jpg",
+				"avatar": "/static/upload/avatar.jpg",
 				"name": "HumiL"
 			}
 		},{
 			"id": 2,
 			"title": "寿司",
-			"image": "./static/upload/trends2.jpg",
+			"image": "/static/upload/trends2.jpg",
 			"time": "05月06日",
 			"author": {
-				"avatar": "./static/upload/avatar.jpg",
+				"avatar": "/static/upload/avatar.jpg",
 				"name": "HumiL"
 			}
 		}],
 		"activity": [{
 			"id": 1,
-			"image": "./static/upload/activity1.jpg"
+			"image": "/static/upload/activity1.jpg"
 		},{
 			"id": 2,
-			"image": "./static/upload/activity2.jpg"
+			"image": "/static/upload/activity2.jpg"
 		}],
 		"video": [{
 			"id": 1,
 			"title": "黑椒牛排的制作过程",
-			"video": "./static/upload/video/video1.mp4",
-			"cover": "./static/upload/video/video1.jpg",
+			"video": "/static/upload/video/video1.mp4",
+			"cover": "/static/upload/video/video1.jpg",
 			"time": "2018-02-06",
 			"author": {
-				"avatar": "./static/upload/avatar.jpg",
+				"avatar": "/static/upload/avatar.jpg",
 				"name": "Freesiaa Made"
 			}
 		},{
 			"id": 2,
 			"title": "面条的制作过程",
-			"video": "./static/upload/video/video2.mp4",
-			"cover": "./static/upload/video/video2.jpg",
+			"video": "/static/upload/video/video2.mp4",
+			"cover": "/static/upload/video/video2.jpg",
 			"time": "2018-01-06",
 			"author": {
-				"avatar": "./static/upload/avatar.jpg",
+				"avatar": "/static/upload/avatar.jpg",
 				"name": "Freesiaa Made"
 			}
 		}],
@@ -604,25 +604,25 @@
       "id": 1,
 			"title": "我的菜单",
 			"desc": "9篇菜谱",
-			"avatar": "./static/upload/avatar.jpg",
-			"images": ["./static/upload/food1.jpg","./static/upload/food2.jpg","./static/upload/food3.jpg","./static/upload/food4.jpg","./static/upload/food5.jpg","./static/upload/food6.jpg","./static/upload/food7.jpg","./static/upload/food8.jpg","./static/upload/food9.jpg"]
+			"avatar": "/static/upload/avatar.jpg",
+			"images": ["/static/upload/food1.jpg","/static/upload/food2.jpg","/static/upload/food3.jpg","/static/upload/food4.jpg","/static/upload/food5.jpg","/static/upload/food6.jpg","/static/upload/food7.jpg","/static/upload/food8.jpg","/static/upload/food9.jpg"]
 		},{
       "id": 2,
 			"title": "我的菜单",
 			"desc": "9篇菜谱",
-			"avatar": "./static/upload/avatar.jpg",
-			"images": ["./static/upload/food1.jpg","./static/upload/food2.jpg","./static/upload/food3.jpg","./static/upload/food4.jpg","./static/upload/food5.jpg","./static/upload/food6.jpg","./static/upload/food7.jpg","./static/upload/food8.jpg","./static/upload/food9.jpg"]
+			"avatar": "/static/upload/avatar.jpg",
+			"images": ["/static/upload/food1.jpg","/static/upload/food2.jpg","/static/upload/food3.jpg","/static/upload/food4.jpg","/static/upload/food5.jpg","/static/upload/food6.jpg","/static/upload/food7.jpg","/static/upload/food8.jpg","/static/upload/food9.jpg"]
 		}],
 		"topic": [{
 			"id": 1,
 			"title": "关于品茶的所有问题，一篇文章告诉你",
-			"image": "./static/upload/topic1.jpg",
+			"image": "/static/upload/topic1.jpg",
 			"imageTitle": "关于品茶的所有问题",
 			"imageDesc": "一篇文章告诉你"
 		},{
 			"id": 2,
 			"title": "关于粗粮的所有问题，一篇文章告诉你",
-			"image": "./static/upload/topic2.jpg",
+			"image": "/static/upload/topic2.jpg",
 			"imageTitle": "关于粗粮的所有问题",
 			"imageDesc": "一篇文章告诉你"
 		}]
@@ -631,16 +631,16 @@
 		"banner": [{
 			"id": 1,
 			"title": "推荐理由：美好的晚餐，这篇文章来介绍",
-			"image": "./static/upload/challenge1.jpg"
+			"image": "/static/upload/challenge1.jpg"
 		},{
 			"id": 2,
 			"title": "推荐理由：谷物对身体很好",
-			"image": "./static/upload/challenge2.jpg"
+			"image": "/static/upload/challenge2.jpg"
 		}],
 		"task": [{
       "id": 1,
 			"title": "绑定手机号",
-			"image": "./static/upload/task1.jpg",
+			"image": "/static/upload/task1.jpg",
 			"imageTitle": "PHONE",
 			"points": 100,
 			"isFinished": 1,
@@ -648,7 +648,7 @@
 		},{
       "id": 2,
 			"title": "上传头像",
-			"image": "./static/upload/task2.jpg",
+			"image": "/static/upload/task2.jpg",
 			"imageTitle": "AVATAR",
 			"points": 100,
 			"isFinished": 1,
@@ -656,7 +656,7 @@
 		},{
       "id": 3,
 			"title": "关注一位好友",
-			"image": "./static/upload/task3.jpg",
+			"image": "/static/upload/task3.jpg",
 			"imageTitle": "FOLLOW",
 			"points": 100,
 			"isFinished": 1,
@@ -664,7 +664,7 @@
 		},{
       "id": 4,
 			"title": "收藏3篇喜欢的菜谱",
-			"image": "./static/upload/task4.jpg",
+			"image": "/static/upload/task4.jpg",
 			"imageTitle": "COLLECT",
 			"points": 100,
 			"isFinished": 1,
@@ -672,7 +672,7 @@
 		},{
       "id": 5,
 			"title": "给喜欢的菜谱评论",
-			"image": "./static/upload/task5.jpg",
+			"image": "/static/upload/task5.jpg",
 			"imageTitle": "COMMENT",
 			"points": 100,
 			"isFinished": 1,

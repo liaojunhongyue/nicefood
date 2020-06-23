@@ -51,6 +51,7 @@ const Login = r => require.ensure([], () => r(require('@/views/user/login/login'
 Vue.use(Router)
 
 export default new Router({
+  // mode: 'history',
   base: '/dist/',
   scrollBehavior(to, from, savedPosition) {
     return { x: 0, y: 0 }
@@ -59,11 +60,10 @@ export default new Router({
     {
       path: '/',
       name: 'main',
-      redirect: '/home',
       component: Main,
       children: [
         {
-          path: '/home',
+          path: '',
           name: 'home', // 首页
           component: Home
         },
